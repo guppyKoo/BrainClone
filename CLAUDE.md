@@ -26,17 +26,23 @@ status: draft | confirmed
 
 ## 2. 정보 라우팅 테이블 — 어떤 정보를 어디에 쓸 것인가
 
+**경계 원칙: "개발 관련인가?"가 1차 분기다.** 개발 관련이면 관심 단계든 숙련 단계든 전부 `developer/`로 간다.
+`profile/`과 `interest/`는 비개발(인간) 영역이다.
+
 | 정보 유형 | 대상 파일 |
 |---|---|
-| 성격, MBTI, 강점/약점, 소통·작업 스타일 | `profile/personality.md` |
+| 현재 진행 중인 일, 요즘 상태 | `now.md` |
+| 인간으로서의 성격, MBTI, 대인관계·소통 | `profile/personality.md` |
 | 인생관, 우선순위, 의사결정 원칙 | `profile/values.md` |
 | 깊은 고민, 회고, 시기별 생각 | `profile/journal/YYYY-MM-DD-주제.md` |
-| 관심 기술·학문·트렌드 정리 | `interest/topics/<주제>.md` |
-| 취미 (운동, 독서, 게임, 음악 등) | `interest/hobbies/<취미>.md` |
-| 하고 싶은 경험, 사고 싶은 것, 읽을 책 | `interest/wishlist.md` |
-| 기술 스택, 숙련도 | `developer/stack.md` |
-| 코드 스타일, 컨벤션, 폴더 구조 취향 | `developer/coding-style.md` |
-| 개발·아키텍처 철학 | `developer/philosophy.md` |
+| 비개발 학습·관심 주제 (영어공부, 학문, 트렌드) | `interest/topics/<주제>.md` |
+| 취미 (운동, 독서, 게임, 음악, 영화 등) | `interest/hobbies/<취미>.md` |
+| 하고 싶은 경험, 사고 싶은 것, 읽을 책 (비개발) | `interest/wishlist.md` |
+| 개발 관심사·학습 주제 (호기심 단계) | `developer/interest.md` |
+| 개발자로서의 성향·작업 스타일 (관찰된 특성) | `developer/tendency.md` |
+| 기술 스택, 숙련도 (실무 반복 사용 수준) | `developer/stack.md` |
+| 코드 스타일, 컨벤션, 폴더 구조 취향 (구체 규칙) | `developer/coding-style.md` |
+| 개발·아키텍처 철학 (지향하는 원칙) | `developer/philosophy.md` |
 | 자주 쓰는 패턴, 디버깅 노트 | `developer/snippets/<주제>.md` |
 | 이력서 기본 정보, 경력 요약 | `career/resume.md` |
 | 프로젝트별 성과·역할·문제 해결 | `career/portfolio/<프로젝트>.md` |
@@ -45,9 +51,22 @@ status: draft | confirmed
 
 라우팅이 애매하면 새 파일을 만들지 말고 사용자에게 묻는다.
 
+### developer 내부 층위와 승격 규칙
+
+- `interest.md`(호기심·학습 중) → 실무에서 반복 사용하는 수준이 되면 `stack.md`로 **승격**하고,
+  interest에는 "더 파보고 싶은 것"만 남긴다. (이동 이력은 git과 `## 변경 이력`에 남는다)
+- `tendency.md`(관찰된 성향) / `philosophy.md`(지향하는 원칙) / `coding-style.md`(구체 규칙) —
+  같은 주제라도 "그런 경향이 있다"는 tendency, "그래야 한다고 믿는다"는 philosophy, "이렇게 쓴다"는 coding-style.
+
+### career와의 경계
+
+- `developer/` = 사실·작업용 (내가 일하는 방식), `career/` = 스토리·제시용 (나를 보여주는 방식).
+- career 문서는 developer 문서를 **링크로 참조**하고 내용을 재서술하지 않는다.
+  기술 목록·성향이 바뀌면 developer만 고치면 되는 구조를 유지한다.
+
 ## 3. Read 규칙
 
-1. 항상 `index.md`에서 시작해 필요한 영역만 내려간다. 전체 폴더를 무차별로 읽지 않는다.
+1. 항상 `index.md`와 `now.md`에서 시작해 필요한 영역만 내려간다. 전체 폴더를 무차별로 읽지 않는다.
 2. 질문에 답하기 전, 관련 영역 문서를 읽었는지 확인한다. 문서에 없는 내용은 지어내지 않는다.
 3. `status: draft` 문서의 내용을 인용할 때는 "확정되지 않은 초안"임을 밝힌다.
 
