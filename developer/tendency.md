@@ -1,40 +1,38 @@
 ---
-title: 개발자로서의 성향
+title: Tendencies as a developer
 area: developer
-tags: [성향, 작업스타일, 강점, 약점]
+tags: [tendency, work-style, strengths, weaknesses]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 개발자로서의 성향
+# Tendencies as a developer
 
-작업 이력에서 **관찰된** 개발자 특성·경향. (지향하는 원칙은 [[philosophy]], 구체 규칙은 [[coding-style]],
-인간으로서의 성격은 `profile/personality.md`)
+**Observed** developer traits from work history. (Believed principles → [[philosophy]], concrete rules → [[coding-style]],
+human personality → `profile/personality.md`.)
 
-## 작업 성향 (추정)
+## Work style (inferred)
 
-- **도구와 자동화에 진심**: Claude Code에 수백 개의 스킬·에이전트·훅(ECC, GateGuard)을 세팅.
-  개발 워크플로우 자체를 튜닝하는 데 큰 에너지를 쓴다 — 얼리어답터, 메타-생산성 지향
-- **막히면 근본적으로 다시 만든다**: Glaze의 DMG 빌드 한계 → 순정 Electron으로 전면 재구축해 목표 달성
-- **끝까지 검증**: typecheck/build/dev/패키징 실행까지 전 단계를 통과해야 "완료"로 간주
-- **구조 먼저, 실행은 위임**: 폴더 구조·규칙을 먼저 정의하고 AI에게 실행을 맡기는 패턴
+- **Serious about tools & automation**: hundreds of skills/agents/hooks (ECC, GateGuard) configured in Claude Code;
+  spends real energy tuning the dev workflow itself — early adopter, meta-productivity oriented
+- **Rebuilds from the root when blocked**: Glaze couldn't produce a DMG → rebuilt the whole app on vanilla Electron and shipped
+- **Verifies to the end**: only "done" after typecheck/build/dev/packaged-app-run all pass
+- **Structure first, delegate execution**: defines folder structure and rules first, then hands execution to AI
 
-## 강점 (추정)
+## Strengths (inferred)
 
-- 새 스택을 빠르게 흡수해 배포(DMG)까지 도달하는 **완주 능력**
-- **근본 원인 추적** — [[y-prosemirror-nodeselection-crash]]를 라이브러리 패치 수준까지 파고듦, 오답 가설도 테스트로 반증 후 기록
-- **시스템/구조화 사고** — OKF, ECC 룰셋 같은 프레임워크를 직접 설계
+- **Finisher**: absorbs a new stack quickly and reaches shipping (DMG)
+- **Root-cause tracking** — dug [[y-prosemirror-nodeselection-crash]] down to a library patch; disproves wrong hypotheses with tests and records them
+- **Systems thinking** — designs frameworks like OKF and the ECC ruleset himself
 
-## 약점
+## Weaknesses
 
-- **TODO — 직접 입력 필요** (예: 완벽주의로 인한 속도 저하? 도구 세팅에 과투자?)
+## Collaboration style
 
-## 협업 스타일
+- Korean commit messages + Conventional Commits, feature branch → PR flow
 
-- 커밋 메시지는 한국어 + Conventional Commits, 기능 브랜치 → PR 흐름
-- **TODO**: 코드 리뷰 성향, 페어 프로그래밍 선호 여부, 문서화 습관
+## Changelog
 
-## 변경 이력
-
-- 2026-08-03: profile/personality.md에서 개발자 성향 부분을 분리해 생성
+- 2026-08-03: split from profile/personality.md
+- 2026-08-03: migrated to English

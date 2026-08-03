@@ -1,35 +1,30 @@
 ---
-title: 위시리스트
+title: Wishlist
 area: interest
-tags: [위시리스트, 버킷리스트, 읽을책]
+tags: [wishlist, bucket-list, books]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 위시리스트
+# Wishlist
 
-비개발 위시리스트. (만들고 싶은 개발 프로젝트는 [[interest|developer/interest.md]]의 "만들어보고 싶은 것"에)
+Non-dev wishlist. (Dev projects to build live in [[interest|developer/interest.md]] under "Want to build".)
 
-## 해보고 싶은 경험
+## Experiences I want
 
-- **자작곡 완성** — 커버가 아닌 내 곡을 만들어 밴드로 연주하기 (<싱 스트리트> 후유증) → [[music]]
-- **TODO — 추가 입력 필요**
+- **Finish an original song** — write my own song, not a cover, and play it with the band (Sing Street aftermath) → [[music]]
 
-## 사고 싶은 것
+## Things to buy
 
-- **TODO — 직접 입력 필요**
+## Books to read
 
-## 읽을 책
+## Movies to watch / music to hear
 
-- **TODO — 직접 입력 필요**
+- (in progress) Coen brothers 6-month curriculum — list and progress in [[humanities]]
 
-## 보고 싶은 영화 / 듣고 싶은 음악
+## Changelog
 
-- (진행 중) 코엔 형제 6개월 커리큘럼 — 목록과 진도는 [[humanities]]
-- **TODO — 추가 입력 필요**
-
-## 변경 이력
-
-- 2026-08-03: 개발 프로젝트 항목을 developer/interest.md로 이동, 비개발 전용으로 재편
-- 2026-08-03: 자작곡 목표·코엔 커리큘럼 등 확정 항목 추가
+- 2026-08-03: moved dev projects to developer/interest.md; non-dev only
+- 2026-08-03: added confirmed items (original song goal, Coen curriculum)
+- 2026-08-03: migrated to English

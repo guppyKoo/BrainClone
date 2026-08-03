@@ -1,39 +1,37 @@
 ---
-title: 애니·영화·게임 취향
+title: Anime, movies & games
 area: interest
-tags: [애니메이션, 만화, 영화, 게임, 팝컬처]
+tags: [anime, manga, movies, games, pop-culture]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 애니 · 영화 · 게임 취향
+# Anime · Movies · Games
 
-일상 대화에 레퍼런스가 튀어나올 정도로 팝컬처 소비량이 많다.
-인문학 모임 쪽의 "진지한 영화"는 [[humanities]], 여기는 순수 취향 영역.
+Consumes enough pop culture that references spill into everyday conversation.
+Serious cinema for the club lives in [[humanities]]; this is pure taste.
 
-## 애니 / 만화
+## Anime / manga
 
-- 일본 만화·애니를 폭넓게 봄 — 나루토, 원피스, 데스노트 등 클래식 라인 익숙
-- 대화 중 비유·농담의 재료로 자주 사용
+- Reads/watches Japanese manga and anime broadly — fluent in the classics (Naruto, One Piece, Death Note)
+- Frequently used as material for analogies and jokes
 
-## 영화 / 드라마
+## Movies / TV
 
-- 왕좌의 게임, 스타워즈 등 대형 프랜차이즈 세계관에 밝음
-- <싱 스트리트>는 실제 행동(밴드 자작곡 시도)까지 유발한 작품
+- Deep on big franchise lore — Game of Thrones, Star Wars
+- *Sing Street* actually changed behavior (triggered the original-song attempt with the band)
 
-## 게임
+## Games
 
-- F1(레이싱), Hearts of Iron IV(전략 시뮬), 리그 오브 레전드
-- LoL은 플레이뿐 아니라 **세계관/롤 라이브러리**까지 파는 편
+- F1 (racing), Hearts of Iron IV (grand strategy), League of Legends
+- For LoL, digs into the **lore/universe** as much as playing
 
-## 창작 캐릭터
+## Original character
 
-- **뻐끔이** — 무뚝뚝하고 차갑지만 속은 따뜻한 물고기 캐릭터.
-  물고기 키우기 웹게임 구상에서 출발해 AI 페르소나 실험으로 이어짐
+- **Ppeokkumi (뻐끔이)** — a blunt, cold-on-the-outside, warm-on-the-inside fish character.
+  Started as a fish-raising web-game idea, evolved into an AI persona experiment
 
-## TODO — 직접 입력
+## Changelog
 
-- 인생 애니 / 인생 영화 Top 5
-- 최근 정주행한 작품
-- 좋아하는 감독·작가
+- 2026-08-03: migrated to English

@@ -1,50 +1,51 @@
 ---
-title: 개발 관련 관심사
+title: Dev interests
 area: developer
-tags: [관심사, AI, 에이전트, CRDT, 학습]
+tags: [interests, AI, agents, CRDT, learning]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 개발 관련 관심사
+# Dev interests
 
-호기심·학습 단계의 개발 주제 모음. **실무에서 반복 사용하는 수준이 되면 [[stack]]으로 승격**하고
-여기에는 "더 파보고 싶은 것"만 남긴다. (비개발 관심사는 `interest/`에)
+Curiosity/learning-stage dev topics. **Promote to [[stack]] once used repeatedly at work**,
+keeping only "dig deeper" items here. (Non-dev interests live in `interest/`.)
 
-## AI 에이전트 & Claude Code 생태계
+## AI agents & the Claude Code ecosystem
 
-가장 활발하게 파는 주제. 단순 사용을 넘어 **개발 워크플로우 자체를 에이전트로 재설계**하는 데 관심.
+Most active topic. Beyond mere usage — **redesigning the dev workflow itself around agents**.
 
-- 현재: ECC 룰셋·스킬·에이전트 대량 운용, GateGuard 등 훅 기반 품질 게이트, MCP 다수 연결(Figma/Notion/MongoDB/GitHub 등), BrainClone을 AI가 읽고 쓰는 구조로 설계
-- 관심 세부: 멀티 에이전트 오케스트레이션, PreToolUse/PostToolUse 훅으로 행동 강제, 세션 간 메모리/컨텍스트 관리
-- 다음에 볼 것: **TODO** — Claude Agent SDK 커스텀 에이전트, 에이전트 평가(eval) 체계
+- Current: large ECC rule/skill/agent fleet, hook-based quality gates (GateGuard), many MCP servers (Figma/Notion/MongoDB/GitHub/…), designing BrainClone as an AI-read/write knowledge base
+- Sub-interests: multi-agent orchestration, enforcing AI behavior via PreToolUse/PostToolUse hooks, cross-session memory/context management
+- Next up: Claude Agent SDK custom agents, agent evaluation (eval) systems
 
-## 실시간 동시편집 (CRDT / Yjs)
+## Realtime collaborative editing (CRDT / Yjs)
 
-실무 숙련 영역이라 스택 자체는 [[stack]]에 정리됨. 남은 호기심:
+Mastered at work — the stack itself lives in [[stack]]. Remaining curiosity:
 
-- **TODO**: Yjs 내부 구조(아이템 병합, GC), 다른 CRDT(Automerge, Loro) 비교
+- Yjs internals (item merging, GC); comparing other CRDTs (Automerge, Loro)
 
-## 학습 중인 기술 (호기심 ~ 입문)
+## Learning-stage tech (curiosity ~ beginner)
 
-- **Flutter** — React/JS 개념에 대응시킨 학습 로드맵을 짠 상태. 모바일 대응 수단 확보가 목적으로 보임
-- **Playwright** — 브라우저 자동화/E2E
-- **AWS SAA-C03** — 10~12주 학습 계획을 세워봤음 (진행 여부 **TODO**)
-- **Appsmith** — 사내 툴링 관점에서 조사 (JSONForm 위젯, API 바디 직렬화 이슈)
+- **Flutter** — built a learning roadmap mapping React/JS concepts; goal appears to be mobile coverage
+- **Playwright** — browser automation / E2E
+- **AWS SAA-C03** — drafted a 10–12 week study plan (progress unconfirmed)
+- **Appsmith** — researched for internal tooling (JSONForm widget, API body serialization issue)
 
-## 메시지/인프라 주변
+## Around messaging/infra
 
-- Kafka, BullMQ, Supabase vs Firebase, Turborepo 원격 캐싱 — 실무 동시편집 맥락에서 비교·검토한 이력
+- Kafka, BullMQ, Supabase vs Firebase, Turborepo remote caching — compared in the context of work collab-editing
 
-## 만들어보고 싶은 것
+## Want to build
 
-- (추정) Claude Agent SDK 기반 개인 에이전트 — BrainClone을 읽는 "디지털 분신"
-- (추정) Bulk Mail 정식 배포 — 코드사인/공증까지 마친 릴리즈
-- (추정) INOS 실서비스 오픈 — 현재 홍보/초기 유저 확보 방안을 고민 중
-- Claude Code ↔ Claude Design을 MCP로 연결해 디자인→구현 파이프라인 만들기
+- (inferred) A personal agent on the Claude Agent SDK — a "digital twin" that reads BrainClone
+- (inferred) Bulk Mail proper release — codesigned/notarized
+- (inferred) INOS public launch — currently thinking through promotion and first users
+- A design→implementation pipeline connecting Claude Code ↔ Claude Design via MCP
 
-## 변경 이력
+## Changelog
 
-- 2026-08-03: interest/topics/의 ai-agent-tooling·realtime-collaboration + wishlist 개발 항목을 병합해 생성
-- 2026-08-03: 학습 중인 기술(Flutter, Playwright, AWS SAA-C03, Appsmith)과 인프라 검토 이력 추가
+- 2026-08-03: created by merging interest/topics (ai-agent-tooling, realtime-collaboration) + dev wishlist items
+- 2026-08-03: added learning-stage tech (Flutter, Playwright, AWS SAA-C03, Appsmith) and infra research history
+- 2026-08-03: migrated to English

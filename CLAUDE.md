@@ -1,100 +1,109 @@
-# BrainClone 관리 규칙 & OKF 규격
+# BrainClone Management Rules & OKF Spec
 
-이 저장소는 사용자(guppy)의 뇌를 복제하는 개인 지식 베이스다.
-AI(Claude)는 이 문서의 규격을 따라 읽고 쓴다. 전역 Read/Write 트리거는 `~/.claude/CLAUDE.md`에 정의되어 있다.
+This repository is a personal knowledge base that clones the brain of the user (guppy).
+AI (Claude) reads and writes here following this spec. Global Read/Write triggers live in `~/.claude/CLAUDE.md`.
 
-## 1. OKF 문서 규격
+## 0. Language
 
-모든 `.md` 문서(이 파일과 `index.md` 제외)는 아래 frontmatter로 시작한다.
+- **All documents are written in English** (token efficiency). Proper nouns stay as-is (goorm, INOS, 뻐끔이 may be romanized).
+- The user speaks Korean in conversation; AI translates when writing to BrainClone.
+- Korean source quotes may be kept only when the original wording matters.
+
+## 1. OKF Document Spec
+
+Every `.md` document (except this file and `index.md`) starts with this frontmatter:
 
 ```markdown
 ---
-title: 문서 제목
+title: Document title
 area: profile | interest | developer | career
-tags: [키워드1, 키워드2]
+tags: [keyword1, keyword2]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 status: draft | confirmed
 ---
 ```
 
-- **status: draft** — AI가 추론·초안으로 작성한 문서. 본문에서 확인되지 않은 추정 내용은 `(추정)` 표기를 붙인다.
-- **status: confirmed** — 사용자가 내용을 검토·확정한 문서. `(추정)` 표기가 남아 있으면 안 된다.
-- 문서 간 연결은 위키링크 `[[파일명]]` 또는 상대경로 마크다운 링크를 사용한다.
-- 한 파일 = 한 주제. 800줄을 넘으면 분할하고 `index.md`를 갱신한다.
-- 저널 파일명은 `journal/YYYY-MM-DD-주제.md` 형식을 따른다.
+- **status: draft** — written by AI from inference. Unverified claims are marked `(inferred)`.
+- **status: confirmed** — reviewed and approved by the user. No `(inferred)` marks may remain.
+- Link documents with wikilinks `[[name]]` or relative markdown links.
+- One file = one topic. Split at 800 lines and update `index.md`.
+- Journal filenames: `journal/YYYY-MM-DD-topic.md`.
+- **No "user input needed" placeholders.** If information is missing, leave the section blank —
+  AI fills it in later as facts emerge from conversation. AI may ask the user questions naturally,
+  and may queue open questions in `now.md` under "Open questions".
 
-## 2. 정보 라우팅 테이블 — 어떤 정보를 어디에 쓸 것인가
+## 2. Routing Table — where does information go?
 
-**경계 원칙: "개발 관련인가?"가 1차 분기다.** 개발 관련이면 관심 단계든 숙련 단계든 전부 `developer/`로 간다.
-`profile/`과 `interest/`는 비개발(인간) 영역이다.
+**Boundary principle: "Is it dev-related?" is the first branch.** Anything development-related goes
+under `developer/`, whether curiosity-stage or mastered. `profile/` and `interest/` are non-dev (human) areas.
 
-| 정보 유형 | 대상 파일 |
+| Information type | Target file |
 |---|---|
-| 현재 진행 중인 일, 요즘 상태 | `now.md` |
-| 인간으로서의 성격, MBTI, 대인관계·소통 | `profile/personality.md` |
-| 인생관, 우선순위, 의사결정 원칙 | `profile/values.md` |
-| 깊은 고민, 회고, 시기별 생각 | `profile/journal/YYYY-MM-DD-주제.md` |
-| 비개발 학습·관심 주제 (영어공부, 학문, 트렌드) | `interest/topics/<주제>.md` |
-| 취미 (운동, 독서, 게임, 음악, 영화 등) | `interest/hobbies/<취미>.md` |
-| 하고 싶은 경험, 사고 싶은 것, 읽을 책 (비개발) | `interest/wishlist.md` |
-| 개발 관심사·학습 주제 (호기심 단계) | `developer/interest.md` |
-| 개발자로서의 성향·작업 스타일 (관찰된 특성) | `developer/tendency.md` |
-| 기술 스택, 숙련도 (실무 반복 사용 수준) | `developer/stack.md` |
-| 코드 스타일, 컨벤션, 폴더 구조 취향 (구체 규칙) | `developer/coding-style.md` |
-| 개발·아키텍처 철학 (지향하는 원칙) | `developer/philosophy.md` |
-| 자주 쓰는 패턴, 디버깅 노트 | `developer/snippets/<주제>.md` |
-| 이력서 기본 정보, 경력 요약 | `career/resume.md` |
-| 프로젝트별 성과·역할·문제 해결 | `career/portfolio/<프로젝트>.md` |
-| 커리어 목표, 희망 연봉/이직 조건 | `career/goals.md` |
-| 면접 예상 질문과 답변 | `career/interview-qa.md` |
+| What's happening now, current status | `now.md` |
+| Personality as a human, MBTI, communication | `profile/personality.md` |
+| Life philosophy, priorities, decision principles | `profile/values.md` |
+| Deep reflections, periodic thoughts | `profile/journal/YYYY-MM-DD-topic.md` |
+| Non-dev learning/interest topics (English study, investing, …) | `interest/topics/<topic>.md` |
+| Hobbies (fitness, reading, games, music, movies, …) | `interest/hobbies/<hobby>.md` |
+| Experiences/things/books wanted (non-dev) | `interest/wishlist.md` |
+| Dev interests & learning topics (curiosity stage) | `developer/interest.md` |
+| Tendencies & work style as a developer (observed) | `developer/tendency.md` |
+| Tech stack, proficiency (used repeatedly at work) | `developer/stack.md` |
+| Code style, conventions, structure preferences (concrete rules) | `developer/coding-style.md` |
+| Development/architecture philosophy (principles) | `developer/philosophy.md` |
+| Recurring patterns, debugging notes | `developer/snippets/<topic>.md` |
+| Resume basics, career summary | `career/resume.md` |
+| Per-project outcomes, roles, problem-solving | `career/portfolio/<project>.md` |
+| Career goals, desired salary/job-change conditions | `career/goals.md` |
+| Expected interview questions & answers | `career/interview-qa.md` |
 
-라우팅이 애매하면 새 파일을 만들지 말고 사용자에게 묻는다.
+If routing is ambiguous, ask the user instead of creating a new file.
 
-### developer 내부 층위와 승격 규칙
+### Layers inside developer/ and the promotion rule
 
-- `interest.md`(호기심·학습 중) → 실무에서 반복 사용하는 수준이 되면 `stack.md`로 **승격**하고,
-  interest에는 "더 파보고 싶은 것"만 남긴다. (이동 이력은 git과 `## 변경 이력`에 남는다)
-- `tendency.md`(관찰된 성향) / `philosophy.md`(지향하는 원칙) / `coding-style.md`(구체 규칙) —
-  같은 주제라도 "그런 경향이 있다"는 tendency, "그래야 한다고 믿는다"는 philosophy, "이렇게 쓴다"는 coding-style.
+- `interest.md` (curiosity/learning) → once used repeatedly at work, **promote** to `stack.md`,
+  leaving only "want to dig deeper" items in interest. (Moves are preserved via git and `## Changelog`.)
+- `tendency.md` (observed traits) / `philosophy.md` (believed principles) / `coding-style.md` (concrete rules) —
+  "tends to do X" → tendency, "believes X is right" → philosophy, "writes code like X" → coding-style.
 
-### career와의 경계
+### Boundary with career/
 
-- `developer/` = 사실·작업용 (내가 일하는 방식), `career/` = 스토리·제시용 (나를 보여주는 방식).
-- career 문서는 developer 문서를 **링크로 참조**하고 내용을 재서술하지 않는다.
-  기술 목록·성향이 바뀌면 developer만 고치면 되는 구조를 유지한다.
+- `developer/` = facts, for working. `career/` = story, for presenting.
+- Career documents **reference** developer documents by link and never restate their content.
+  When stack or tendencies change, only developer/ needs editing.
 
-## 3. Read 규칙
+## 3. Read Rules
 
-1. 항상 `index.md`와 `now.md`에서 시작해 필요한 영역만 내려간다. 전체 폴더를 무차별로 읽지 않는다.
-2. 질문에 답하기 전, 관련 영역 문서를 읽었는지 확인한다. 문서에 없는 내용은 지어내지 않는다.
-3. `status: draft` 문서의 내용을 인용할 때는 "확정되지 않은 초안"임을 밝힌다.
+1. Always start from `index.md` and `now.md`, then descend only into needed areas. Never bulk-read every folder.
+2. Before answering, verify the relevant area was read. Never invent content that is not in the documents.
+3. When citing a `status: draft` document, note that it is an unconfirmed draft.
 
-## 4. Write 규칙
+## 4. Write Rules
 
-1. **수정 우선**: 같은 주제의 문서가 있으면 새 파일 대신 그 문서를 수정한다.
-2. **updated 갱신**: 내용을 수정하면 반드시 frontmatter의 `updated`를 오늘 날짜로 바꾼다.
-3. **index 동기화**: 새 문서를 만들면 같은 작업 안에서 `index.md`에 링크를 추가한다.
-4. **충돌 해결**: 사용자의 현재 발화 > 문서 기록. 충돌 발견 시 문서를 갱신하고 변경 사실을 알린다.
-5. **삭제 금지**: 문서·내용 삭제는 사용자가 명시적으로 지시했을 때만 한다. 과거 내용은 git 이력이 보존하므로 본문은 항상 최신 상태로 깔끔하게 유지한다.
-6. **민감 정보 금지**: 비밀번호, API 키, 주민번호 등 크리덴셜은 절대 기록하지 않는다. 연봉 등 민감 수치는 사용자가 직접 요청한 경우에만 기록한다.
-7. **저널은 불변**: `journal/`의 과거 날짜 파일은 수정하지 않는다. 생각이 바뀌면 새 날짜의 저널을 쓴다.
+1. **Edit over create**: if a document on the topic exists, edit it instead of creating a new file.
+2. **Update `updated`**: bump the frontmatter date on every content change.
+3. **Index sync**: when creating a document, add its link to `index.md` in the same operation.
+4. **Conflict resolution**: the user's current statement > recorded documents. Update the document and mention the change.
+5. **No deletion**: delete documents/content only on explicit user instruction. Git preserves history, so keep the body clean and current.
+6. **No secrets**: never record passwords, API keys, or government IDs. Sensitive figures (salary, holdings) only on direct user request.
+7. **Journals are immutable**: never edit past-dated journal files. New thoughts get a new dated entry.
 
-## 5. 버전 관리 (Git)
+## 5. Versioning (Git)
 
-과거 데이터 보존은 **git이 담당**한다. 파일명은 항상 고정하고(항상 최신 내용), 스냅샷 파일을 늘리지 않는다.
+**Git owns history.** Filenames stay fixed (always-latest content); never accumulate snapshot files.
 
-1. **수정 후 즉시 커밋**: 문서를 생성·수정하면 `docs: <파일명> — <변경 요약>` 형식으로 커밋한다.
-   과거 버전 조회는 `git log -p <파일>`.
-2. **변경 이력 섹션**: 의미 있는 변화(성과 추가, 목표 변경 등)는 해당 문서 하단
-   `## 변경 이력`에 `- YYYY-MM-DD: 한 줄 요약`을 추가한다. git diff는 "무엇이", 이 섹션은 "왜"를 담는다.
-   오탈자·표현 수정 같은 사소한 변경은 기록하지 않는다.
-3. **대개편 시 아카이브**: 문서의 방향이 완전히 바뀌는 전면 재작성(예: 이직 후 resume 갱신)일 때만
-   기존 문서를 `_archive/YYYY-MM-DD-<파일명>.md`로 옮긴 뒤 새로 작성한다.
-   `_archive/`는 기본 Read 대상에서 **제외** — 사용자가 과거 이력을 물을 때만 읽는다.
-4. **journal은 예외**: 저널은 원래 날짜별 append-only 스냅샷이므로 그대로 유지한다.
+1. **Commit after every change**: `docs: <file> — <summary of change>`. Commit messages in English.
+   Past versions: `git log -p <file>`.
+2. **Changelog section**: meaningful changes (new achievement, changed goal) get one line in the document's
+   `## Changelog`: `- YYYY-MM-DD: summary`. Git diff covers *what*; this section covers *why*.
+   Skip typo-level edits.
+3. **Archive on overhaul**: only when a document is fully rewritten in a new direction (e.g. resume after a job change),
+   move the old file to `_archive/YYYY-MM-DD-<filename>.md` and write fresh.
+   `_archive/` is **excluded** from default reads — open it only when the user asks about the past.
+4. **Journals are the exception**: append-only dated snapshots by design.
 
-## 6. 유지보수
+## 6. Maintenance
 
-- 월 1회 정도 사용자와 함께 `draft` 문서를 검토해 `confirmed`로 승격하는 것을 제안한다.
-- `updated`가 6개월 이상 지난 문서를 발견하면 최신화가 필요한지 사용자에게 확인한다.
+- Roughly monthly, offer to review `draft` documents with the user and promote them to `confirmed`.
+- If a document's `updated` is older than 6 months, ask the user whether it needs refreshing.

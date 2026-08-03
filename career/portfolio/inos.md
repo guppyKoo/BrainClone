@@ -1,50 +1,47 @@
 ---
-title: INOS — 인문학 모임 플랫폼
+title: INOS — humanities meetup platform
 area: career
-tags: [포트폴리오, NestJS, AI, 모노레포, 사이드프로젝트]
+tags: [portfolio, NestJS, AI, monorepo, side-project]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# INOS — 인문학의 OS
+# INOS — the OS of humanities
 
-인문학 모임 플랫폼. 영화/책 그룹 선택, AI 발제문 생성(SSE 스트리밍), 모임 일정 조율, 아카이빙.
-개인 프로젝트 (`~/Practice/INOS`).
+Humanities meetup platform: movie/book group selection, AI discussion prompts (SSE streaming), scheduling, archiving.
+Personal project (`~/Practice/INOS`).
 
-## 기술 구성
+## Tech
 
-- **모노레포**: pnpm workspace + Turborepo
-  - `apps/server` (3000): NestJS + Fastify — Auth/Group/Content/Schedule/Archive API
-  - `apps/ai-server` (3001): NestJS + Fastify — SSE 스트리밍 발제문·추천·요약 전담
+- **Monorepo**: pnpm workspace + Turborepo
+  - `apps/server` (3000): NestJS + Fastify — Auth/Group/Content/Schedule/Archive APIs
+  - `apps/ai-server` (3001): NestJS + Fastify — dedicated SSE streaming for prompts/recommendations/summaries
   - `apps/web` (5173): React 19 + Vite + Tailwind v4 + DaisyUI
-  - `packages/prisma|types|utils`: 공유 스키마·DTO·유틸
-- **데이터**: Prisma + PostgreSQL(Supabase) + **pgvector** — `$queryRaw` 벡터 검색
-- **인프라**: BullMQ + ioredis 큐, JWT + Passport + Google OAuth
+  - `packages/prisma|types|utils`: shared schema, DTOs, utilities
+- **Data**: Prisma + PostgreSQL (Supabase) + **pgvector** — vector search via `$queryRaw`
+- **Infra**: BullMQ + ioredis queues, JWT + Passport + Google OAuth
 
-## 설계 포인트
+## Design points
 
-- AI 트래픽(장시간 SSE)을 별도 서버로 분리해 API 서버와 격리
-- Prisma 스키마를 패키지로 공유(symlink)해 앱 간 타입 일관성 확보
-- NestJS `@Sse()` 데코레이터 기반 스트리밍
+- AI traffic (long-lived SSE) isolated into its own server, away from the API server
+- Prisma schema shared as a package (symlink) for cross-app type consistency
+- Streaming via NestJS `@Sse()` decorator
 
-## 제품 전략
+## Product strategy
 
-- **지인 기반 초대제 폐쇄형** 포지셔닝 — 모르는 사람과의 온라인 모임이 갖는 리스크와 지속성 문제를 피하려는 의도
-- **AI 발제문**으로 유료 전문가 모임 대비 부족한 인사이트를 보완하는 것이 핵심 가설
-- 작품 해석/설명 AI는 추후 **유료 기능**으로 검토 중
-- 현재 과제: 홍보 및 초기 유저 확보 방안
-- 데스크톱: 기존 웹을 Electron으로 감싸는 macOS 앱 진행 중 (`partition` 기반 세션 지속, BrowserWindow 로딩)
+- **Invite-only, friends-based** positioning — avoids the risks and churn of meeting strangers online
+- Core hypothesis: **AI discussion prompts** close the insight gap vs. paid expert-led clubs
+- Artwork interpretation/explanation AI under consideration as a future **paid feature**
+- Current challenge: promotion and acquiring first users
+- Desktop: macOS Electron app wrapping the existing web (session persistence via `partition`, BrowserWindow loading)
 
-## 어필 포인트
+## Talking points
 
-- 취미(인문학 모임)의 실제 페인포인트를 풀스택 + AI로 해결한 프로젝트 — 본인이 모임의 영화 큐레이터([[humanities]])이자 사용자
-- 벡터 검색·큐·OAuth 등 프로덕션급 구성 요소를 개인 프로젝트에서 직접 설계
+- Solved a real pain point of his own hobby with full-stack + AI — he is the club's film curator ([[humanities]]) and a user
+- Production-grade components (vector search, queues, OAuth) designed solo in a personal project
 
-## TODO
+## Changelog
 
-- 현재 진행 상태(개발 중/운영 중), 사용자 수, 데모 URL
-
-## 변경 이력
-
-- 2026-08-03: 제품 전략(초대제 폐쇄형, AI 발제문 가설, 유료화 검토) 및 Electron 데스크톱 진행 내용 추가
+- 2026-08-03: added product strategy (invite-only, AI-prompt hypothesis, paid feature) and Electron desktop progress
+- 2026-08-03: migrated to English

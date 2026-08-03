@@ -1,33 +1,28 @@
 ---
-title: 인문학 — 책과 영화 모임
+title: Humanities — book & film club
 area: interest
-tags: [인문학, 독서, 영화, 모임]
+tags: [humanities, reading, film, club]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 인문학 — 책과 영화 모임
+# Humanities — book & film club
 
-취미를 넘어 직접 플랫폼([[inos]] — "인문학의 OS")을 만들 정도로 애정이 있는 영역.
+Loved enough to build a whole platform for it ([[inos]] — "the OS of humanities").
 
-## 활동
+## Activities
 
-- **4인 월간 인문학 모임** — 역할은 **영화 큐레이터**
-- 감독 단위 커리큘럼을 짜서 진행 — 첫 감독으로 **코엔 형제** 선정(파고, 노컨트리 등) 6개월 과정
-- 발제문·사전 가이드를 직접 작성 — <추락의 해부>(Anatomy of a Fall) 사전 가이드, <굿뉴스>(2025) 발제문 등
-- AI로 발제문을 만들어 토론을 돕는 실험 → 이 경험이 [[inos]]의 직접적인 출발점
+- **4-person monthly humanities club** — role: **film curator**
+- Designs director-based curricula — first director: the **Coen brothers** (Fargo, No Country for Old Men, …), a 6-month course
+- Writes discussion guides himself — pre-watch guide for *Anatomy of a Fall*, discussion prompt for *Good News* (2025), etc.
+- Experiments with AI-generated discussion prompts → the direct origin of [[inos]]
 
-## 연결
+## Connection
 
-- 모임의 페인포인트(모르는 사람과의 온라인 모임이 갖는 리스크, 유지의 어려움)을 풀려고 INOS를 지인 기반 **초대제 폐쇄형**으로 설계
+- Designed INOS as **invite-only, friends-based** to avoid the risks and churn of meeting strangers online
 
-## TODO — 직접 입력
+## Changelog
 
-- 최근 읽은/좋았던 책, 인생 책
-- 좋아하는 영화 장르·감독 (코엔 다음 커리큘럼 후보는?)
-- 모임 이름·시작 시기
-
-## 변경 이력
-
-- 2026-08-03: 추정으로 적혀 있던 모임 활동을 확정 사실(4인 월간·영화 큐레이터·코엔 커리큘럼)로 교체
+- 2026-08-03: replaced inferred club details with confirmed facts (4-person monthly, film curator, Coen curriculum)
+- 2026-08-03: migrated to English

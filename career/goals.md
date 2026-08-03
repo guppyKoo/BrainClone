@@ -1,31 +1,27 @@
 ---
-title: 커리어 목표
+title: Career goals
 area: career
-tags: [목표, 이직, 성장]
+tags: [goals, job-change, growth]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 커리어 목표
+# Career goals
 
-> 이 영역은 본인만 답할 수 있는 내용이 대부분. 관찰 기반 추정만 채워둠.
+## Short-term (inferred)
 
-## 단기 목표 (추정)
+- (inferred) Establish AI-agent-driven development workflows at production level — mature the skill/hook/multi-agent system
+- (inferred) Push side projects (Bulk Mail, INOS) to "shipped & operating" for the portfolio
 
-- (추정) AI 에이전트 기반 개발 워크플로우를 실무 수준으로 정착 — 스킬/훅/멀티에이전트 체계 고도화
-- (추정) 사이드 프로젝트(Bulk Mail, INOS)를 "배포·운영" 단계까지 끌어올려 포트폴리오화
-- **TODO**: 올해 안에 이루고 싶은 것
+## Long-term
 
-## 장기 목표
+## Desired conditions (for a job change)
 
-- **TODO — 직접 입력 필요** (예: 특정 도메인 전문가? 창업? 테크리드?)
+> Salary and similar figures are recorded only on direct user request (OKF sensitive-info rule).
 
-## 희망 조건 (이직 시)
+## Things to avoid
 
-- 희망 연봉: **TODO — 직접 입력 시에만 기록** (민감 정보 — OKF 규칙상 요청 시에만 기록)
-- 희망 조건: **TODO** (원격/출근, 도메인, 팀 규모, 기술 스택 등)
+## Changelog
 
-## 피하고 싶은 것
-
-- **TODO**
+- 2026-08-03: migrated to English

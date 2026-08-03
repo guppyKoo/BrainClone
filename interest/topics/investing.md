@@ -1,37 +1,36 @@
 ---
-title: 투자와 거시경제
+title: Investing & macroeconomics
 area: interest
-tags: [투자, 주식, 거시경제, 시장분석]
+tags: [investing, stocks, macro, market-analysis]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 투자와 거시경제
+# Investing & macroeconomics
 
-취미이자 오래된 관심 주제. 단순 매매보다 **분석하고 논리를 세우는 것** 자체에 재미를 느끼는 쪽.
+A hobby and long-standing interest. The fun is in **building the analysis and the argument**, more than trading itself.
 
-## 스타일
+## Style
 
-- 한국·미국 주식을 함께 운용
-- 특정 종목 비중이 커지면 분할매수(DCA)로 집중도를 낮추는 식의 리스크 관리
-- 종목 하나를 볼 때 밸류에이션·유통물량·락업 같은 구조적 요인까지 파고드는 편
-- 국내 제도(ISA 계좌, 국내/해외 주식 세금)도 직접 조사해 정리한 이력
+- Runs both Korean and US equities
+- Risk management like DCA-ing to dilute concentration when one position grows too large
+- Digs into structural factors per name — valuation, float, lock-ups
+- Has researched Korean specifics directly (ISA accounts, domestic/foreign stock taxation)
 
-## 관심 테마
+## Themes
 
-- AI 인프라 (반도체·데이터센터)
-- 휴머노이드 로보틱스
-- 한국 거시 — 원화 약세, 코스피 수급, 외국인 자금 흐름
-- 구조적 이슈(인구 감소, 반도체 수출 편중)를 개인 투자 전략과 연결짓는 관점
+- AI infrastructure (semiconductors, datacenters)
+- Humanoid robotics
+- Korean macro — weak won, KOSPI supply/demand, foreign fund flows
+- Connecting structural issues (population decline, semiconductor export concentration) to personal strategy
 
-## 관찰
+## Observation
 
-- "근거 없는 단정을 싫어한다"는 기질이 가장 잘 드러나는 영역 — 남의 전망을 그대로 받지 않고 직접 논리를 세운다
+- The area where "dislikes unfounded assertions" shows most — builds his own argument instead of adopting others' forecasts
 
-## TODO — 직접 입력
+> Holdings and amounts are recorded only on direct user request, per the OKF sensitive-info rule.
 
-- 투자 원칙 (매도 기준, 목표 비중, 리밸런싱 주기)
-- 정보 소스 (즐겨 보는 리포트/채널)
+## Changelog
 
-> 보유 종목·금액 등 구체 수치는 OKF 민감정보 규칙에 따라 본인이 요청할 때만 기록한다.
+- 2026-08-03: migrated to English

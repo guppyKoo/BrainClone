@@ -1,45 +1,45 @@
 ---
-title: 인간으로서의 성격
+title: Personality as a human
 area: profile
-tags: [성격, MBTI, 소통, 대인관계]
+tags: [personality, MBTI, communication]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 인간으로서의 성격
+# Personality as a human
 
-인간 guppy의 성격·기질. **개발자로서의 성향·작업 스타일은 [[tendency|developer/tendency.md]]에 분리.**
+The human guppy. **Developer tendencies & work style are split into [[tendency|developer/tendency.md]].**
 
-## 기본 정보
+## Basics
 
-- 이름/핸들: guppy (GitHub: guppyKoo)
-- 2001년생
-- 수지 거주 / 판교 출근
-- MBTI: **TODO — 직접 입력 필요**
+- Name/handle: guppy (GitHub: guppyKoo)
+- Born 2001
+- Lives in Suji / commutes to Pangyo
+- MBTI:
 
-## 관찰된 기질 (추정)
+## Observed traits (inferred)
 
-- **완결성 지향**: 만들다 마는 것을 못 견디고 끝(배포, 확정)까지 가려는 기질
-- **구조화 본능**: 생각·지식·규칙을 체계(폴더 구조, 프레임워크)로 정리해야 직성이 풀림 — 이 BrainClone 자체가 증거
-- **기술과 인문학을 함께 사랑**: 개발자이면서 인문학 모임의 영화 큐레이터를 맡고, 아예 플랫폼(INOS)까지 만든다
-- **분석형·반박 기질**: 논리가 허술하면 바로 파고든다. 근거 없는 단정을 싫어하며, AI에게도 같은 기준을 적용한다
-- **창작 욕구**: 남의 것을 그대로 쓰기보다 자기 것을 만들고 싶어함 — 밴드 자작곡 시도, UI 컴포넌트 직접 재구현 등 동일 패턴
+- **Completion-driven**: can't stand leaving things half-done; pushes to the end (ship, finalize)
+- **Structuring instinct**: needs to organize thoughts/knowledge/rules into systems (folder trees, frameworks) — this BrainClone itself is evidence
+- **Loves both tech and the humanities**: a developer who curates films for a humanities club and even built a platform (INOS) for it
+- **Analytical, pushes back**: digs in immediately when logic is loose. Dislikes unfounded assertions and applies the same standard to AI
+- **Creative urge**: prefers making his own over reusing others' — original songs in the band, hand-built UI components; same pattern everywhere
 
-## 강점 / 약점 (인간으로서)
+## Strengths / weaknesses (as a human)
 
-- 강점: **TODO** (예: 꾸준함? 호기심? 공감?)
-  - (관찰) 루틴 지속력 — 주 6일 운동, 월간 모임 큐레이션을 몇 달짜리 커리큘럼으로 설계
-- 약점: **TODO**
+- Strengths:
+  - (observed) Routine persistence — 6-day/week gym habit, designs multi-month curricula for the monthly club
+- Weaknesses:
 
-## 소통 스타일
+## Communication style
 
-- 주 언어: 한국어, 반말 선호
-- 톤: 캐주얼하고 위티하게. 냉소·독설 섞인 농담을 즐기고 과잉 칭찬·매끄러운 응대를 싫어함
-- 팝컬처 레퍼런스를 자주 사용한다 (일본 만화/애니, 왕좌의 게임, 스타워즈, LoL 세계관) — 상대도 받아주기를 기대
-- **TODO**: 대인관계 성향(내향/외향), 갈등 대처 방식, 에너지를 얻는/뺏기는 상황
+- Primary language: Korean; prefers 반말 (casual speech)
+- Tone: casual and witty. Enjoys cynical/sarcastic humor; dislikes excessive praise and overly smooth customer-service tone
+- Frequently drops pop-culture references (Japanese manga/anime, Game of Thrones, Star Wars, LoL lore) — expects the other side to play along
 
-## 변경 이력
+## Changelog
 
-- 2026-08-03: 개발자 성향 부분을 developer/tendency.md로 분리, 인간 성격 전용으로 재편
-- 2026-08-03: 기본 정보(2001년생·수지·판교)와 소통 스타일(반말·냉소·레퍼런스) 확정 내용 반영
+- 2026-08-03: split developer tendencies into developer/tendency.md; human-personality only
+- 2026-08-03: confirmed basics (born 2001, Suji/Pangyo) and communication style (반말, cynical humor, references)
+- 2026-08-03: migrated to English

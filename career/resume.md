@@ -1,44 +1,41 @@
 ---
-title: 이력서 기본 정보
+title: Resume basics
 area: career
-tags: [이력서, 경력]
+tags: [resume, career]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 이력서 기본 정보
+# Resume basics
 
-## 인적 사항
+## Personal
 
-- 이름: **TODO** (핸들: guppy / guppy.koo)
-- 이메일: yunchan0339@gmail.com
+- Name: (handle: guppy / guppy.koo)
+- Email: yunchan0339@gmail.com
 - GitHub: https://github.com/guppyKoo
+- Born 2001 / lives in Suji
 
-## 현재
+## Current
 
-- 소속: **구름(goorm)** — 판교 근무 (edu-core, gem, mist-blocks 등 구름 교육 제품 저장소에서 활동)
-- 역할: JavaScript/TypeScript 기반 **풀스택 개발자** — NestJS 백엔드, 실시간 협업 편집(Y.js/Hocuspocus), 배포(EKS/AWS Kubernetes, Jenkins)
-- 2001년생 / 수지 거주
-- 경력 연차: **2025-09-01**
+- Employer: **goorm** — Pangyo office (active in goorm education products: edu-core, gem, mist-blocks, …)
+- Role: JavaScript/TypeScript **full-stack developer** — NestJS backend, realtime collaborative editing (Yjs/Hocuspocus), deployment (EKS/AWS Kubernetes, Jenkins)
+- Career start: **2025-09-01**
 
-## 핵심 역량 요약 (초안)
+## Core competencies (draft)
 
-- TypeScript/React 기반 제품 개발 — 실무 에디터 시스템 + 개인 프로젝트 배포 경험
-- 실시간 동시편집(Yjs/hocuspocus/ProseMirror) 심층 디버깅 — 오픈소스 라이브러리 패치 경험
-- Electron 데스크톱 앱을 스캐폴딩부터 DMG 배포까지 단독 완주
-- NestJS/Prisma/pgvector 백엔드 + AI(SSE 스트리밍, OpenAI API) 통합 설계
-- AI 에이전트 워크플로우(Claude Code, MCP, 훅) 구축·운용 — 사내 LiteLLM 프록시 연동 포함
-- 배포/인프라: EKS 기반 Kubernetes 환경, Jenkins 파이프라인 경험
+- TypeScript/React product development — production editor systems + shipped personal projects
+- Deep debugging of realtime collaborative editing (Yjs/hocuspocus/ProseMirror) — open-source library patch experience
+- Solo-completed an Electron desktop app from scaffold to DMG distribution
+- NestJS/Prisma/pgvector backend + AI integration (SSE streaming, OpenAI API)
+- Builds and operates AI agent workflows (Claude Code, MCP, hooks) — including in-house LiteLLM proxy integration
+- Deploy/infra: EKS-based Kubernetes, Jenkins pipelines
 
-## 경력 이력
+## Work history
 
-- **TODO — 회사별 기간·직책·주요 업무 직접 입력 필요**
+## Education / certifications
 
-## 학력 / 자격
+## Changelog
 
-- **TODO**
-
-## 변경 이력
-
-- 2026-08-03: 소속(구름·판교)·역할·배포 인프라 경험을 추정에서 확정으로 전환
+- 2026-08-03: employer (goorm, Pangyo), role, and infra experience moved from inferred to confirmed
+- 2026-08-03: migrated to English

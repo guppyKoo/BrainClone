@@ -1,32 +1,31 @@
 ---
-title: 가치관과 의사결정 원칙
+title: Values & decision principles
 area: profile
-tags: [가치관, 우선순위, 의사결정]
+tags: [values, priorities, decisions]
 created: 2026-08-03
 updated: 2026-08-03
 status: draft
 ---
 
-# 가치관과 의사결정 원칙
+# Values & decision principles
 
-> 작업 이력에서 역추론한 초안. 인생관·우선순위는 본인만 쓸 수 있는 영역이라 대부분 TODO.
+> Draft inferred from work history. Life philosophy and priorities can only come from the user.
 
-## 관찰된 가치 (추정)
+## Observed values (inferred)
 
-- **자동화 > 반복노동**: 반복되는 일은 규칙·훅·에이전트로 시스템화한다. 사람의 시간은 판단에 쓴다.
-- **완결성**: 만들다 마는 것보다 배포 가능한 상태(DMG, 릴리즈)까지 가는 것을 중요하게 여긴다.
-- **근본 원인주의**: 증상 회피 패치보다 원인을 찾아 고친다 (라이브러리 소스 패치도 불사).
-- **기술은 수단**: 인문학 모임(INOS), 메일 도구(Bulk Mail) 등 삶과 커뮤니티를 위한 도구를 만든다.
+- **Automation > repetitive labor**: recurring work gets systematized into rules/hooks/agents; human time goes to judgment
+- **Completeness**: shipping (DMG, release) matters more than half-built work
+- **Root-cause first**: fixes causes rather than patching symptoms — even patching library source
+- **Tech is a means**: builds tools for life and community (INOS for the humanities club, Bulk Mail)
 
-## 삶과 일의 우선순위
+## Life & work priorities
 
-- **TODO — 직접 입력 필요** (예: 가족/건강/성장/자산의 순위, 워라밸 기준)
+## Decision principles
 
-## 의사결정 원칙
+- (inferred) Tool choice: start on proven foundations; build your own when you hit their limits
 
-- **TODO — 직접 입력 필요** (예: "되돌릴 수 있는 결정은 빨리 한다" 같은 자기 원칙)
-- (추정) 도구 선택 시: 검증된 것 위에서 시작하되, 한계에 부딪히면 직접 만든다.
+## Life philosophy
 
-## 인생관
+## Changelog
 
-- **TODO — 직접 입력 필요**
+- 2026-08-03: migrated to English
