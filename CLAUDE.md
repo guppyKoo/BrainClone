@@ -3,6 +3,10 @@
 This repository is a personal knowledge base that clones the brain of the user (guppy).
 AI (Claude) reads and writes here following this spec. Global Read/Write triggers live in `~/.claude/CLAUDE.md`.
 
+**!!!!! important !!!!!**
+
+- Write all documents in English (BrainClone only)
+
 ## 0. Language
 
 - **All documents are written in English** (token efficiency). Proper nouns stay as-is (goorm, INOS, 뻐끔이 may be romanized).
@@ -38,25 +42,25 @@ status: draft | confirmed
 **Boundary principle: "Is it dev-related?" is the first branch.** Anything development-related goes
 under `developer/`, whether curiosity-stage or mastered. `profile/` and `interest/` are non-dev (human) areas.
 
-| Information type | Target file |
-|---|---|
-| What's happening now, current status | `now.md` |
-| Personality as a human, MBTI, communication | `profile/personality.md` |
-| Life philosophy, priorities, decision principles | `profile/values.md` |
-| Deep reflections, periodic thoughts | `profile/journal/YYYY-MM-DD-topic.md` |
-| Non-dev learning/interest topics (English study, investing, …) | `interest/topics/<topic>.md` |
-| Hobbies (fitness, reading, games, music, movies, …) | `interest/hobbies/<hobby>.md` |
-| Experiences/things/books wanted (non-dev) | `interest/wishlist.md` |
-| Dev interests & learning topics (curiosity stage) | `developer/interest.md` |
-| Tendencies & work style as a developer (observed) | `developer/tendency.md` |
-| Tech stack, proficiency (used repeatedly at work) | `developer/stack.md` |
-| Code style, conventions, structure preferences (concrete rules) | `developer/coding-style.md` |
-| Development/architecture philosophy (principles) | `developer/philosophy.md` |
-| Recurring patterns, debugging notes | `developer/snippets/<topic>.md` |
-| Resume basics, career summary | `career/resume.md` |
-| Per-project outcomes, roles, problem-solving | `career/portfolio/<project>.md` |
-| Career goals, desired salary/job-change conditions | `career/goals.md` |
-| Expected interview questions & answers | `career/interview-qa.md` |
+| Information type                                                | Target file                           |
+| --------------------------------------------------------------- | ------------------------------------- |
+| What's happening now, current status                            | `now.md`                              |
+| Personality as a human, MBTI, communication                     | `profile/personality.md`              |
+| Life philosophy, priorities, decision principles                | `profile/values.md`                   |
+| Deep reflections, periodic thoughts                             | `profile/journal/YYYY-MM-DD-topic.md` |
+| Non-dev learning/interest topics (English study, investing, …)  | `interest/topics/<topic>.md`          |
+| Hobbies (fitness, reading, games, music, movies, …)             | `interest/hobbies/<hobby>.md`         |
+| Experiences/things/books wanted (non-dev)                       | `interest/wishlist.md`                |
+| Dev interests & learning topics (curiosity stage)               | `developer/interest.md`               |
+| Tendencies & work style as a developer (observed)               | `developer/tendency.md`               |
+| Tech stack, proficiency (used repeatedly at work)               | `developer/stack.md`                  |
+| Code style, conventions, structure preferences (concrete rules) | `developer/coding-style.md`           |
+| Development/architecture philosophy (principles)                | `developer/philosophy.md`             |
+| Recurring patterns, debugging notes                             | `developer/snippets/<topic>.md`       |
+| Resume basics, career summary                                   | `career/resume.md`                    |
+| Per-project outcomes, roles, problem-solving                    | `career/portfolio/<project>.md`       |
+| Career goals, desired salary/job-change conditions              | `career/goals.md`                     |
+| Expected interview questions & answers                          | `career/interview-qa.md`              |
 
 If routing is ambiguous, ask the user instead of creating a new file.
 
@@ -96,7 +100,7 @@ If routing is ambiguous, ask the user instead of creating a new file.
 1. **Commit after every change**: `docs: <file> — <summary of change>`. Commit messages in English.
    Past versions: `git log -p <file>`.
 2. **Changelog section**: meaningful changes (new achievement, changed goal) get one line in the document's
-   `## Changelog`: `- YYYY-MM-DD: summary`. Git diff covers *what*; this section covers *why*.
+   `## Changelog`: `- YYYY-MM-DD: summary`. Git diff covers _what_; this section covers _why_.
    Skip typo-level edits.
 3. **Archive on overhaul**: only when a document is fully rewritten in a new direction (e.g. resume after a job change),
    move the old file to `_archive/YYYY-MM-DD-<filename>.md` and write fresh.
