@@ -3,10 +3,6 @@
 This repository is a personal knowledge base that clones the brain of the user (guppy).
 AI (Claude) reads and writes here following this spec. Global Read/Write triggers live in `~/.claude/CLAUDE.md`.
 
-**!!!!! important !!!!!**
-
-- Write all documents in English (BrainClone only)
-
 ## 0. Language
 
 - **All documents are written in English** (token efficiency). Proper nouns stay as-is (goorm, INOS, 뻐끔이 may be romanized).
