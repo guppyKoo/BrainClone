@@ -19,9 +19,13 @@ guppy의 뇌를 복제한 개인 지식 베이스. 관리 규칙과 OKF 규격�
 
 ## ✨ Interest — 에너지와 영감 (비개발: 책·음악·영화·취미·영어공부 등)
 
-- [topics/](interest/topics/) — 비개발 학습·관심 주제 (예: 영어공부) — 현재 비어 있음
+- [topics/](interest/topics/) — 비개발 학습·관심 주제
+  - [investing.md](interest/topics/investing.md) — 투자와 거시경제
 - [hobbies/](interest/hobbies/) — 취미
-  - [humanities.md](interest/hobbies/humanities.md) — 인문학 (책·영화 모임)
+  - [humanities.md](interest/hobbies/humanities.md) — 인문학 (책·영화 모임, 영화 큐레이터 역할)
+  - [pop-culture.md](interest/hobbies/pop-culture.md) — 애니·영화·게임 취향
+  - [music.md](interest/hobbies/music.md) — 기타와 밴드, 자작곡
+  - [fitness.md](interest/hobbies/fitness.md) — 운동 루틴
 - [wishlist.md](interest/wishlist.md) — 경험·물건·책·영화 위시리스트
 
 ## 💻 Developer — 개발과 관련된 모든 것

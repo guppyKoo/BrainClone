@@ -26,12 +26,25 @@ status: draft
 
 - **TODO**: Yjs 내부 구조(아이템 병합, GC), 다른 CRDT(Automerge, Loro) 비교
 
+## 학습 중인 기술 (호기심 ~ 입문)
+
+- **Flutter** — React/JS 개념에 대응시킨 학습 로드맵을 짠 상태. 모바일 대응 수단 확보가 목적으로 보임
+- **Playwright** — 브라우저 자동화/E2E
+- **AWS SAA-C03** — 10~12주 학습 계획을 세워봤음 (진행 여부 **TODO**)
+- **Appsmith** — 사내 툴링 관점에서 조사 (JSONForm 위젯, API 바디 직렬화 이슈)
+
+## 메시지/인프라 주변
+
+- Kafka, BullMQ, Supabase vs Firebase, Turborepo 원격 캐싱 — 실무 동시편집 맥락에서 비교·검토한 이력
+
 ## 만들어보고 싶은 것
 
 - (추정) Claude Agent SDK 기반 개인 에이전트 — BrainClone을 읽는 "디지털 분신"
 - (추정) Bulk Mail 정식 배포 — 코드사인/공증까지 마친 릴리즈
-- (추정) INOS 실서비스 오픈
+- (추정) INOS 실서비스 오픈 — 현재 홍보/초기 유저 확보 방안을 고민 중
+- Claude Code ↔ Claude Design을 MCP로 연결해 디자인→구현 파이프라인 만들기
 
 ## 변경 이력
 
 - 2026-08-03: interest/topics/의 ai-agent-tooling·realtime-collaboration + wishlist 개발 항목을 병합해 생성
+- 2026-08-03: 학습 중인 기술(Flutter, Playwright, AWS SAA-C03, Appsmith)과 인프라 검토 이력 추가

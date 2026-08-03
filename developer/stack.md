@@ -25,7 +25,9 @@ status: draft
 ## 실무 도메인 특화
 
 - **실시간 동시편집**: Yjs, hocuspocus, y-prosemirror, ProseMirror/TipTap — 라이브러리 패치 경험 ([[y-prosemirror-nodeselection-crash]])
+  - 구름 `goorm-hocuspocus` + `edu-core` — **epoch 기반 문서 버저닝** 설계/운영
 - **에디터/블록 시스템**: 구름 edu-core, mist-blocks-react (추정)
+- **사내 AI 인프라 연동**: 구름 내부 LiteLLM 프록시에 Claude Code 연결, GitHub MCP를 HTTP 엔드포인트로 구성
 
 ## 도구·인프라
 
@@ -37,7 +39,13 @@ status: draft
 
 ## 환경
 
-- MacBook (Apple M3, 18GB) — arm64 네이티브 기준, 메모리 여유가 크지 않아 동시 빌드 개수 유의
+- **MacBook Pro (Mac15,6) / Apple M3 Pro** — CPU 11코어(성능 5 + 효율 6), GPU 14코어, RAM 18GB, macOS arm64
+  - 메모리 18GB는 모노레포 동시 빌드·로컬 DB·Electron 동시 구동 시 병목 — 동시 프로세스 개수 주의
+- 디스플레이: LG 울트라와이드 2560x1080 메인 + 내장 Liquid Retina XDR (상시 듀얼 모니터 환경)
+
+## 변경 이력
+
+- 2026-08-03: 실무 동시편집 상세(epoch 버저닝, LiteLLM 프록시) 및 정확한 개발 환경 사양 반영
 
 ## TODO
 
