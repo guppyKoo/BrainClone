@@ -1,9 +1,9 @@
 ---
 title: Development philosophy
 area: developer
-tags: [philosophy, architecture, AI-collaboration]
+tags: [philosophy, architecture, AI-collaboration, portability]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-07
 status: draft
 ---
 
@@ -21,6 +21,13 @@ status: draft
 4. **Stand on proven ground, but own it**: uses proven bases (Radix/TanStack), yet re-implemented ~30 UI components to own and understand the core layer.
 5. **AI executes, humans design the structure**: define folder structure and rules first, then delegate execution to AI.
 
+## Stated principles
+
+- **Portable over machine-local**: agent config and conventions must work on every machine he uses.
+  Enforcement that lives on a single device is rejected even when it works — the rule text in a
+  synced file wins over a locally installed script. This refines observed principle 3: rules should
+  be systems, but not device-bound ones.
+
 ## Architectural leanings (inferred)
 
 - Monorepo + shared packages (prisma/types/utils) for type consistency
@@ -29,4 +36,6 @@ status: draft
 
 ## Changelog
 
+- 2026-08-07: added stated principle — portable agent config over machine-local enforcement
+  (declined a Stop hook for the BrainClone auto-record rule because it would live on one machine only)
 - 2026-08-03: migrated to English
