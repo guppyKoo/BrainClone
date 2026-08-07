@@ -3,7 +3,7 @@ title: Personality as a human
 area: profile
 tags: [personality, MBTI, communication]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-07
 status: draft
 ---
 
@@ -16,7 +16,7 @@ The human guppy. **Developer tendencies & work style are split into [[tendency|d
 - Name/handle: guppy (GitHub: guppyKoo)
 - Born 2001
 - Lives in Suji / commutes to Pangyo
-- MBTI:
+- MBTI: INTP
 
 ## Observed traits (inferred)
 
@@ -40,6 +40,7 @@ The human guppy. **Developer tendencies & work style are split into [[tendency|d
 
 ## Changelog
 
+- 2026-08-07: MBTI confirmed as INTP
 - 2026-08-03: split developer tendencies into developer/tendency.md; human-personality only
 - 2026-08-03: confirmed basics (born 2001, Suji/Pangyo) and communication style (반말, cynical humor, references)
 - 2026-08-03: migrated to English

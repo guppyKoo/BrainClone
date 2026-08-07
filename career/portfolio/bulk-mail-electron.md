@@ -3,7 +3,7 @@ title: Bulk Mail — Electron desktop app
 area: career
 tags: [portfolio, Electron, React, side-project]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-07
 status: draft
 ---
 
@@ -26,6 +26,17 @@ Repos: github.com/guppyKoo (original: Bulk-email → migration: bulk-mail-electr
 - **UI**: ~30 hand-built Radix + CVA components, design tokens (`rgb(from ...)` derivation) + dark mode
 - **Features**: rich text editor, recipient management (tags/sidebar), AI image generation, send-result report, settings window (⌘,)
 
+## Actual usage (dogfooding)
+
+- Used continuously since **2026-04** to send a personal daily/weekly letter to friends — the app's real proving ground, not a demo.
+- Current list: **7 recipients**, including the user's own work address (self-check copy).
+- Cadence: irregular but roughly 2–4 times a week, sent on weekday afternoons (KST).
+- Started as a one-to-one letter (addressed to a single person by name) and grew into a group send.
+- Early sends carried a fixed sign-off asking recipients not to block the address; later ones dropped it.
+- Recipients reply to the letters, so each send turns into individual threads — the letter functions as a conversation starter.
+- **Known incident (2026-07-14)**: a mail already sent on 2026-07-01 went out again unprompted, and the user
+  sent a follow-up saying they had not triggered it. Suggests a re-send/scheduling bug worth reproducing.
+
 ## Talking points
 
 - When the platform blocked the goal, swapped the entire stack and **finished the full migration + release solo in a short window** (started 2026-07-13)
@@ -33,4 +44,5 @@ Repos: github.com/guppyKoo (original: Bulk-email → migration: bulk-mail-electr
 
 ## Changelog
 
+- 2026-08-07: added real-usage section (7-recipient personal letter since 2026-04) and the 2026-07-14 duplicate-send incident
 - 2026-08-03: migrated to English

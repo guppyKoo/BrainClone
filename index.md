@@ -3,7 +3,7 @@
 Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLAUDE.md).
 **AI reads this file and [now.md](now.md) first, for any task.**
 
-> Last updated: 2026-08-03 · Most documents are `draft` — review and promote to `confirmed`
+> Last updated: 2026-08-07 · Most documents are `draft` — review and promote to `confirmed`
 > Boundary: **everything dev-related lives in `developer/`**; `profile/` and `interest/` are non-dev areas
 > Language: all documents in English (see CLAUDE.md §0)
 
@@ -26,6 +26,7 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [humanities.md](interest/hobbies/humanities.md) — humanities book/film club (film curator role)
   - [pop-culture.md](interest/hobbies/pop-culture.md) — anime, movies, games
   - [music.md](interest/hobbies/music.md) — guitar, band, songwriting
+  - [writing.md](interest/hobbies/writing.md) — velog blog (@yunchan312): tech series & travel essays
   - [fitness.md](interest/hobbies/fitness.md) — workout routine
 - [wishlist.md](interest/wishlist.md) — experiences, things, books, movies
 
