@@ -28,6 +28,7 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [music.md](interest/hobbies/music.md) — guitar, band, songwriting
   - [writing.md](interest/hobbies/writing.md) — velog blog (@yunchan312): tech series & travel essays
   - [fitness.md](interest/hobbies/fitness.md) — workout routine
+  - [food.md](interest/hobbies/food.md) — food & dining taste (nopo identification criteria)
 - [wishlist.md](interest/wishlist.md) — experiences, things, books, movies
 
 ## 💻 Developer — everything dev-related

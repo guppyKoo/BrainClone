@@ -36,6 +36,22 @@ Repos: github.com/guppyKoo (original: Bulk-email → migration: bulk-mail-electr
 - Recipients reply to the letters, so each send turns into individual threads — the letter functions as a conversation starter.
 - **Known incident (2026-07-14)**: a mail already sent on 2026-07-01 went out again unprompted, and the user
   sent a follow-up saying they had not triggered it. Suggests a re-send/scheduling bug worth reproducing.
+- **Known incident (2026-08-10, 13:35 KST)**: another unprompted send. Evidence points to a **legacy script, not the app** —
+  it went to a single address (the user's own work account) instead of the 7-person list, and its body carries the
+  April-era sign-off template the app stopped using in May. The user suspects a leftover macOS Automator job.
+  Note the two incidents differ in shape (7/14 re-sent a real campaign to all 7; 8/10 sent a fixed debug template to one),
+  so they may be two separate causes.
+
+## Direction — public subscription letter (decided 2026-08-07)
+
+- Turning the personal letter into an **opt-in newsletter**: anyone can subscribe, and the letter lands in their inbox.
+- Concept: a deliberately useless, funny letter arriving in the early-afternoon slump at work or school.
+- **Subscribe and unsubscribe both handled by Instagram DM**, processed manually — no signup form, no database.
+  MVP-first, on the principle that shipping beats polishing.
+- Deferred until volume demands it: automated subscribe/unsubscribe, dedicated sending domain with SPF/DKIM/DMARC,
+  an SMTP relay instead of personal Gmail, and a threshold for when to switch.
+- Open item: put unsubscribe instructions in the mail footer before taking public signups, and settle the
+  unprompted-send incidents first.
 
 ## Talking points
 
@@ -43,6 +59,8 @@ Repos: github.com/guppyKoo (original: Bulk-email → migration: bulk-mail-electr
 - Incremental migration strategy passing typecheck/build/dev at every phase
 
 ## Changelog
+
+- 2026-08-10: logged the 2026-08-10 unprompted send (legacy-script evidence); added the public-subscription direction
 
 - 2026-08-07: added real-usage section (7-recipient personal letter since 2026-04) and the 2026-07-14 duplicate-send incident
 - 2026-08-03: migrated to English

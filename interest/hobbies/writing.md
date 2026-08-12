@@ -57,6 +57,17 @@ destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
 - Running gags run past their limit; overall difficulty **cutting** material rather than adding
 - Occasional typos and broken sentences
 
+## In progress — Hongcheon piece (working title: "우리 너무 똑똑하게 살았어")
+
+- New travel essay, drafted 2026-08. Trip: Hongcheon with four friends — valley + barbecue day one, Ocean World day two.
+  Draft currently ends at night one; day two unwritten.
+- Opens from the user's developer identity: overheating a brain like a computer, needing a reboot — the trip as the reboot.
+- **Structural upgrade over the previous series**: each friend is assigned a mock "officer" role (lookout, security, music,
+  everything-else, transport), which turns the old height running gag into a setup that actually pays off in the hornet-fight
+  climax. Setup-and-payoff rather than plain repetition.
+- Strongest passages so far: the abandoned Homeplus mall, the restaurant owner's dialogue, and the Blue Marble/hornet scene
+  where an earlier ambient sound turns out to have been the hornet all along.
+
 ## Direction
 
 - **Platform split (decided 2026-08-07)**: velog becomes tech-writing only; travel/daily essays move off it.
@@ -70,6 +81,8 @@ destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
   Long passages that keep showing (the grocery-run operation, Deungseon Falls) never dragged.
 
 ## Changelog
+
+- 2026-08-10: logged the in-progress Hongcheon piece and its officer-role structure
 
 - 2026-08-07: recorded the cinematic-narration intent as the core creative axis; noted Brunch platform mechanics research
 
