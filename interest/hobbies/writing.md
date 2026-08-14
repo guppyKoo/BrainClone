@@ -3,7 +3,7 @@ title: Writing — velog blog
 area: interest
 tags: [writing, blog, velog, essay, travel]
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-14
 status: draft
 ---
 
@@ -41,6 +41,8 @@ destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
   reveal (Deungseon Falls), montage with voice-over (the grocery-run operation), a repeated "헙!" acting as a
   cut/sound cue, and a voice-over ending (the closing "winter" passage). This is the through-line of the work
   and the angle to lead with in any writer application.
+  Stated in his own words (2026-08-14): *"글을 쓸 줄 모르니까 상황을 머릿속에서 영화의 한 장면처럼
+  각색하고 그것을 그대로 글로 풀어낸다."* Framed as a workaround, but it is the method.
   Corollary the user already knows but broke: film cannot show taste — convey it through a reaction shot
   (the Kanghodong-face line) rather than stacked adjectives.
 
@@ -56,17 +58,72 @@ destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
 - Food descriptions fall into repeated stock phrasing across posts
 - Running gags run past their limit; overall difficulty **cutting** material rather than adding
 - Occasional typos and broken sentences
+- **Sentence-level control is the real gap** (measured on the Ocean World draft, 2026-08-14):
+  `~느낌` 12+ times, `~하기 시작했다` 6 times, seven sentences over 60 chars, one opening sentence
+  packing six actions into one clause. The scenes are strong; the sentences leak them.
+- **Over-helpful foreshadowing**: the narrator names the pattern out loud (`'이 느낌이 아침부터 뭐지?'`),
+  which removes the reader's discovery. Misattribution by the narrator (`'내일이 월요일이라 그런가'`)
+  does the opposite and works — keep those, cut the pattern-naming.
+- **Motif wording drifts**: the same recurring sensation was phrased four different ways, so it never
+  registers as one motif. Contrast with `수범이는 카메라를 멈추지 않았다`, which lands precisely because
+  it is repeated verbatim. He can already do this; it just was not applied consistently.
 
 ## In progress — Hongcheon piece (working title: "우리 너무 똑똑하게 살았어")
 
-- New travel essay, drafted 2026-08. Trip: Hongcheon with four friends — valley + barbecue day one, Ocean World day two.
-  Draft currently ends at night one; day two unwritten.
+- New travel essay, drafted 2026-08. Trip: Hongcheon with four friends — valley + barbecue day one,
+  Ocean World day two. **Part 2 (Ocean World → jjimjilbang → drive home) drafted 2026-08-14.**
 - Opens from the user's developer identity: overheating a brain like a computer, needing a reboot — the trip as the reboot.
 - **Structural upgrade over the previous series**: each friend is assigned a mock "officer" role (lookout, security, music,
   everything-else, transport), which turns the old height running gag into a setup that actually pays off in the hornet-fight
-  climax. Setup-and-payoff rather than plain repetition.
-- Strongest passages so far: the abandoned Homeplus mall, the restaurant owner's dialogue, and the Blue Marble/hornet scene
-  where an earlier ambient sound turns out to have been the hornet all along.
+  climax. Setup-and-payoff rather than plain repetition. Part 2 extends the same device into the wave-pool rescue sequence
+  (transport / security / record / assembly-point / sound-technique roles).
+- **Part 2's motif — the floating-then-sinking sensation.** Stated design intent: the unconscious refusing to return
+  to reality. It starts the morning of the last day, because the body knows before the mind does; it is entirely
+  **absent** during the Ocean World fantasy sequence; it returns while preparing to leave, with the sinking half
+  growing heavier; the final line has no floating left, only sinking.
+- **Target tone for part 2**: funny on the surface, but leaving a serious afterglow — the reader should reread it
+  differently once finished.
+- Strongest passages so far: the abandoned Homeplus mall, the restaurant owner's dialogue, the Blue Marble/hornet scene
+  where an earlier ambient sound turns out to have been the hornet all along, and in part 2 the POV cut to a friend's
+  perspective and the gag where a rescue attempt sends the target into a wall instead.
+
+### Revision plan for part 2 (agreed 2026-08-14, not yet applied)
+
+1. Plant "today is the last day" in the morning scene — luggage loaded into the car, no emotion attached.
+   Currently the reader gets no signal until ~80% through, so the motif's first appearance reads as fatigue.
+2. Fix one verbatim phrasing for the motif and repeat it across all five appearances, so its final
+   half-disappearance is visible.
+3. Delete the narrator's pattern-naming line; keep the misattribution line.
+4. Fill the motif's absence during Ocean World with **literal buoyancy** (feet leaving the pool floor)
+   rather than stating that the sensation was gone.
+5. For the afterglow: one negated instance of the camera running gag when the fantasy ends, and let the
+   officer roles dissolve back into plain names without commentary. No explanatory closing paragraph.
+
+## Learning plan (2026-08-14)
+
+Diagnosis: the gap is sentence-level control, which is a motor skill, not knowledge — so practice over reading.
+
+- **Transcription (필사), 3×/week, 20 min** — type, don't read; structure enters through the hands.
+  Targets matched to his register: 박민규 (『삼미 슈퍼스타즈의 마지막 팬클럽』, 『카스테라』) as the closest
+  model for "trivial events told epically"; 성석제 for pace. 김훈 for one chapter only — sustained short-sentence
+  pressure suits print, not web, and longer exposure would distort his voice.
+- **Revise old posts weekly** rather than drafting new ones, so the same habits do not recur.
+- **Read aloud before publishing** — the eye skips awkward sentences, the mouth cannot.
+- **Constraint drills**: 40-char sentence cap; no adverbs; ban `느낌/생각/것 같다` for one scene.
+- **Books**: 스티븐 킹 『유혹하는 글쓰기』 (practical), 이오덕 『우리 글 바로 쓰기』 (as a lookup reference for
+  translationese). **Not** screenwriting texts — the film-thinking is already the surplus, the prose is the deficit.
+- **Metrics before publishing** (worth scripting): avg sentence length < 40 chars, `느낌` ≤ 3/post,
+  sentences > 50 chars ≤ 5/post, `~하기 시작했다` = 0.
+- Deliberately **not** doing: vocabulary notebooks, grammar study, "finding a voice". Spelling is a
+  final-pass batch job, not a current concern.
+
+### Note on external feedback
+
+An earlier AI critique of the draft was scored and largely affirming (9/10 on unmeasurable axes,
+5.5 on sentence craft) and advised **against** working on prose so as not to lose his voice.
+That advice is rejected here: craft is a scope, not a personality transplant, and the "don't fix it,
+it's your style" framing reclassifies a weakness as an identity. The concrete parts of that critique
+(splitting overloaded sentences, cutting `~느낌이 들었다`, over-friendly foreshadowing) do hold.
 
 ## Direction
 
@@ -81,6 +138,9 @@ destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
   Long passages that keep showing (the grocery-run operation, Deungseon Falls) never dragged.
 
 ## Changelog
+
+- 2026-08-14: logged Hongcheon part 2 (Ocean World) draft, its floating/sinking motif design and target tone,
+  the revision plan, measured sentence-level weaknesses, and a practice-first learning plan
 
 - 2026-08-10: logged the in-progress Hongcheon piece and its officer-role structure
 

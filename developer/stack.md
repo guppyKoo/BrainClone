@@ -3,7 +3,7 @@ title: Tech stack & proficiency
 area: developer
 tags: [stack, TypeScript, React, Electron, NestJS]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-14
 status: draft
 ---
 
@@ -21,6 +21,7 @@ status: draft
 | **Tailwind CSS v4** | Bulk Mail (`@theme inline`, `rgb(from ...)` token derivation), INOS (DaisyUI) |
 | **NestJS + Fastify** | INOS server/ai-server — including SSE streaming |
 | **Prisma + PostgreSQL** | INOS — pgvector search, monorepo shared schema |
+| **NestJS + Express + Mongoose/MongoDB** | Edu Vibe server (2026-08) — global `ValidationPipe`/`ClassSerializerInterceptor` defenses, repository layer, `migrate-mongo` migrations. Pitfalls: [[nestjs-mongoose-pitfalls]] |
 
 ## Work domain specialties
 
@@ -46,5 +47,6 @@ status: draft
 
 ## Changelog
 
+- 2026-08-14: added NestJS+Express+Mongoose/MongoDB (Edu Vibe); corrected the React row — Edu Vibe front is pinned to 18 because `react-router-dom` stops at v7
 - 2026-08-03: added work collab-editing details (epoch versioning, LiteLLM proxy) and exact machine specs
 - 2026-08-03: migrated to English

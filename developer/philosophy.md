@@ -1,9 +1,9 @@
 ---
 title: Development philosophy
 area: developer
-tags: [philosophy, architecture, AI-collaboration, portability]
+tags: [philosophy, architecture, AI-collaboration, portability, data-integrity]
 created: 2026-08-03
-updated: 2026-08-07
+updated: 2026-08-14
 status: draft
 ---
 
@@ -27,15 +27,26 @@ status: draft
   Enforcement that lives on a single device is rejected even when it works — the rule text in a
   synced file wins over a locally installed script. This refines observed principle 3: rules should
   be systems, but not device-bound ones.
+- **Guarantees belong in the engine, not in convention** (stated 2026-08-14): prefers RDBMS
+  specifically because `ON DELETE CASCADE` is enforced regardless of how many app instances run or
+  which path issued the delete. Frames MongoDB's app-level cascade as the messy alternative rather
+  than as a legitimate trade. Same shape as principle 3 — a rule that depends on everyone remembering
+  it is not a rule. See [[mongodb-cascade-strategies]].
+  - Corollary he accepts once shown: this cleanliness is conditional on a single un-sharded database.
+    Once services or shards split, RDBMS lands in the same place (Outbox + events).
 
 ## Architectural leanings (inferred)
 
 - Monorepo + shared packages (prisma/types/utils) for type consistency
 - Service separation (INOS: API server / AI server; Bulk Mail: settings/mail/image services)
 - Explicit bridges at IPC/API boundaries (`window.api` preload bridge)
+- (inferred) Skeptical of infrastructure added to solve a problem that a smaller change would solve —
+  pushed back hard on the idea of introducing Redis Streams merely to deduplicate Change Stream consumers
 
 ## Changelog
 
+- 2026-08-14: added stated principle — engine-enforced guarantees over app-level convention
+  (RDBMS cascade preference, from the MongoDB cascade design discussion)
 - 2026-08-07: added stated principle — portable agent config over machine-local enforcement
   (declined a Stop hook for the BrainClone auto-record rule because it would live on one machine only)
 - 2026-08-03: migrated to English

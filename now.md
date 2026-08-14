@@ -3,7 +3,7 @@ title: Now — current snapshot
 area: profile
 tags: [now, snapshot, in-progress]
 created: 2026-08-03
-updated: 2026-08-12
+updated: 2026-08-14
 status: draft
 ---
 
@@ -12,25 +12,34 @@ status: draft
 > Current-state snapshot. AI reads `index.md` and this file first, for any task.
 > Highest update frequency — past states live in git history.
 
-Last updated: 2026-08-12
+Last updated: 2026-08-14
 
 ## In progress
 
 ### Dev
 
-- **BrainClone**: started today. Structure settled (developer-centric split), migrated to English. Next: fill gaps, promote drafts to confirmed
+- **BrainClone**: structure settled (developer-centric split), migrated to English. Next: fill gaps, promote drafts to confirmed
   - Big picture is a [[second-brain]] concept — the top requirement is phone/work machine/home machine sharing **one** knowledge base
 - **Bulk Mail**: v1.1.x — handling macOS ad-hoc codesigning (`fix/adhoc-signing` branch)
 - **INOS**: humanities meetup platform in development + Electron desktop app wrapping the existing web
-- **Work (goorm) — Edu Vibe**: current focus. Owns two new repos (`edu-vibe-front`, `edu-vibe-server`), both still empty at M0. Wrote/refined the V2 Tech Spec himself
-  - Stack decided: NestJS 11 (**Express** adapter, for a possible 전자정부표준프레임워크/Spring migration) + MongoDB + **Mongoose**; front is pnpm workspace + Turborepo + React + Vite + Tailwind v4 + Vapor-ui + TanStack Query
+- **Work (goorm) — Edu Vibe**: current focus. Owns two repos (`edu-vibe-front`, `edu-vibe-server`). As of 2026-08-14 **both are past M0** — front has routing + Tailwind/Vapor-ui scaffolding, server has schemas, a repository layer and the full MVP API (verified end-to-end against local Mongo). Wrote the V2 Tech Spec, the DB schema doc and the API spec himself, using AI as a critical reviewer rather than an author
+  - Server: NestJS 11 (**Express** adapter, for a possible 전자정부표준프레임워크/Spring migration) + MongoDB + **Mongoose** + `migrate-mongo` — no in-house precedent for migrations, so the convention was set from scratch
+  - Front: **single package, not a workspace** — pnpm + Vite + **React 18** + `react-router-dom` v7 + Tailwind v4 + Vapor-ui + TanStack Query, on **Node 24**. Turborepo was dropped; a one-package workspace is pure overhead
+  - Not wired yet: LiteLLM proxy, S3 storage, web deploy — the three are explicit boundaries in the server code
   - Prisma was evaluated and rejected for MongoDB — no Prisma Migrate on Mongo, aggregation escapes the type system, replica set needed even for plain nested writes
   - The 학습창 is assumed to arrive as `@devth/learn-*` SDK packages from another team (Devth) — this assumption is what the whole architecture rests on
   - In-house convention references: `gem-server` (NestJS+Express+Mongoose), `new-edu` (pnpm+Turbo+Vite+Vapor-ui)
 - **Work (goorm)**: edu-core / goorm-hocuspocus realtime collaborative editing — epoch-based document versioning
+- **Cascade-delete redesign (exploring, 2026-08-14)**: looking for a lighter replacement for the legacy
+  Kafka-based cascade path on MongoDB. Options weighed and the decision table are in
+  [[mongodb-cascade-strategies]]. Current default recommendation is multi-document transactions;
+  no change made yet. Relevant constraint: the app runs multiple instances on one server
 
 ### Non-dev
 
+- **Writing**: Hongcheon travel essay part 2 (Ocean World) drafted 2026-08-14; a five-point revision plan
+  is queued in [[writing|interest/hobbies/writing.md]]. Also started a deliberate prose-practice routine
+  (transcription + weekly revision + read-aloud) aimed at sentence-level control
 - **Humanities club**: film curator in a 4-person monthly club — running a 6-month Coen brothers curriculum
 - **Band**: trying to write original songs instead of covers (Sing Street aftermath)
 - **Fitness**: maintaining a 6-day/week gym routine
@@ -38,17 +47,23 @@ Last updated: 2026-08-12
 ## Digging into
 
 - AI agent workflows (Claude Code hooks, skills, multi-agent) → details: [[interest|developer/interest]]
+- MongoDB Change Streams / CDC → [[mongodb-cascade-strategies]]
 - Flutter, Playwright — learning stage
 - Investing & macroeconomics → [[investing|interest/topics/investing.md]]
 
 ## Open questions (AI should ask)
 
 - Jeju Bio AX hackathon — registration closed end of July 2026. Did the user participate? Result? (unconfirmed, so excluded from In progress)
+- Cascade redesign: **is the legacy Kafka topic consumed by the same service or a different one?**
+  Asked repeatedly on 2026-08-14, never answered. Same service ⇒ drop Kafka; different service ⇒ keep it and add an Outbox
+- Cascade redesign: is the MongoDB deployment a replica set? Decides whether transactions are available at all
 
 ## This quarter's priorities
 
 ## Changelog
 
+- 2026-08-14: Edu Vibe corrected — both repos are past M0 (front routing scaffolded, server API built and verified); front is a single package, not a Turborepo workspace; React pinned to 18, Node 24
+- 2026-08-14: added the cascade-delete redesign thread and its two open questions; logged travel-essay part 2 and the writing-practice routine
 - 2026-08-12: work focus updated — Edu Vibe (V2 Tech Spec, NestJS+Mongoose stack decided, M0 scaffolding pending)
 - 2026-08-03: added frontmatter (OKF compliance), expanded with work & non-dev activities
 - 2026-08-03: migrated to English

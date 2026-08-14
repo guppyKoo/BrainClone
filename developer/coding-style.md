@@ -3,7 +3,7 @@ title: Code style & convention preferences
 area: developer
 tags: [coding-style, conventions, commits]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-14
 status: draft
 ---
 
@@ -24,6 +24,16 @@ status: draft
 
 - Variables/functions `camelCase`; booleans prefixed `is/has/should/can`
 - Types/components `PascalCase`; constants `UPPER_SNAKE_CASE`; hooks prefixed `use`
+- **Files & directories: PascalCase for TS/TSX modules and the directories holding them** — e.g.
+  `src/pages/ClassHome/ClassHomePage.tsx`, `src/Routes.tsx`. Stated explicitly on Edu Vibe front (2026-08-13).
+  Config and CSS files stay lowercase (`vite.config.ts`, `global.css`)
+
+## Identifiers
+
+- Prefers **prefixed string ids over ObjectId or bare UUID** — `class-`, `proj-`, `arti-` + 10 base36 chars
+  (`class-pihtuke4hn`). Reason: the value alone says what it is in logs/URLs, and a wrong-kind id can be
+  rejected at the DTO boundary. ObjectIds are all 24-char hex, so a mismatch only surfaces as an empty result
+- Enum-ish fields carry meaningful strings, never magic numbers (`'up' | 'down' | null`, not `0 | 1 | 2`)
 
 ## Commits & Git
 
@@ -43,4 +53,5 @@ status: draft
 
 ## Changelog
 
+- 2026-08-14: added file/directory naming (PascalCase, stated on Edu Vibe front) and the Identifiers section (prefixed string ids)
 - 2026-08-03: migrated to English

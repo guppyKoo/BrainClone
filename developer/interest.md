@@ -1,9 +1,9 @@
 ---
 title: Dev interests
 area: developer
-tags: [interests, AI, agents, CRDT, learning]
+tags: [interests, AI, agents, CRDT, learning, cdc]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-14
 status: draft
 ---
 
@@ -19,6 +19,11 @@ Most active topic. Beyond mere usage — **redesigning the dev workflow itself a
 - Current: large ECC rule/skill/agent fleet, hook-based quality gates (GateGuard), many MCP servers (Figma/Notion/MongoDB/GitHub/…), designing BrainClone as an AI-read/write knowledge base
 - Sub-interests: multi-agent orchestration, enforcing AI behavior via PreToolUse/PostToolUse hooks, cross-session memory/context management
 - Next up: Claude Agent SDK custom agents, agent evaluation (eval) systems
+- **Inter-agent context sharing** (2026-08-14): asked whether agent A can observe agent B's context.
+  Landed on the mechanics — there is no shared memory to read; "seeing" B always reduces to injecting
+  B's history into A's prompt, so the real design questions are how much, when, and what to omit
+  (a failed attempt of B's, replayed verbatim, becomes verified context for A). Claude Code subagents
+  are parent↔child only; siblings coordinate through a shared file.
 
 ## Realtime collaborative editing (CRDT / Yjs)
 
@@ -36,6 +41,9 @@ Mastered at work — the stack itself lives in [[stack]]. Remaining curiosity:
 ## Around messaging/infra
 
 - Kafka, BullMQ, Supabase vs Firebase, Turborepo remote caching — compared in the context of work collab-editing
+- **MongoDB Change Streams / CDC** (2026-08-14) — studied in depth while looking for a lighter replacement
+  for the legacy Kafka cascade path. Full note: [[mongodb-cascade-strategies]].
+  Adjacent unexplored ground: Debezium, Transactional Outbox, Atlas Triggers, Redis Streams vs Pub/Sub.
 
 ## Want to build
 
@@ -46,6 +54,7 @@ Mastered at work — the stack itself lives in [[stack]]. Remaining curiosity:
 
 ## Changelog
 
+- 2026-08-14: added MongoDB Change Streams / CDC and inter-agent context sharing
 - 2026-08-03: created by merging interest/topics (ai-agent-tooling, realtime-collaboration) + dev wishlist items
 - 2026-08-03: added learning-stage tech (Flutter, Playwright, AWS SAA-C03, Appsmith) and infra research history
 - 2026-08-03: migrated to English

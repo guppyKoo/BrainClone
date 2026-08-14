@@ -3,7 +3,7 @@
 Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLAUDE.md).
 **AI reads this file and [now.md](now.md) first, for any task.**
 
-> Last updated: 2026-08-07 · Most documents are `draft` — review and promote to `confirmed`
+> Last updated: 2026-08-14 · Most documents are `draft` — review and promote to `confirmed`
 > Boundary: **everything dev-related lives in `developer/`**; `profile/` and `interest/` are non-dev areas
 > Language: all documents in English (see CLAUDE.md §0)
 
@@ -41,6 +41,8 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
 - [snippets/](developer/snippets/) — patterns & debugging notes
   - [electron-patterns.md](developer/snippets/electron-patterns.md) — Electron patterns from real projects
   - [y-prosemirror-nodeselection-crash.md](developer/snippets/y-prosemirror-nodeselection-crash.md) — collab-editing crash debugging note
+  - [mongodb-cascade-strategies.md](developer/snippets/mongodb-cascade-strategies.md) — MongoDB cascade-delete options (transactions / Change Stream / Kafka+Outbox)
+  - [nestjs-mongoose-pitfalls.md](developer/snippets/nestjs-mongoose-pitfalls.md) — NestJS/Mongoose traps that fail silently (serializer, Swagger schema, migrate-mongo hash)
 
 ## 🚀 Career — social self & achievements (presentation layer; links into developer/)
 
@@ -50,3 +52,6 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [inos.md](career/portfolio/inos.md) — INOS (humanities meetup platform)
 - [goals.md](career/goals.md) — short/long-term career goals
 - [interview-qa.md](career/interview-qa.md) — expected interview Q&A
+
+
+---
