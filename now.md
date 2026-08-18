@@ -3,7 +3,7 @@ title: Now — current snapshot
 area: profile
 tags: [now, snapshot, in-progress]
 created: 2026-08-03
-updated: 2026-08-14
+updated: 2026-08-18
 status: draft
 ---
 
@@ -12,7 +12,7 @@ status: draft
 > Current-state snapshot. AI reads `index.md` and this file first, for any task.
 > Highest update frequency — past states live in git history.
 
-Last updated: 2026-08-14
+Last updated: 2026-08-18
 
 ## In progress
 
@@ -29,6 +29,7 @@ Last updated: 2026-08-14
   - Prisma was evaluated and rejected for MongoDB — no Prisma Migrate on Mongo, aggregation escapes the type system, replica set needed even for plain nested writes
   - The 학습창 is assumed to arrive as `@devth/learn-*` SDK packages from another team (Devth) — this assumption is what the whole architecture rests on
   - In-house convention references: `gem-server` (NestJS+Express+Mongoose), `new-edu` (pnpm+Turbo+Vite+Vapor-ui)
+  - **EDU VIBE practice-page boundary discussion (2026-08-18)**: EDU proposed four DEVEL collaboration options for reusable coding-practice and AI-chat capabilities. The preferred direction is a standalone API service owning projects, files, chats, builds, and artifacts; an SDK with consumer-owned data is the main alternative. No decision has been finalized.
 - **Work (goorm)**: edu-core / goorm-hocuspocus realtime collaborative editing — epoch-based document versioning
 - **Cascade-delete redesign (exploring, 2026-08-14)**: looking for a lighter replacement for the legacy
   Kafka-based cascade path on MongoDB. Options weighed and the decision table are in
@@ -37,8 +38,8 @@ Last updated: 2026-08-14
 
 ### Non-dev
 
-- **Writing**: Hongcheon travel essay part 2 (Ocean World) drafted 2026-08-14; a five-point revision plan
-  is queued in [[writing|interest/hobbies/writing.md]]. Also started a deliberate prose-practice routine
+- **Writing**: Hongcheon travel essay **published on velog 2026-08** as two posts — 「뇌가 뜨거워서 그랬어: 첫날」
+  (08-15) and 「마지막 날」 (08-17). Travel series now 6 posts. Details in [[writing|interest/hobbies/writing.md]]. Also started a deliberate prose-practice routine
   (transcription + weekly revision + read-aloud) aimed at sentence-level control
 - **Humanities club**: film curator in a 4-person monthly club — running a 6-month Coen brothers curriculum
 - **Band**: trying to write original songs instead of covers (Sing Street aftermath)
@@ -61,6 +62,9 @@ Last updated: 2026-08-14
 ## This quarter's priorities
 
 ## Changelog
+
+- 2026-08-18: Hongcheon essay published on velog (2 posts); travel series now 6 posts
+- 2026-08-18: logged the EDU VIBE/DEVEL practice-page modularization agenda; decision pending
 
 - 2026-08-14: Edu Vibe corrected — both repos are past M0 (front routing scaffolded, server API built and verified); front is a single package, not a Turborepo workspace; React pinned to 18, Node 24
 - 2026-08-14: added the cascade-delete redesign thread and its two open questions; logged travel-essay part 2 and the writing-practice routine
