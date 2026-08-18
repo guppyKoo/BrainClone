@@ -3,7 +3,7 @@ title: Dev interests
 area: developer
 tags: [interests, AI, agents, CRDT, learning, cdc]
 created: 2026-08-03
-updated: 2026-08-14
+updated: 2026-08-18
 status: draft
 ---
 
@@ -17,6 +17,7 @@ keeping only "dig deeper" items here. (Non-dev interests live in `interest/`.)
 Most active topic. Beyond mere usage — **redesigning the dev workflow itself around agents**.
 
 - Current: large ECC rule/skill/agent fleet, hook-based quality gates (GateGuard), many MCP servers (Figma/Notion/MongoDB/GitHub/…), designing BrainClone as an AI-read/write knowledge base
+- **Cross-client BrainClone integration** (2026-08-18): wants Claude Code, Codex CLI, and ChatGPT to share the same BrainClone source of truth; exploring how ChatGPT can read and write the local knowledge base while preserving its OKF structure and Git history
 - Sub-interests: multi-agent orchestration, enforcing AI behavior via PreToolUse/PostToolUse hooks, cross-session memory/context management
 - Next up: Claude Agent SDK custom agents, agent evaluation (eval) systems
 - **Inter-agent context sharing** (2026-08-14): asked whether agent A can observe agent B's context.
@@ -54,6 +55,7 @@ Mastered at work — the stack itself lives in [[stack]]. Remaining curiosity:
 
 ## Changelog
 
+- 2026-08-18: recorded the plan to connect BrainClone across Claude Code, Codex CLI, and ChatGPT
 - 2026-08-14: added MongoDB Change Streams / CDC and inter-agent context sharing
 - 2026-08-03: created by merging interest/topics (ai-agent-tooling, realtime-collaboration) + dev wishlist items
 - 2026-08-03: added learning-stage tech (Flutter, Playwright, AWS SAA-C03, Appsmith) and infra research history
