@@ -3,7 +3,7 @@
 Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLAUDE.md).
 **AI reads this file and [now.md](now.md) first, for any task.**
 
-> Last updated: 2026-08-14 · Most documents are `draft` — review and promote to `confirmed`
+> Last updated: 2026-08-18 · Most documents are `draft` — review and promote to `confirmed`
 > Boundary: **everything dev-related lives in `developer/`**; `profile/` and `interest/` are non-dev areas
 > Language: all documents in English (see CLAUDE.md §0)
 
@@ -50,6 +50,7 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
 - [portfolio/](career/portfolio/) — per-project outcomes
   - [bulk-mail-electron.md](career/portfolio/bulk-mail-electron.md) — Bulk Mail (Electron desktop app)
   - [inos.md](career/portfolio/inos.md) — INOS (humanities meetup platform)
+  - [wekick.md](career/portfolio/wekick.md) — WeKick campus futsal matching platform
 - [goals.md](career/goals.md) — short/long-term career goals
 - [interview-qa.md](career/interview-qa.md) — expected interview Q&A
 

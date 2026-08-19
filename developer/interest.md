@@ -38,6 +38,8 @@ Mastered at work — the stack itself lives in [[stack]]. Remaining curiosity:
 - **Playwright** — browser automation / E2E
 - **AWS SAA-C03** — drafted a 10–12 week study plan (progress unconfirmed)
 - **Appsmith** — researched for internal tooling (JSONForm widget, API body serialization issue)
+- **Local AI applications** — has run a local OpenAI-compatible chat server and wants to build a persona-customizable chat application with prompt customization, LangChain, and possibly LangGraph
+- **Godot game development** — wants to learn game development by building a story-driven indie game combining visual-novel progression, RPG elements, and turn-based strategy
 
 ## Around messaging/infra
 
@@ -52,9 +54,12 @@ Mastered at work — the stack itself lives in [[stack]]. Remaining curiosity:
 - (inferred) Bulk Mail proper release — codesigned/notarized
 - (inferred) INOS public launch — currently thinking through promotion and first users
 - A design→implementation pipeline connecting Claude Code ↔ Claude Design via MCP
+- A local AI chat application with configurable model personas
+- A solo-developed political-fantasy game set after a hundred-year war, with three playable factions and branching strategic choices
 
 ## Changelog
 
+- 2026-08-18: added local AI chat and Godot turn-based narrative game interests from prior ChatGPT conversations
 - 2026-08-18: recorded the plan to connect BrainClone across Claude Code, Codex CLI, and ChatGPT
 - 2026-08-14: added MongoDB Change Streams / CDC and inter-agent context sharing
 - 2026-08-03: created by merging interest/topics (ai-agent-tooling, realtime-collaboration) + dev wishlist items

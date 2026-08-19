@@ -26,10 +26,11 @@ Kubernetes fundamentals, then hands-on deployment of a Spring Boot backend onto 
 Hankuk University of Foreign Studies cluster (Ingress NGINX, cert-manager, self-signed certs,
 and why Let's Encrypt was unusable there). Related dev context: [[interest|developer/interest.md]].
 
-### 어쩌면 여행을 위한 일상을 보낸 걸지도 몰라 (4 posts, 2025-07 → 2026-02)
+### 어쩌면 여행을 위한 일상을 보낸 걸지도 몰라 (6 posts, 2025-07 → 2026-08)
 
 Travel essays with friends from high school. Sokcho (prequel) → Boryeong (roulette-picked
-destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
+destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2) → the Hongcheon piece,
+published as 「뇌가 뜨거워서 그랬어: 첫날」 (2026-08-15) and 「뇌가 뜨거워서 그랬어: 마지막 날」 (2026-08-17).
 
 - Chapters 1 and 2 were **written as a single piece** and split only because of length.
 - Recurring bit: a running gag repeating one friend's height every time he is mentioned.
@@ -68,9 +69,12 @@ destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
   registers as one motif. Contrast with `수범이는 카메라를 멈추지 않았다`, which lands precisely because
   it is repeated verbatim. He can already do this; it just was not applied consistently.
 
-## In progress — Hongcheon piece (working title: "우리 너무 똑똑하게 살았어")
+## Hongcheon piece — published 2026-08 as 「뇌가 뜨거워서 그랬어」 (첫날 / 마지막 날)
 
-- New travel essay, drafted 2026-08. Trip: Hongcheon with four friends — valley + barbecue day one,
+- **Published on velog, not Brunch** — the 2026-08-07 platform-split plan (velog = tech only) is not
+  abandoned, just deferred: he says he will move the essays over later (stated 2026-08-18).
+  Earlier working title: "우리 너무 똑똑하게 살았어".
+- Trip: Hongcheon with four friends — valley + barbecue day one,
   Ocean World day two. **Part 2 (Ocean World → jjimjilbang → drive home) drafted 2026-08-14.**
 - Opens from the user's developer identity: overheating a brain like a computer, needing a reboot — the trip as the reboot.
 - **Structural upgrade over the previous series**: each friend is assigned a mock "officer" role (lookout, security, music,
@@ -87,7 +91,61 @@ destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2).
   where an earlier ambient sound turns out to have been the hornet all along, and in part 2 the POV cut to a friend's
   perspective and the gag where a rescue attempt sends the target into a wall instead.
 
-### Revision plan for part 2 (agreed 2026-08-14, not yet applied)
+### Author's stated intent (2026-08-18) — corrections to the critique above
+
+He pushed back on four of the points, and most of the pushback holds:
+
+- **Motif drift is deliberate escalation**, not carelessness: 늘어지다 → 가라앉다 → 떨어지다, with `붕 뜨는`
+  held constant as the anchor. Reclassify item (2) as designed. Remaining flaw: the ladder is not monotone —
+  the final line reverts to `가라앉기만`, and `가라앉다` is used both mid-ladder (반신욕) and as the terminal
+  state, so the last rung does not read as the strongest.
+- **The near-accident beat is the point**: distraction by the sensation → almost hitting the car behind →
+  shows refusal to go home. It works, and the 말벌 flashback is the right distractor. Only the narrator's
+  pattern-naming line (`아니 아침부터 이 느낌이 뭐지?`) is separable and still worth cutting.
+- **Ocean World is deliberately thin**: one exaggerated event instead of a list of rides. Agreed as a
+  principle, and the 온수풀 바람 line already gives a physical anchor. Earlier criticism overweighted this.
+- **The character intros are a heist-movie convention**, deliberate. Valid — and all four assigned traits
+  do fire later (주짓수, 키, 락, 사진). What does not fire is the surrounding biography
+  (핵융합 연구, 영상 편집 외주, 방송부, 학원 시절): trim that, keep trait + role.
+- He wants the reader to *notice* `느낌`, via an **absence-and-return structure**: plant it low-key at the
+  start of part 2 (bed, car), remove it entirely through the Ocean World fantasy, bring it back at 반신욕 —
+  so the reader goes "별거 아니네" → forgets → recognises it and tenses up. The device is sound and it does
+  work in part 2 (the whole ladder lives inside part 2; part 1 only carries the linked `뇌가 뜨거운 느낌`).
+  Two residual notes: absence needs a **positive trace** (the wave pool is literally full of floating — one
+  benign `붕 뜨다` with no sinking half would make the removal felt). **Correction:** the 찜질방
+  `뇌의 시냕스가 끕끕해지는 느낌` line is NOT filler — stated intent (2026-08-18) is that recalling the
+  trip *is* the rise half of that beat, and reality then yanks him down (`확- 떨어지는`). Conceptually the
+  strongest beat in the piece: memory as the float, the everyday as the drop, which retroactively makes the
+  final line mean "no memories left to lift me". Under-executed only at word level — `끕끕해지다` is an
+  adhesive/settling image, not a lift, so the reader cannot read it as the ascent. Give that beat the
+  anchor word (`붕 뜨다`) instead of deleting it.
+
+### Revision plan for part 2 (agreed 2026-08-14) — what actually landed in the published version
+
+Read of the published text, 2026-08-18: **2 of 5 applied.**
+
+- ❌ (1) "last day" planting — not done. Part 2 still opens straight into the sensation with no signal.
+- △ (2) verbatim motif — partially. The `확-` marker is now consistent, but the second half still drifts
+  (`늘어지는` / `가라앉는` / `떨어지는`). Final line (`뜨는 느낌도 없이 확- 가라앉기만`) lands anyway.
+- ❌ (3) pattern-naming line — survived verbatim (`아니 아침부터 이 느낌이 뭐지?`). The misattribution line was correctly kept.
+- ❌ (4) literal buoyancy during Ocean World — not written; the motif is simply absent.
+- ✅ (5) officer roles dissolve back into plain names after the fantasy ends, with no commentary. The
+  camera gag (`수범이는 카메라를 멈추지 않았다`) is repeated verbatim 4× and works — but is never negated.
+
+**Unplanned payoff that works better than the plan:** the ending reveals a literal fever (mother touching
+his forehead), so "뇌가 뜨거워서" turns out to be physically true and the float/sink motif retroactively
+reads as chills. Risk: it tilts the motif toward pure illness; the emotional reading is only seeded in
+part 1's closing (fear of losing what you have) and never echoed in part 2.
+
+**Habits actually fixed in this piece:** no Namuwiki link dumps at all; the dinner course is compressed to
+a one-line list instead of a dish-by-dish essay; the height gag is now a dynamic state gauge
+(190→210→180→198→205) used functionally in the hornet fight and the wave-pool rescue.
+
+**Still open:** `느낌` is both the filler word and the motif carrier, so the motif hides in noise; part 1
+front-loads a ~500-word character-sheet block for the four friends (telling); Ocean World itself is
+skipped in one summary sentence, so the destination is never shown; part 2 is much shorter than part 1;
+the "그 동네" scene (forgetting the route, the 7-years line, the study room) is the best quiet moment in
+part 1 and is never paid off.
 
 1. Plant "today is the last day" in the morning scene — luggage loaded into the car, no emotion attached.
    Currently the reader gets no signal until ~80% through, so the motif's first appearance reads as fatigue.
@@ -138,6 +196,9 @@ it's your style" framing reclassifies a weakness as an identity. The concrete pa
   Long passages that keep showing (the grocery-run operation, Deungseon Falls) never dragged.
 
 ## Changelog
+
+- 2026-08-18: Hongcheon piece published on velog as two posts (「뇌가 뜨거워서 그랬어: 첫날/마지막 날」);
+  travel series now 6 posts. Noted the platform-split plan was not followed for it
 
 - 2026-08-14: logged Hongcheon part 2 (Ocean World) draft, its floating/sinking motif design and target tone,
   the revision plan, measured sentence-level weaknesses, and a practice-first learning plan
