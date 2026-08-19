@@ -3,7 +3,7 @@ title: Tech stack & proficiency
 area: developer
 tags: [stack, TypeScript, React, Electron, NestJS]
 created: 2026-08-03
-updated: 2026-08-14
+updated: 2026-08-19
 status: draft
 ---
 
@@ -16,7 +16,7 @@ status: draft
 | Tech | Evidence |
 |---|---|
 | **TypeScript** (strict) | Common to every project. Primary language |
-| **React 19** | Bulk Mail, INOS web, work (edu-core family) |
+| **React 19** | Bulk Mail, INOS web, work (edu-core family), Edu Vibe front. `react-router-dom` stops at v7 but its peer is `react: >=18`, so it runs on 19 — only `react-router` **v8** forces a package rename |
 | **Electron** | Bulk Mail — completed through DMG shipping with electron-vite + electron-builder |
 | **Tailwind CSS v4** | Bulk Mail (`@theme inline`, `rgb(from ...)` token derivation), INOS (DaisyUI) |
 | **NestJS + Fastify** | INOS server/ai-server — including SSE streaming |
@@ -47,6 +47,7 @@ status: draft
 
 ## Changelog
 
-- 2026-08-14: added NestJS+Express+Mongoose/MongoDB (Edu Vibe); corrected the React row — Edu Vibe front is pinned to 18 because `react-router-dom` stops at v7
+- 2026-08-19: corrected an earlier mistake — `react-router-dom` v7 does NOT force React 18 (its peer is `>=18`). Edu Vibe front moved to React 19
+- 2026-08-14: added NestJS+Express+Mongoose/MongoDB (Edu Vibe); corrected the React row
 - 2026-08-03: added work collab-editing details (epoch versioning, LiteLLM proxy) and exact machine specs
 - 2026-08-03: migrated to English

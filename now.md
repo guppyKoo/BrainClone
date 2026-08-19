@@ -24,7 +24,7 @@ Last updated: 2026-08-18
 - **INOS**: humanities meetup platform in development + Electron desktop app wrapping the existing web
 - **Work (goorm) — Edu Vibe**: current focus. Owns two repos (`edu-vibe-front`, `edu-vibe-server`). As of 2026-08-14 **both are past M0** — front has routing + Tailwind/Vapor-ui scaffolding, server has schemas, a repository layer and the full MVP API (verified end-to-end against local Mongo). Wrote the V2 Tech Spec, the DB schema doc and the API spec himself, using AI as a critical reviewer rather than an author
   - Server: NestJS 11 (**Express** adapter, for a possible 전자정부표준프레임워크/Spring migration) + MongoDB + **Mongoose** + `migrate-mongo` — no in-house precedent for migrations, so the convention was set from scratch
-  - Front: **single package, not a workspace** — pnpm + Vite + **React 18** + `react-router-dom` v7 + Tailwind v4 + Vapor-ui + TanStack Query, on **Node 24**. Turborepo was dropped; a one-package workspace is pure overhead
+  - Front: **single package, not a workspace** — pnpm + Vite + **React 19** + `react-router-dom` v7 + Tailwind v4 + Vapor-ui + TanStack Query, on **Node 24**. Turborepo was dropped; a one-package workspace is pure overhead
   - Not wired yet: LiteLLM proxy, S3 storage, web deploy — the three are explicit boundaries in the server code
   - Prisma was evaluated and rejected for MongoDB — no Prisma Migrate on Mongo, aggregation escapes the type system, replica set needed even for plain nested writes
   - The 학습창 is assumed to arrive as `@devth/learn-*` SDK packages from another team (Devth) — this assumption is what the whole architecture rests on
@@ -66,6 +66,7 @@ Last updated: 2026-08-18
 - 2026-08-18: Hongcheon essay published on velog (2 posts); travel series now 6 posts
 - 2026-08-18: logged the EDU VIBE/DEVEL practice-page modularization agenda; decision pending
 
+- 2026-08-19: Edu Vibe front moved to React 19 — the earlier "pinned to 18" note was wrong (`react-router-dom` v7 accepts React >=18)
 - 2026-08-14: Edu Vibe corrected — both repos are past M0 (front routing scaffolded, server API built and verified); front is a single package, not a Turborepo workspace; React pinned to 18, Node 24
 - 2026-08-14: added the cascade-delete redesign thread and its two open questions; logged travel-essay part 2 and the writing-practice routine
 - 2026-08-12: work focus updated — Edu Vibe (V2 Tech Spec, NestJS+Mongoose stack decided, M0 scaffolding pending)
