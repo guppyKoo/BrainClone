@@ -3,7 +3,7 @@ title: Code style & convention preferences
 area: developer
 tags: [coding-style, conventions, commits]
 created: 2026-08-03
-updated: 2026-08-14
+updated: 2026-08-19
 status: draft
 ---
 
@@ -50,8 +50,10 @@ status: draft
 ## Testing
 
 - TDD-oriented, 80% coverage target (ECC rules)
+- **Edu Vibe server testing strategy (stated 2026-08-19)**: use Jest with outside-in Red–Green–Refactor. Start from a failing API contract/E2E test, cover service business rules with repository mocks, verify each repository method through real Mongoose round trips with `mongodb-memory-server`, and use Supertest for guards, validation, serialization, and HTTP contracts. Do not force unit tests for one-line controller delegation.
 
 ## Changelog
 
+- 2026-08-19: confirmed the Edu Vibe server TDD strategy and layer-specific test boundaries
 - 2026-08-14: added file/directory naming (PascalCase, stated on Edu Vibe front) and the Identifiers section (prefixed string ids)
 - 2026-08-03: migrated to English
