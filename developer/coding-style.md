@@ -3,7 +3,7 @@ title: Code style & convention preferences
 area: developer
 tags: [coding-style, conventions, commits]
 created: 2026-08-03
-updated: 2026-08-19
+updated: 2026-08-20
 status: draft
 ---
 
@@ -46,6 +46,9 @@ status: draft
 - Prefers minimal Linear/Notion-style UI (redesigned Bulk Mail in that style)
 - Token-based theming: seed colors (`--fg`/`--bg`) derived via `rgb(from ...)`, dark mode via `.dark` class
 - Prefers building his own Radix-based component set over adopting a kit wholesale
+- **UI library wrappers inherit the wrapped component's props.** For example, Edu Vibe's `CaretButton`
+  wraps Vapor UI's `Button`, so its props extend `Button.Props` and pass the remaining props through instead
+  of redefining a narrower, incompatible button API.
 
 ## Testing
 
@@ -54,6 +57,7 @@ status: draft
 
 ## Changelog
 
+- 2026-08-20: added the prop-inheritance rule for UI component wrappers
 - 2026-08-19: confirmed the Edu Vibe server TDD strategy and layer-specific test boundaries
 - 2026-08-14: added file/directory naming (PascalCase, stated on Edu Vibe front) and the Identifiers section (prefixed string ids)
 - 2026-08-03: migrated to English
