@@ -39,7 +39,7 @@ status: draft
 
 - Conventional Commits (`feat:`, `fix:` …) with **Korean messages**
   - e.g. `fix: macOS 빌드에 ad-hoc 코드사인 추가, Gatekeeper 손상 오류 안내 추가`
-- Feature branch → PR → main (e.g. `ui-redesign-v1.1.0`, `fix/adhoc-signing`)
+- **Edu Vibe branch flow**: feature branch → PR → `develop` for day-to-day work; `develop` → `master` only for deployment/release
 
 ## UI taste
 
@@ -57,6 +57,7 @@ status: draft
 
 ## Changelog
 
+- 2026-08-20: changed the Edu Vibe branch flow to use `develop` for work PRs and reserve `master` for deployment
 - 2026-08-20: added the prop-inheritance rule for UI component wrappers
 - 2026-08-19: confirmed the Edu Vibe server TDD strategy and layer-specific test boundaries
 - 2026-08-14: added file/directory naming (PascalCase, stated on Edu Vibe front) and the Identifiers section (prefixed string ids)
