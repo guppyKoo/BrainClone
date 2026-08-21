@@ -3,7 +3,7 @@ title: Tendencies as a developer
 area: developer
 tags: [tendency, work-style, strengths, weaknesses]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-21
 status: draft
 ---
 
@@ -31,8 +31,11 @@ human personality → `profile/personality.md`.)
 ## Collaboration style
 
 - Korean commit messages + Conventional Commits, feature branch → PR flow
+- Do not invoke `impeccable`; use direct, scoped implementation unless the user explicitly reverses this preference.
 
 ## Changelog
 
+- 2026-08-21: strengthened the preference to not invoke `impeccable`
+- 2026-08-20: recorded preference for direct execution on small UI changes without `impeccable`
 - 2026-08-03: split from profile/personality.md
 - 2026-08-03: migrated to English
