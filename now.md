@@ -72,6 +72,8 @@ Last updated: 2026-08-24
 
 ## Changelog
 
+- 2026-08-24: INOS feature push logged (notifications/inbox, meeting time, board, local auth +
+  invite links, presentation mode, generation-failure recovery) and the model-choice question opened
 - 2026-08-24: humanities club — two-film block (Lost in Translation / The Substance) with
   per-film viewing focus; curation method recorded in [[humanities]]
 - 2026-08-18: Hongcheon essay published on velog (2 posts); travel series now 6 posts
