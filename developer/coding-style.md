@@ -30,9 +30,13 @@ status: draft
 
 ## Identifiers
 
-- Prefers **prefixed string ids over ObjectId or bare UUID** — `class-`, `proj-`, `arti-` + 10 base36 chars
-  (`class-pihtuke4hn`). Reason: the value alone says what it is in logs/URLs, and a wrong-kind id can be
-  rejected at the DTO boundary. ObjectIds are all 24-char hex, so a mismatch only surfaces as an empty result
+- Keeps MongoDB's internal `_id` as an automatically generated ObjectId. Never place application/domain IDs in
+  `_id`; schemas expose a separate string `id` field for service lookups, references, URLs, and API responses.
+- Prefers **prefixed string domain IDs** — `class-`, `proj-`, `arti-` + 10 base36 chars
+  (`class-pihtuke4hn`). The prefix makes the entity type visible in logs and URLs and lets DTO validation reject
+  wrong-kind IDs. This preference does not replace MongoDB's ObjectId `_id`; the two identifiers have separate roles.
+- Student participation records follow the same separation: `_id` is ObjectId, while `User.id` is
+  `{entryCode}-{nickName}` and is uniquely indexed.
 - Enum-ish fields carry meaningful strings, never magic numbers (`'up' | 'down' | null`, not `0 | 1 | 2`)
 
 ## Commits & Git
@@ -62,6 +66,7 @@ status: draft
 
 ## Changelog
 
+- 2026-08-24: clarified that prefixed IDs belong in a separate domain `id`; MongoDB `_id` remains an automatic ObjectId
 - 2026-08-24: added the full-contract definition of GREEN learned from the Edu Vibe TDD execution
 - 2026-08-20: changed the Edu Vibe branch flow to use `develop` for work PRs and reserve `master` for deployment
 - 2026-08-20: added the prop-inheritance rule for UI component wrappers
