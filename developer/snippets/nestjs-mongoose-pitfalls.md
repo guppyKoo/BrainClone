@@ -3,13 +3,13 @@ title: NestJS + Mongoose pitfalls that fail silently
 area: developer
 tags: [nestjs, mongoose, swagger, migrate-mongo, validation, pitfalls]
 created: 2026-08-14
-updated: 2026-08-21
+updated: 2026-08-24
 status: confirmed
 ---
 
 # NestJS + Mongoose pitfalls that fail silently
 
-> Hit while building the Edu Vibe server (2026-08-14). All four share one trait: **nothing throws**.
+> Hit while building the Edu Vibe server (2026-08-14 onward). They share one trait: **nothing throws**.
 > They surface as a missing field, an empty doc, or a re-run — which is why they are worth writing down.
 > Stack context: [[stack]] · related decision record: [[mongodb-cascade-strategies]]
 
@@ -97,8 +97,34 @@ looks wrong; it only shows up after deploy (found by hand with Postman, not by a
 
 Cheap guard: one test per public endpoint asserting it answers without a token.
 
+## 7. `@IsOptional()` does not necessarily make a Swagger query parameter optional
+
+Class-validator controls runtime validation, while the Nest Swagger CLI plugin primarily derives requiredness from
+the TypeScript property shape. This DTO behaves as optional at runtime because of `@IsOptional()`, yet can be emitted
+as `required: true` in OpenAPI because the property itself is not optional:
+
+```ts
+@IsOptional()
+@Min(1)
+@Max(50)
+limit: number = 20
+```
+
+Make the TypeScript contract optional too, and retain a service fallback so runtime behavior does not depend solely
+on transformation applying the initializer:
+
+```ts
+limit?: number = 20
+
+const limit = query.limit ?? 20
+```
+
+`openapi:gen` exiting successfully proves only that a document was generated. Inspect the generated JSON for status
+codes, parameter requiredness/defaults, and response schema refs before treating API documentation as GREEN.
+
 ## Changelog
 
+- 2026-08-24: added the Swagger requiredness mismatch between `@IsOptional()` and TypeScript property shape
 - 2026-08-21: added items 5-6 — query parameters are outside the global pipe, and default-deny guards
   need explicit `@Public()` on machine-called endpoints
 - 2026-08-14: created from the Edu Vibe server build

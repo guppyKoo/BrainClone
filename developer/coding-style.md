@@ -3,7 +3,7 @@ title: Code style & convention preferences
 area: developer
 tags: [coding-style, conventions, commits]
 created: 2026-08-03
-updated: 2026-08-20
+updated: 2026-08-24
 status: draft
 ---
 
@@ -54,9 +54,15 @@ status: draft
 
 - TDD-oriented, 80% coverage target (ECC rules)
 - **Edu Vibe server testing strategy (stated 2026-08-19)**: use Jest with outside-in Red–Green–Refactor. Start from a failing API contract/E2E test, cover service business rules with repository mocks, verify each repository method through real Mongoose round trips with `mongodb-memory-server`, and use Supertest for guards, validation, serialization, and HTTP contracts. Do not force unit tests for one-line controller delegation.
+- **GREEN means every representation of the contract agrees** (confirmed through the Edu Vibe TDD run,
+  2026-08-24): record the RED baseline with counts and reasons; after each implementation wave, run the
+  full e2e suite rather than only the touched spec; and do not call the work complete until HTTP behavior,
+  migration-created indexes, serialized response keys, and generated OpenAPI all agree. If a test expectation
+  appears wrong, do not edit it to fit the implementation — reconcile it with the specification first.
 
 ## Changelog
 
+- 2026-08-24: added the full-contract definition of GREEN learned from the Edu Vibe TDD execution
 - 2026-08-20: changed the Edu Vibe branch flow to use `develop` for work PRs and reserve `master` for deployment
 - 2026-08-20: added the prop-inheritance rule for UI component wrappers
 - 2026-08-19: confirmed the Edu Vibe server TDD strategy and layer-specific test boundaries

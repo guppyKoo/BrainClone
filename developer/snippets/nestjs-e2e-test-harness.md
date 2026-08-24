@@ -3,7 +3,7 @@ title: NestJS e2e test harness — the ways a suite passes without proving anyth
 area: developer
 tags: [nestjs, jest, mongodb-memory-server, migrate-mongo, testing, pitfalls]
 created: 2026-08-21
-updated: 2026-08-21
+updated: 2026-08-24
 status: confirmed
 ---
 
@@ -86,6 +86,38 @@ millisecond and the order becomes arbitrary (natural order in one run, reverse i
 fan-out that creates N documents at once hits this. Add the `_id` as a final tie-break whenever a list
 order is user-visible.
 
+## 7. Setting test env vars before `compile()` is still too late after a static `AppModule` import
+
+`ConfigModule.forRoot()` reads `.env` when the module file is **evaluated**, not when
+`Test.createTestingModule(...).compile()` runs. A test bootstrap can appear to set `MONGODB_URI` early while a
+top-level `import { AppModule } ...` has already captured the local-development URI.
+
+This happened in Edu Vibe: e2e tests silently connected to the local `vibe` database, and the otherwise-correct
+`deleteMany` cleanup ran against it. When discovered, only three test fixture documents remained and the main
+collections were empty; whether pre-existing local data had been present could not be established.
+
+Load the application module only after installing the test environment, and add a second, independent guard before
+running migrations or cleanup:
+
+```ts
+process.env.MONGODB_URI = mongo.getUri(dbName)
+
+const { AppModule } = requireFromTest('../../src/app.module') as typeof import('../../src/app.module')
+const moduleRef = await Test.createTestingModule({ imports: [AppModule] }).compile()
+const app = configureApp(moduleRef.createNestApplication())
+await app.init()
+
+const connection = app.get<Connection>(getConnectionToken())
+if (connection.name !== dbName) {
+  throw new Error(`Test DB isolation failed: expected=${dbName}, actual=${connection.name}`)
+}
+```
+
+The general rule is stronger than “set test env vars”: **assert the resolved destructive target immediately before
+the destructive operation.** A broken test harness can damage data, not merely produce a false result.
+
 ## Changelog
 
+- 2026-08-24: added the module-evaluation ordering bug that pointed e2e cleanup at the local database,
+  plus a fail-closed database-name guard
 - 2026-08-21: created while adding the first tests to the Edu Vibe server
