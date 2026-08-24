@@ -53,6 +53,18 @@ status: draft
 - **UI library wrappers inherit the wrapped component's props.** For example, Edu Vibe's `CaretButton`
   wraps Vapor UI's `Button`, so its props extend `Button.Props` and pass the remaining props through instead
   of redefining a narrower, incompatible button API.
+- **Writes small components himself instead of pulling a library** when the need is narrow. On INOS
+  (2026-08-24) he accepted a hand-written markdown renderer + toolbar (only the syntax the product
+  supports, rendered to React nodes so raw-HTML injection is impossible) and a hand-built hour/minute
+  TimePicker over the native `time` input, both styled to the existing 2px-ink-border design system.
+- **Chrome should not outshout content.** Repeated corrections on INOS (2026-08-24): shrink the ordinal
+  number on discussion prompts (40px → 14px, muted), enlarge the work title so the reader knows which
+  book/film they are on, and set the prompt body to `font-normal` rather than semibold.
+- **Status indicators show presence, not counts.** Unread notifications render as a plain dot, not a
+  number badge; the exact count stays in `aria-label` for screen readers.
+- **Korean long-form text gets sentence-per-line rendering** rather than one wrapped block, plus the
+  `whitespace-pre-wrap break-keep break-words` trio — see [[korean-text-wrapping]] for the overflow trap
+  that motivated it.
 
 ## Testing
 
@@ -66,6 +78,7 @@ status: draft
 
 ## Changelog
 
+- 2026-08-24: added four UI rules observed on INOS — hand-rolled small components, chrome quieter than content, dot-not-count status badges, Korean sentence-per-line text
 - 2026-08-24: clarified that prefixed IDs belong in a separate domain `id`; MongoDB `_id` remains an automatic ObjectId
 - 2026-08-24: added the full-contract definition of GREEN learned from the Edu Vibe TDD execution
 - 2026-08-20: changed the Edu Vibe branch flow to use `develop` for work PRs and reserve `master` for deployment

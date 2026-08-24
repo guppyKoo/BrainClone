@@ -44,6 +44,7 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [mongodb-cascade-strategies.md](developer/snippets/mongodb-cascade-strategies.md) — MongoDB cascade-delete options (transactions / Change Stream / Kafka+Outbox)
   - [nestjs-mongoose-pitfalls.md](developer/snippets/nestjs-mongoose-pitfalls.md) — NestJS/Mongoose traps that fail silently (serializer, Swagger schema, migrate-mongo hash, query params, default-deny guard)
   - [nestjs-e2e-test-harness.md](developer/snippets/nestjs-e2e-test-harness.md) — how a NestJS e2e suite passes without proving anything (indexes, shared global config, tooling traps)
+  - [korean-text-wrapping.md](developer/snippets/korean-text-wrapping.md) — why `break-keep` makes space-less Korean overflow, and the three-property fix
 
 ## 🚀 Career — social self & achievements (presentation layer; links into developer/)
 
