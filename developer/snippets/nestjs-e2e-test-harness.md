@@ -33,15 +33,16 @@ Using the actual migrations (not a hand-written index list) has a second payoff:
 drift — a renamed collection, a missing index — fails in tests instead of in production.
 Worth adding one test that asserts the indexes **exist**, so this whole layer cannot silently rot.
 
-## 2. Cleaning with `dropDatabase` undoes item 1
+## 2. Do not perform destructive database cleanup from e2e tests
 
-Per-test isolation by dropping the database also drops the migration-created indexes, so the suite
-degrades back to case 1 after the first test. Delete documents, keep collections:
+Neither `dropDatabase` nor collection-wide `deleteMany({})` belongs in the e2e harness. `dropDatabase`
+removes migration-created indexes, while `deleteMany({})` can erase a developer database if connection
+isolation ever regresses. The latter failure happened in Edu Vibe despite the suite intending to use
+`mongodb-memory-server`.
 
-```ts
-const collections = await connection.db.collections()
-await Promise.all(collections.map((c) => c.deleteMany({})))
-```
+Give each spec its own ephemeral MongoDB instance, scope fixture data with generated domain IDs, make
+fixed fixtures idempotent with upserts, and dispose of the instance when the spec ends. If a test needs
+stronger isolation, create a fresh ephemeral database/application for that test instead of deleting data.
 
 ## 3. A test app that *replicates* global config will drift from production
 
@@ -113,11 +114,12 @@ if (connection.name !== dbName) {
 }
 ```
 
-The general rule is stronger than “set test env vars”: **assert the resolved destructive target immediately before
-the destructive operation.** A broken test harness can damage data, not merely produce a false result.
+The general rule is stronger than “set test env vars”: **assert that the resolved connection is ephemeral before
+running migrations or tests, and keep destructive cleanup out of the harness entirely.** A broken test harness can
+damage data, not merely produce a false result.
 
 ## Changelog
 
-- 2026-08-24: added the module-evaluation ordering bug that pointed e2e cleanup at the local database,
-  plus a fail-closed database-name guard
+- 2026-08-24: prohibited destructive e2e cleanup after a module-evaluation ordering bug pointed
+  `deleteMany({})` at the local database; use disposable databases, idempotent fixtures, and a fail-closed guard
 - 2026-08-21: created while adding the first tests to the Edu Vibe server
