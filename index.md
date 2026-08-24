@@ -42,7 +42,8 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [electron-patterns.md](developer/snippets/electron-patterns.md) — Electron patterns from real projects
   - [y-prosemirror-nodeselection-crash.md](developer/snippets/y-prosemirror-nodeselection-crash.md) — collab-editing crash debugging note
   - [mongodb-cascade-strategies.md](developer/snippets/mongodb-cascade-strategies.md) — MongoDB cascade-delete options (transactions / Change Stream / Kafka+Outbox)
-  - [nestjs-mongoose-pitfalls.md](developer/snippets/nestjs-mongoose-pitfalls.md) — NestJS/Mongoose traps that fail silently (serializer, Swagger schema, migrate-mongo hash)
+  - [nestjs-mongoose-pitfalls.md](developer/snippets/nestjs-mongoose-pitfalls.md) — NestJS/Mongoose traps that fail silently (serializer, Swagger schema, migrate-mongo hash, query params, default-deny guard)
+  - [nestjs-e2e-test-harness.md](developer/snippets/nestjs-e2e-test-harness.md) — how a NestJS e2e suite passes without proving anything (indexes, shared global config, tooling traps)
 
 ## 🚀 Career — social self & achievements (presentation layer; links into developer/)
 

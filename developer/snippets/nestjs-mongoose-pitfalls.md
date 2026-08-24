@@ -1,9 +1,9 @@
 ---
 title: NestJS + Mongoose pitfalls that fail silently
 area: developer
-tags: [nestjs, mongoose, swagger, migrate-mongo, pitfalls]
+tags: [nestjs, mongoose, swagger, migrate-mongo, validation, pitfalls]
 created: 2026-08-14
-updated: 2026-08-14
+updated: 2026-08-21
 status: confirmed
 ---
 
@@ -69,6 +69,36 @@ editing an already-applied migration.
 Storing the TTL as **seconds (number)** instead of `'12h'` fixes the type and removes a whole class of
 format typos from env config.
 
+## 5. The global `ValidationPipe` does not guard query parameters
+
+`whitelist` / `forbidNonWhitelisted` operate on the **DTO** bound to a handler argument. A handler that
+takes `@Query('limit') limit?: string` has no DTO, so there is nothing to validate — `?limit=0`,
+`?limit=999`, and a corrupted cursor all sail through as 200. The pipe's protection feels global but
+covers only what a DTO describes.
+
+```ts
+// unvalidated, whatever the global pipe says
+async list(@Query('limit') limit?: string) {}
+
+// validated
+async list(@Query() query: ListQueryDto) {}
+```
+
+Express also parses a repeated key (`?projectId=a&projectId=b`) into an **array**, which reaches a
+`string`-typed parameter unchecked and lands in the Mongoose query as-is.
+
+## 6. A default-deny global guard turns a missing `@Public()` into a 401 health check
+
+Making the global guard "authenticated unless marked public" is the right default — a forgotten marker
+fails closed instead of exposing an endpoint. The cost is that **anything a machine calls without a
+token must be marked explicitly.** A health endpoint without `@Public()` returns 401, and since load
+balancers and probes carry no token, the instance simply never becomes healthy. Nothing in the code
+looks wrong; it only shows up after deploy (found by hand with Postman, not by a test).
+
+Cheap guard: one test per public endpoint asserting it answers without a token.
+
 ## Changelog
 
+- 2026-08-21: added items 5-6 — query parameters are outside the global pipe, and default-deny guards
+  need explicit `@Public()` on machine-called endpoints
 - 2026-08-14: created from the Edu Vibe server build
