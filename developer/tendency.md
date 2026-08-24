@@ -39,9 +39,16 @@ human personality → `profile/personality.md`.)
   `role: 'student'`. Write aggregation decisions at query level for him, not as business vocabulary.
 - **Wants deliverables in full, not summarized**: when a document is meant to be handed to someone
   else, he asks for the whole text rather than a digest of it.
+- **Separates AI planning context from execution to reduce confirmation bias**: for the Edu Vibe TDD
+  run, intentionally used one model to plan and a different model to turn RED into GREEN. The executor
+  received the finalized tests, specification, and instructions, but not the planning conversation's
+  accumulated reasoning. The goal is a clean-room-like second reading: the executor should treat tests
+  as the contract instead of inheriting the planner's expected implementation or unconsciously repairing
+  gaps in its own plan.
 
 ## Changelog
 
+- 2026-08-24: recorded the deliberate context separation between AI planner and TDD executor
 - 2026-08-24: added three collaboration traits — diagnosis before repair, metrics defined as
   computations, deliverables in full text
 - 2026-08-21: strengthened the preference to not invoke `impeccable`
