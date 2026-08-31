@@ -3,7 +3,7 @@ title: Tendencies as a developer
 area: developer
 tags: [tendency, work-style, strengths, weaknesses]
 created: 2026-08-03
-updated: 2026-08-24
+updated: 2026-08-31
 status: draft
 ---
 
@@ -45,9 +45,14 @@ human personality → `profile/personality.md`.)
   accumulated reasoning. The goal is a clean-room-like second reading: the executor should treat tests
   as the contract instead of inheriting the planner's expected implementation or unconsciously repairing
   gaps in its own plan.
+- **Preserves model-specific viewpoints when reviewing AI-authored documents**: when one AI has written a
+  retrospective or analysis, another model should not erase or rewrite the original disagreement. Add the
+  second model's corrections and perspective in clearly labeled callouts directly below the relevant text,
+  so differences in reasoning remain visible side by side.
 
 ## Changelog
 
+- 2026-08-31: recorded the preference to preserve AI viewpoints side by side with model-labeled callouts
 - 2026-08-24: recorded the deliberate context separation between AI planner and TDD executor
 - 2026-08-24: added three collaboration traits — diagnosis before repair, metrics defined as
   computations, deliverables in full text
