@@ -47,6 +47,7 @@ under `developer/`, whether curiosity-stage or mastered. `profile/` and `interes
 | Non-dev learning/interest topics (English study, investing, …)  | `interest/topics/<topic>.md`          |
 | Hobbies (fitness, reading, games, music, movies, …)             | `interest/hobbies/<hobby>.md`         |
 | Experiences/things/books wanted (non-dev)                       | `interest/wishlist.md`                |
+| 서비스·제품 아이디어 (공모전·해커톤 포함)             | `idea/service/<idea>.md`                 |
 | Dev interests & learning topics (curiosity stage)               | `developer/interest.md`               |
 | Tendencies & work style as a developer (observed)               | `developer/tendency.md`               |
 | Tech stack, proficiency (used repeatedly at work)               | `developer/stack.md`                  |
@@ -59,6 +60,9 @@ under `developer/`, whether curiosity-stage or mastered. `profile/` and `interes
 | Expected interview questions & answers                          | `career/interview-qa.md`              |
 
 If routing is ambiguous, ask the user instead of creating a new file.
+
+서비스·제품 아이디어는 개발 관련 여부와 관계없이 `idea/service/`에 먼저 기록하고,
+구현·출품 후 성과가 생기면 `career/portfolio/` 문서와 연결한다.
 
 ### Layers inside developer/ and the promotion rule
 
