@@ -1,7 +1,7 @@
 ---
 title: 개발 관심사
 area: developer
-tags: [interests, AI, agents, CRDT, learning, cdc, C, open-source, translation]
+tags: [interests, AI, agents, CRDT, learning, database-design, PostgreSQL, MongoDB, cdc, C, open-source, translation]
 created: 2026-08-03
 updated: 2026-09-01
 status: draft
