@@ -53,6 +53,7 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
 - [portfolio/](career/portfolio/) — per-project outcomes
   - [bulk-mail-electron.md](career/portfolio/bulk-mail-electron.md) — Bulk Mail (Electron desktop app)
   - [inos.md](career/portfolio/inos.md) — INOS (humanities meetup platform)
+  - [challkathon.md](career/portfolio/challkathon.md) — 소통과 합의 형성을 주도해 대상을 수상한 해커톤
   - [wekick.md](career/portfolio/wekick.md) — WeKick campus futsal matching platform
   - [yellowbook.md](career/portfolio/yellowbook.md) — Small-business inventory and schedule management B2B SaaS
   - [rebid.md](career/portfolio/rebid.md) — Auction-based upcycling marketplace
