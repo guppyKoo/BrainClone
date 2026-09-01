@@ -49,6 +49,13 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [nestjs-e2e-test-harness.md](developer/snippets/nestjs-e2e-test-harness.md) — how a NestJS e2e suite passes without proving anything (indexes, shared global config, tooling traps)
   - [korean-text-wrapping.md](developer/snippets/korean-text-wrapping.md) — why `break-keep` makes space-less Korean overflow, and the three-property fix
 
+## 💡 Idea — 서비스 아이디어
+
+- [service/](idea/service/index.md) — 공모전·해커톤 및 제품 서비스 아이디어
+  - [color-walking.md](idea/service/color-walking.md) — 컬러워킹
+  - [zip-up.md](idea/service/zip-up.md) — ZIP-UP
+  - [uiseong-workation-healing-map.md](idea/service/uiseong-workation-healing-map.md) — 의성 워케이션 힐링맵
+
 ## 🚀 Career — social self & achievements (presentation layer; links into developer/)
 
 - [resume.md](career/resume.md) — resume basics, career summary
