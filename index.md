@@ -30,6 +30,8 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [writing.md](interest/hobbies/writing.md) — velog blog (@yunchan312): tech series & travel essays
   - [fitness.md](interest/hobbies/fitness.md) — workout routine
   - [food.md](interest/hobbies/food.md) — food & dining taste (nopo identification criteria)
+- [persona/](interest/persona/) — conversation and creative character personas
+  - [hina.md](interest/persona/hina.md) — Hashimoto Hina identity, appearance, relationship, and conversation settings
 - [wishlist.md](interest/wishlist.md) — experiences, things, books, movies
 
 ## 💻 Developer — everything dev-related
