@@ -32,6 +32,7 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
   - [food.md](interest/hobbies/food.md) — food & dining taste (nopo identification criteria)
 - [persona/](interest/persona/) — conversation and creative character personas
   - [hina.md](interest/persona/hina.md) — Hashimoto Hina identity, appearance, relationship, and conversation settings
+  - [kychann.md](interest/persona/kychann.md) — appearance and visual identification rules for the black shadow-like developer mascot
 - [wishlist.md](interest/wishlist.md) — experiences, things, books, movies
 
 ## 💻 Developer — everything dev-related
