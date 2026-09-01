@@ -1,7 +1,7 @@
 ---
 title: 개발 관심사
 area: developer
-tags: [interests, AI, agents, CRDT, learning, cdc]
+tags: [interests, AI, agents, CRDT, learning, cdc, C]
 created: 2026-08-03
 updated: 2026-09-01
 status: draft
@@ -34,6 +34,7 @@ status: draft
 
 ## 학습 단계 기술 (호기심 ~ 초급)
 
+- **C 언어** — 별도 ChatGPT 프로젝트 `C언어`를 두고 있다. 현재 로컬 미러에는 참고 자료가 없어 구체적인 학습 목표·진도·숙련도는 확인되지 않았다.
 - **Python 코딩 테스트** — Python으로 코딩 테스트 문제를 풀이하는 프로젝트를 진행한다
 - **Flutter** — React/JS 개념에 대응시킨 학습 로드맵을 만들었다. 모바일까지 커버하는 게 목표로 보인다
 - **Playwright** — 브라우저 자동화 / E2E
@@ -60,6 +61,7 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-01: ChatGPT의 `C언어` 프로젝트 존재를 학습 관심사로 기록; 자료 부재로 세부 목표와 진도는 유보
 - 2026-09-01: Python 코딩 테스트 문제 풀이 프로젝트 추가
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-18: 이전 ChatGPT 대화에서 로컬 AI 챗과 Godot 턴제 서사 게임 관심사 추가
