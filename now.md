@@ -44,6 +44,8 @@ Last updated: 2026-08-24
 
 ### Non-dev
 
+- **OPIc**: 현재 IM3. 난이도 5-5와 선택한 Background Survey를 기준으로 영어 실전 질문에 답하고,
+  답변별 피드백을 받는 방식으로 준비 중. 상세는 [[opic|interest/topics/opic.md]].
 - **Writing**: Hongcheon travel essay **published on velog 2026-08** as two posts — 「뇌가 뜨거워서 그랬어: 첫날」
   (08-15) and 「마지막 날」 (08-17). Travel series now 6 posts. Details in [[writing|interest/hobbies/writing.md]]. Also started a deliberate prose-practice routine
   (transcription + weekly revision + read-aloud) aimed at sentence-level control
@@ -74,6 +76,7 @@ Last updated: 2026-08-24
 
 ## Changelog
 
+- 2026-09-01: OPIc 준비 현황 추가 — 현재 IM3, 난이도 5-5, Background Survey 기반 영어 문답 연습
 - 2026-08-24: INOS feature push logged (notifications/inbox, meeting time, board, local auth +
   invite links, presentation mode, generation-failure recovery) and the model-choice question opened
 - 2026-08-24: humanities club — two-film block (Lost in Translation / The Substance) with
