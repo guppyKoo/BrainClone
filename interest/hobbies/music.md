@@ -1,25 +1,26 @@
 ---
-title: Music — guitar & band
+title: 음악 — 기타 & 밴드
 area: interest
 tags: [music, guitar, band, songwriting]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-09-01
 status: draft
 ---
 
-# Music — guitar & band
+# 음악 — 기타 & 밴드
 
-## Activities
+## 활동
 
-- Plays guitar; active in a band
-- Interested in band gear/setup
-- **Wants to write original songs rather than covers** — influenced by the film *Sing Street*
+- 기타를 치고 밴드 활동을 한다
+- 밴드 장비/셋업에 관심이 있다
+- **커버가 아니라 자작곡을 쓰고 싶어 한다** — 영화 *Sing Street*의 영향
 
-## Observation
+## 관찰
 
-- The "make my own instead of reusing others'" trait shows up in music too
-  (same pattern as hand-built UI components and self-designed frameworks on the dev side — [[personality]])
+- "남의 것을 가져다 쓰기보다 내 것을 만든다"는 성향이 음악에서도 드러난다
+  (개발 쪽에서 UI 컴포넌트를 직접 만들고 프레임워크를 직접 설계하는 것과 같은 패턴 — [[personality]])
 
-## Changelog
+## 변경 이력
 
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-03: 영어로 전환

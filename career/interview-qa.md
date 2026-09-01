@@ -1,44 +1,46 @@
 ---
-title: Expected interview Q&A
+title: 예상 면접 질문 & 답변
 area: career
 tags: [interview, QA]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-09-01
 status: draft
 ---
 
-# Expected interview Q&A
+# 예상 면접 질문 & 답변
 
-> Question + answer skeletons drafted from project history. Polish in the user's own words before confirming.
+> 프로젝트 이력에서 뽑아낸 질문 + 답변 뼈대. 확정하기 전에 사용자 본인의 언어로 다듬을 것.
 
-## Technical deep-dives
+## 기술 심화
 
-**Q. Hardest bug you've solved?**
-Draft: atom-node deletions not syncing in collaborative editing. Disproved the first hypothesis ("empty-document seeding")
-with a test, then found the missing null guard in y-prosemirror's selection-restore code and fixed it via patch-package.
-→ Tell the full arc: hypothesis → disproof → root cause → patch. ([[y-prosemirror-nodeselection-crash]])
+**Q. 해결한 것 중 가장 어려웠던 버그는?**
+초안: 협업 편집에서 atom 노드 삭제가 동기화되지 않던 문제. 첫 가설("빈 문서 시딩")을
+테스트로 반증한 뒤, y-prosemirror의 selection 복원 코드에 null 가드가 빠져 있는 것을 찾아
+patch-package로 수정했다.
+→ 가설 → 반증 → 근본 원인 → 패치의 전체 흐름을 이야기할 것. ([[y-prosemirror-nodeselection-crash]])
 
-**Q. How does CRDT/collaborative editing work?**
-Draft: explain via the Yjs document model, the hocuspocus server's role, and the editor binding (ySyncPlugin).
-Differentiate with real binding-layer bug-hunting experience.
+**Q. CRDT/협업 편집은 어떻게 동작하나요?**
+초안: Yjs 문서 모델, hocuspocus 서버의 역할, 에디터 바인딩(ySyncPlugin)으로 설명한다.
+바인딩 레이어에서 실제로 버그를 추적해본 경험으로 차별화한다.
 
-**Q. How do you choose technology?**
-Draft: start on proven foundations (Radix, TanStack, Prisma) but own the core layer.
-Swap boldly when the platform blocks the goal — Glaze → Electron for DMG shipping. ([[bulk-mail-electron]])
+**Q. 기술은 어떻게 선택하나요?**
+초안: 검증된 토대(Radix, TanStack, Prisma) 위에서 시작하되 핵심 레이어는 직접 소유한다.
+플랫폼이 목표를 막으면 과감히 바꾼다 — DMG 배포를 위해 Glaze → Electron. ([[bulk-mail-electron]])
 
-## Projects
+## 프로젝트
 
-**Q. Tell me about your side projects.**
-Draft: [[bulk-mail-electron]] (problem → rebuild → ship story) + [[inos]] (own hobby's pain point solved with full-stack + AI).
+**Q. 사이드 프로젝트 소개해 주세요.**
+초안: [[bulk-mail-electron]] (문제 → 재구축 → 출시 서사) + [[inos]] (내 취미의 불편함을 풀스택 + AI로 해결).
 
-**Q. How do you use AI tools in development?**
-Draft: not just code generation — hook-based quality gates, multi-agent review, and a personal knowledge base (BrainClone)
-wired into the workflow. Emphasize the workflow-designer perspective.
+**Q. 개발에 AI 도구를 어떻게 쓰나요?**
+초안: 단순 코드 생성이 아니라 hook 기반 품질 게이트, 멀티 에이전트 리뷰, 그리고 개인 지식베이스(BrainClone)를
+워크플로에 엮어 쓴다. 워크플로 설계자의 관점을 강조할 것.
 
-## Personality / culture fit
+## 성향 / 컬처핏
 
-**Q. Introduce yourself / strengths & weaknesses**
+**Q. 자기소개 / 강점과 약점**
 
-## Changelog
+## 변경 이력
 
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-03: 영어로 전환

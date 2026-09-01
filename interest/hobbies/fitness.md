@@ -1,22 +1,23 @@
 ---
-title: Workout routine
+title: 운동 루틴
 area: interest
 tags: [fitness, gym, routine]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-09-01
 status: draft
 ---
 
-# Workout routine
+# 운동 루틴
 
-## Current
+## 현재
 
-- Maintaining a **6-day/week gym** routine
-- Plans training and diet from InBody measurements — goal: cut body fat, grow upper-body muscle
-- Data-driven planning and systematized routines — same style as his dev work ([[tendency]])
+- **주 6일 헬스** 루틴을 유지하고 있다
+- 인바디 측정값을 기준으로 운동과 식단을 계획한다 — 목표는 체지방 감소와 상체 근육 증가
+- 데이터 기반으로 계획하고 루틴을 체계화하는 방식 — 개발할 때와 같은 스타일이다 ([[tendency]])
 
-> Detailed numbers and diet targets are managed by the user directly; this document records only that the routine exists and its direction.
+> 세부 수치와 식단 목표는 사용자가 직접 관리한다. 이 문서는 루틴의 존재와 방향만 기록한다.
 
-## Changelog
+## 변경 이력
 
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-03: 영어로 전환

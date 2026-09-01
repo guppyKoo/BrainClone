@@ -1,28 +1,29 @@
 ---
-title: WeKick — campus futsal matching platform
+title: WeKick — 대학생 풋살 매칭 플랫폼
 area: career
 tags: [portfolio, frontend, product, futsal, startup]
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-09-01
 status: draft
 ---
 
-# WeKick — campus futsal matching platform
+# WeKick — 대학생 풋살 매칭 플랫폼
 
-Campus futsal matching platform. The user led planning and frontend development and went beyond a class project by registering an actual business and pursuing real sponsors.
+대학생 풋살 매칭 플랫폼. 기획과 프론트엔드 개발을 주도했고, 수업 프로젝트에서 멈추지 않고 실제 사업자 등록까지 마친 뒤 실 스폰서를 유치했다.
 
-## Product & responsibilities
+## 제품 & 담당 역할
 
-- Designed and built real-time match matching, match-record management, and an operator-only admin experience.
-- Implemented role-based access, conditional filtering, responsive UI, and iterative UX improvements based on user feedback.
-- Worked across product planning and frontend development rather than treating the project as an isolated coding exercise.
+- 실시간 매치 매칭, 매치 기록 관리, 운영자 전용 어드민 경험을 설계하고 구현했다.
+- 역할 기반 접근 제어, 조건부 필터링, 반응형 UI를 구현하고 사용자 피드백을 반영해 UX를 반복 개선했다.
+- 프로젝트를 고립된 코딩 과제로 다루지 않고 제품 기획과 프론트엔드 개발을 넘나들며 일했다.
 
-## Outcome & lessons
+## 성과 & 배운 것
 
-- Secured sponsorship from three companies after registering the business.
-- The service did not achieve sufficient retention and was ultimately unsuccessful as a sustained product.
-- The experience provided practical exposure to product validation, operations, sponsorship, user feedback, and the difference between shipping a service and retaining users.
+- 사업자 등록 후 3개 기업으로부터 스폰서십을 확보했다.
+- 서비스는 충분한 리텐션을 만들지 못했고, 지속되는 제품으로는 결국 실패했다.
+- 대신 제품 검증, 운영, 스폰서십, 사용자 피드백, 그리고 "서비스를 출시하는 것"과 "사용자를 붙잡는 것"의 차이를 실전으로 경험했다.
 
-## Changelog
+## 변경 이력
 
-- 2026-08-18: created from prior project and career-writing conversations
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-18: 이전 프로젝트·커리어 관련 대화에서 생성

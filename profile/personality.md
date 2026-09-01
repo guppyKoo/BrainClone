@@ -1,46 +1,47 @@
 ---
-title: Personality as a human
+title: 인간으로서의 성격
 area: profile
 tags: [personality, MBTI, communication]
 created: 2026-08-03
-updated: 2026-08-07
+updated: 2026-09-01
 status: draft
 ---
 
-# Personality as a human
+# 인간으로서의 성격
 
-The human guppy. **Developer tendencies & work style are split into [[tendency|developer/tendency.md]].**
+인간 guppy. **개발자로서의 성향과 업무 스타일은 [[tendency|developer/tendency.md]]로 분리했다.**
 
-## Basics
+## 기본 정보
 
-- Name/handle: guppy (GitHub: guppyKoo)
-- Born 2001
-- Lives in Suji / commutes to Pangyo
+- 이름/핸들: guppy (GitHub: guppyKoo)
+- 2001년생
+- 수지 거주 / 판교 출퇴근
 - MBTI: INTP
 
-## Observed traits (inferred)
+## 관찰된 성향 (추론)
 
-- **Completion-driven**: can't stand leaving things half-done; pushes to the end (ship, finalize)
-- **Structuring instinct**: needs to organize thoughts/knowledge/rules into systems (folder trees, frameworks) — this BrainClone itself is evidence
-- **Loves both tech and the humanities**: a developer who curates films for a humanities club and even built a platform (INOS) for it
-- **Analytical, pushes back**: digs in immediately when logic is loose. Dislikes unfounded assertions and applies the same standard to AI
-- **Creative urge**: prefers making his own over reusing others' — original songs in the band, hand-built UI components; same pattern everywhere
+- **완결 지향**: 뭔가를 반쯤 하다 마는 것을 못 견딘다. 끝까지 밀어붙인다 (출시, 마무리)
+- **구조화 본능**: 생각·지식·규칙을 체계(폴더 트리, 프레임워크)로 정리해야 직성이 풀린다 — 이 BrainClone 자체가 증거다
+- **기술과 인문학을 둘 다 좋아함**: 인문학 동아리를 위해 영화를 큐레이션하고, 그걸 위한 플랫폼(INOS)까지 만든 개발자
+- **분석적이고 반박한다**: 논리가 헐거우면 곧바로 파고든다. 근거 없는 단정을 싫어하고, 같은 기준을 AI에게도 적용한다
+- **창작 욕구**: 남의 것을 가져다 쓰기보다 직접 만드는 것을 선호한다 — 밴드의 자작곡, 손으로 만든 UI 컴포넌트. 어디서나 같은 패턴
 
-## Strengths / weaknesses (as a human)
+## 강점 / 약점 (인간으로서)
 
-- Strengths:
-  - (observed) Routine persistence — 6-day/week gym habit, designs multi-month curricula for the monthly club
-- Weaknesses:
+- 강점:
+  - (관찰) 루틴 지속력 — 주 6일 헬스 습관, 월간 동아리를 위한 수개월짜리 커리큘럼 설계
+- 약점:
 
-## Communication style
+## 커뮤니케이션 스타일
 
-- Primary language: Korean; prefers 반말 (casual speech)
-- Tone: casual and witty. Enjoys cynical/sarcastic humor; dislikes excessive praise and overly smooth customer-service tone
-- Frequently drops pop-culture references (Japanese manga/anime, Game of Thrones, Star Wars, LoL lore) — expects the other side to play along
+- 주 언어: 한국어. 반말을 선호한다
+- 톤: 캐주얼하고 위트 있게. 냉소적·비꼬는 유머를 즐기고, 과한 칭찬과 지나치게 매끄러운 고객응대 톤을 싫어한다
+- 대중문화 레퍼런스를 자주 던진다 (일본 만화/애니, 왕좌의 게임, 스타워즈, LoL 세계관) — 상대도 받아치기를 기대한다
 
-## Changelog
+## 변경 이력
 
-- 2026-08-07: MBTI confirmed as INTP
-- 2026-08-03: split developer tendencies into developer/tendency.md; human-personality only
-- 2026-08-03: confirmed basics (born 2001, Suji/Pangyo) and communication style (반말, cynical humor, references)
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-07: MBTI를 INTP로 확정
+- 2026-08-03: 개발자 성향을 developer/tendency.md로 분리, 인간 성격만 남김
+- 2026-08-03: 기본 정보(2001년생, 수지/판교)와 커뮤니케이션 스타일(반말, 냉소적 유머, 레퍼런스) 확정
+- 2026-08-03: 영어로 전환

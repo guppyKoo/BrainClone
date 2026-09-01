@@ -1,77 +1,135 @@
 ---
-title: INOS — humanities meetup platform
+title: INOS — 인문학 모임 플랫폼
 area: career
 tags: [portfolio, NestJS, AI, monorepo, side-project]
 created: 2026-08-03
-updated: 2026-08-24
+updated: 2026-09-01
 status: draft
 ---
 
-# INOS — the OS of humanities
+# INOS — 인문학의 OS
 
-Humanities meetup platform: movie/book group selection, AI discussion prompts (SSE streaming), scheduling, archiving.
-Personal project (`~/Practice/INOS`).
+인문학 모임 플랫폼: 영화/책 그룹 선정, AI 토론 발제문(SSE 스트리밍), 일정 조율, 아카이빙.
+개인 프로젝트 (`~/Practice/INOS`).
 
-## Tech
+## 기술
 
-- **Monorepo**: pnpm workspace + Turborepo
-  - `apps/server` (3000): NestJS + Fastify — Auth/Group/Content/Schedule/Archive APIs
-  - `apps/ai-server` (3001): NestJS + Fastify — dedicated SSE streaming for prompts/recommendations/summaries
+- **모노레포**: pnpm workspace + Turborepo
+  - `apps/server` (3000): NestJS + Fastify — Auth/Group/Content/Schedule/Archive API
+  - `apps/ai-server` (3001): NestJS + Fastify — 발제문/추천/요약 전용 SSE 스트리밍
   - `apps/web` (5173): React 19 + Vite + Tailwind v4 + DaisyUI
-  - `packages/prisma|types|utils`: shared schema, DTOs, utilities
-- **Data**: Prisma + PostgreSQL (Supabase) + **pgvector** — vector search via `$queryRaw`
-- **Infra**: BullMQ + ioredis queues, JWT + Passport + Google OAuth
+  - `packages/prisma|types|utils`: 공유 스키마, DTO, 유틸리티
+- **데이터**: Prisma + PostgreSQL (Supabase) + **pgvector** — `$queryRaw`로 벡터 검색
+- **인프라**: BullMQ + ioredis 큐, JWT + Passport + Google OAuth
+- **LLM**: 단일 모델 — **Claude Sonnet**. 멀티 모델 라우팅도, 작업별 모델 분리도 없다
 
-## Design points
+## 설계 포인트
 
-- AI traffic (long-lived SSE) isolated into its own server, away from the API server
-- Prisma schema shared as a package (symlink) for cross-app type consistency
-- Streaming via NestJS `@Sse()` decorator
+- AI 트래픽(장시간 유지되는 SSE)을 API 서버에서 떼어내 전용 서버로 격리
+- Prisma 스키마를 패키지(심링크)로 공유해 앱 간 타입 일관성 확보
+- NestJS `@Sse()` 데코레이터로 스트리밍
 
-## Product strategy
+## 제품 전략
 
-- **Invite-only, friends-based** positioning — avoids the risks and churn of meeting strangers online
-- Core hypothesis: **AI discussion prompts** close the insight gap vs. paid expert-led clubs
-- Artwork interpretation/explanation AI under consideration as a future **paid feature**
-- Current challenge: promotion and acquiring first users
-- Desktop: macOS Electron app wrapping the existing web (session persistence via `partition`, BrowserWindow loading)
+- **초대 기반, 친구 중심** 포지셔닝 — 온라인에서 낯선 사람을 만나는 리스크와 이탈을 피한다
+- 핵심 가설: **AI 토론 발제문**이 유료 전문가 진행 모임과의 통찰 격차를 메운다
+- 작품 해석/설명 AI를 향후 **유료 기능**으로 검토 중
+- 현재 과제: 홍보와 초기 사용자 확보
+- 데스크톱: 기존 웹을 감싸는 macOS Electron 앱 (`partition`으로 세션 유지, BrowserWindow 로딩)
 
-## Feature build-out (2026-08-24)
+## 기능 확장 (2026-08-24)
 
-A long solo session took the product from "prompts generate" to "a club can actually be run on it".
+혼자 진행한 긴 세션에서 "발제문이 생성된다"에서 "실제로 동아리를 운영할 수 있다"까지 끌어올렸다.
 
-- **Notifications**: four email triggers (date confirmed, prompts ready, 3h before, availability
-  nudge at 48h), all on the existing SMTP + BullMQ infrastructure — no new secrets or services.
-  Duplicate sends are prevented structurally by a unique `(meeting, recipient, type)` log row
-  rather than by application checks. Delayed jobs are re-scheduled when the date changes and
-  cancelled when the meeting ends or is deleted.
-- **In-app inbox** reuses that same log table as its store — the dedup ledger already recorded
-  "who was told what, when", so the inbox needed only a `readAt` column, not a new table.
-- **Meeting time**: `confirmedTime` (`HH:mm`, nullable) so the 3h reminder is computed from the
-  real start instead of an assumed evening hour (`MEETING_DEFAULT_HOUR` stays as the fallback).
-- **Board (`하고싶은 말`)** with a hand-written markdown subset + toolbar, likes, pagination.
-- **Auth widened**: local email/password signup beside Google OAuth, plus copyable invite links —
-  both added because email-only invitations were a real barrier for less technical members.
-- **Presentation mode**: fullscreen one-question-at-a-time view for running the meeting itself.
-- **Failure path for AI generation**: failures used to leave the discussion stuck at `GENERATING`
-  forever with no recovery (two rows had sat stuck for 31 days). Added a `FAILED` state written
-  from both servers, and gave the owner a "re-check the title/author/director, then regenerate"
-  panel. Wrong artwork metadata is the likeliest cause, so the fix is a correction form rather
-  than a bare retry button.
+- **알림**: 이메일 트리거 네 개(날짜 확정, 발제문 준비 완료, 3시간 전, 48시간 시점 일정 조율 독촉).
+  전부 기존 SMTP + BullMQ 인프라 위에 올렸다 — 새 시크릿도, 새 서비스도 없다.
+  중복 발송은 애플리케이션 검사가 아니라 `(meeting, recipient, type)` 유니크 로그 행으로 구조적으로 막는다.
+  지연 잡은 날짜가 바뀌면 재스케줄하고, 모임이 끝나거나 삭제되면 취소한다.
+- **인앱 수신함**은 그 로그 테이블을 그대로 저장소로 재사용한다 — 중복 방지 원장이 이미
+  "누구에게 무엇을 언제 알렸는지"를 기록하고 있었으므로, 수신함에는 새 테이블이 아니라 `readAt` 컬럼 하나만 필요했다.
+- **모임 시간**: `confirmedTime` (`HH:mm`, nullable)을 두어 3시간 전 리마인더를 가정된 저녁 시각이 아니라
+  실제 시작 시각에서 계산한다 (`MEETING_DEFAULT_HOUR`는 폴백으로 남는다).
+- **게시판 (`하고싶은 말`)** — 직접 작성한 마크다운 서브셋 + 툴바, 좋아요, 페이지네이션.
+- **인증 확대**: Google OAuth 옆에 로컬 이메일/비밀번호 가입 추가, 복사 가능한 초대 링크도.
+  둘 다 이메일 초대만으로는 기술에 덜 익숙한 멤버에게 실제 장벽이었기 때문에 추가했다.
+- **발표 모드**: 모임 진행 자체를 위한, 한 번에 한 질문씩 보여주는 전체화면 뷰.
+- **AI 생성 실패 경로**: 실패하면 토론이 `GENERATING` 상태로 영원히 멈춰 복구 수단이 없었다
+  (두 행이 31일 동안 멈춰 있었다). 두 서버 양쪽에서 쓰는 `FAILED` 상태를 추가하고, 소유자에게
+  "제목/저자/감독을 다시 확인한 뒤 재생성" 패널을 줬다. 작품 메타데이터가 틀린 게 가장 유력한
+  원인이므로, 해결책은 맨 재시도 버튼이 아니라 수정 폼이다.
 
-## Talking points
+## 발제문 설계 요구사항 (2026-08-25)
 
-- Solved a real pain point of his own hobby with full-stack + AI — he is the club's film curator ([[humanities]]) and a user
-- Production-grade components (vector search, queues, OAuth) designed solo in a personal project
-- **Prefers reusing an existing mechanism over adding one**: the notification inbox rides on the
-  email dedup log; realtime updates ride on the discussion socket gateway. A good answer for
-  "how do you decide when to add infrastructure?"
-- **Realtime lesson worth retelling**: saving an impression was unreliable while the main server
-  wrote the row and then asked the AI server over HTTP to broadcast it. Moving the write to the
-  server that owns the socket gateway fixed it — whoever owns the gateway should own the write.
+AI 생성 토론 발제문에 대해 진술한 요구사항: **한 세트에 최소 하나는 여섯 요소 프레임워크에 닻을 내린
+기법 질문이어야 한다** ([[humanities]]) — 일반적인 감상 질문이 아니라, 본인과 AI가 손으로 만들어내는
+종류의 질문. 논의 중인 설계 방향 (아직 구현된 것은 없음):
 
-## Changelog
+- "질문 N개"가 아니라 structured output으로 **타입이 있는 질문 슬롯**(warmup / technique / thematic / reserve)을
+  생성해서, 기법 질문이 운이 아니라 스키마로 보장되게 한다
+- 기법 질문의 `element`는 관찰된 사실들로부터 **모델이 고른다** — 이전 설계는 세션마다 주입하고
+  소진된 요소를 추적했는데, 둘 다 잘라냈다
+- 2단계 생성: 먼저 영화에 대한 관찰 가능한 사실들, 그다음 그 사실 하나를 질문으로 감싼다
+- "답을 흘리지 말 것" 제약에는 규칙 나열보다 대조 few-shot(좋은 예 vs 나쁜 예)이 낫다
 
-- 2026-08-24: recorded the notification/inbox/board/auth/presentation/failure-recovery build-out and two reusable talking points
-- 2026-08-03: added product strategy (invite-only, AI-prompt hypothesis, paid feature) and Electron desktop progress
-- 2026-08-03: migrated to English
+**질문 슬롯 구성 (2026-08-25 최종)** — 세트당 여섯 질문, **영화와 책이 동일한 형태**:
+
+| # | 슬롯 | 목적 | 필수 필드 |
+| --- | --- | --- | --- |
+| 1 | `warmup` | 진입 수준, 누구나 답할 수 있는 | — |
+| 2 | `technique` | 기법 프레임워크의 한 요소에 닻을 내린 | `element`(모델 선택), `observation`(책: `passage`, 인용문만 — 페이지 번호 없이) |
+| 3–4 | `thematic` | 주제 / 해석, 서로 다른 두 각도 | `angle` |
+| 5 | `stance` | 저자 또는 감독의 세계관 | `evidence` + `source` |
+| 6 | `private_experience` | 작품을 자기 삶과 연결하기 | — |
+
+`workType`에 따라 다른 것은 딱 두 가지다: `technique` 슬롯이 뽑아 쓰는 요소 목록(영화는 여섯,
+책은 다섯 — [[humanities]] 참고)과 투입되는 팩트 시트. 프롬프트 템플릿 하나가 둘 다 커버한다.
+
+설계 논의에서 이어진 메모:
+
+- **전제: 멤버들은 각자 보고 읽은 뒤 모이고, 가이드는 그 자리에서 처음 본다** — 사전 배포는 절대 없다.
+  다시 재생하거나 확인할 수 없으므로 준비가 필요한 질문은 하나도 있을 수 없다: 세는 것 금지, 찾아보는 것 금지.
+  멤버는 평범한 독자·관객이고 대략 네 명이다
+- 영화의 `observation`은 장면을 특정해야 하고(인물, 장소, 행동 중 둘), 기억이 제각각이므로
+  특정 컷 하나보다 순간들의 범주를 선호한다
+
+- 일부만 읽은 사람은 명시적으로 **배려하지 않는다** — 앞 3분의 1에 warmup을 거는 아이디어가 있었으나
+  폐기했다. 작품을 끝내는 것은 멤버의 책임이다
+- 3~4번 슬롯은 각도 다양성을 강제해야 한다(`angle`: 인물의 선택 / 작품의 입장 / 제목과 상징 /
+  구조의 효과). 아니면 모델이 같은 질문을 두 번 쓴다
+- `application`("앞으로 무엇이 바뀔까") 슬롯을 검토했다가 **잘라냈다** — "무엇을 배웠나요"로 퇴화한다.
+  대신 `private_experience`가 세트를 닫는다
+- `stance`는 **nullable**이다: 작품에 진짜 입장이 있는지는 팩트 시트 단계에서 판단한다.
+  강제하면 모델이 정치적 독해를 지어낸다. 없으면 `thematic` 하나를 더 넣는 것으로 폴백
+- `stance`가 다섯 번째인 건 의도적이다: 앞쪽에 두면 토론 전체를 프레이밍해버린다
+- 흥미로운 질문은 의도를 맞히는 게 아니라 **의도와 결과 사이의 간극**이다
+- `stance`의 `observation`은 작품 내부 증거나 검증된 팩트 시트 진술만 인용할 수 있다 —
+  모델 기억에서 나온 정치적 라벨은 절대 안 된다. 모든 슬롯 중 오귀속 위험이 가장 높고,
+  검색을 켠 팩트 시트 단계가 정말로 필요한 유일한 슬롯이다
+- 논픽션은 아예 다른 세트로 분기한다 — 기법 요소가 적용되지 않는다. 논증 축(주장, 증거 유형,
+  가장 약한 고리, 다루지 않은 반론, 저자의 이해관계)이 필요하고, 거기서 `stance`는 nullable이 아니라 필수다
+
+## 어필 포인트
+
+- 자기 취미의 진짜 불편함을 풀스택 + AI로 풀었다 — 본인이 동아리의 영화 큐레이터([[humanities]])이자 사용자다
+- 개인 프로젝트에서 실무급 구성 요소(벡터 검색, 큐, OAuth)를 혼자 설계했다
+- **새 메커니즘을 추가하기보다 기존 것을 재사용하는 것을 선호한다**: 알림 수신함은 이메일 중복 방지 로그에
+  올라타고, 실시간 업데이트는 토론 소켓 게이트웨이에 올라탄다. "인프라를 언제 추가할지 어떻게 판단하나요"에
+  대한 좋은 답변이다.
+- **다시 이야기할 만한 실시간 관련 교훈**: 메인 서버가 행을 쓰고 나서 AI 서버에 HTTP로 브로드캐스트를
+  요청하는 구조에서는 감상 저장이 불안정했다. 소켓 게이트웨이를 소유한 서버로 쓰기를 옮기니 해결됐다 —
+  게이트웨이를 소유한 쪽이 쓰기도 소유해야 한다.
+
+## 변경 이력
+
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-25: 가이드는 모임 자리에서 처음 본다 — 준비가 필요한 질문(세기, 찾아보기)을 두 매체 모두에서 전면 금지
+- 2026-08-25: element를 모델이 고르도록 변경(주입과 소진 추적 모두 제거), 인용문에서 페이지 번호 제외, 각자 관람 전제 기록
+- 2026-08-25: 슬롯 구성 최종 — 슬롯 여섯 개, 영화와 책 동일 (warmup / technique / thematic ×2 / stance / private_experience). `application` 슬롯은 제거
+- 2026-08-25: 슬롯 구성 확정 — 슬롯 일곱 개, 영화와 책 동일 (warmup / technique / thematic ×2 / stance / private_experience / application). 일부만 읽은 사람 배려는 폐기
+- 2026-08-25: 책의 기법 닻을 다섯 요소 책 프레임워크로 설정 (영화는 여섯 유지)
+- 2026-08-25: 저자 입장 슬롯 요청과 영화/책 7슬롯 세트 초안 추가
+- 2026-08-25: 영화 질문 슬롯 구성(warmup 2 / thematic 2 / technique 1 / 개인 경험 1) 기록, 생성은 단일 모델(Claude Sonnet)로 돈다는 점 기록
+- 2026-08-25: 여섯 요소 기법 질문에 대한 발제문 설계 요구사항 추가 (설계 단계, 구현된 것 없음)
+- 2026-08-24: 알림/수신함/게시판/인증/발표 모드/실패 복구 확장과 재사용 가능한 어필 포인트 두 개 기록
+- 2026-08-03: 제품 전략(초대 기반, AI 발제문 가설, 유료 기능)과 Electron 데스크톱 진척 추가
+- 2026-08-03: 영어로 전환

@@ -1,98 +1,96 @@
 ---
-title: MongoDB cascade-delete strategies
+title: MongoDB 캐스케이드 삭제 전략
 area: developer
 tags: [mongodb, cascade, change-stream, kafka, transactions, cdc]
 created: 2026-08-14
-updated: 2026-08-14
+updated: 2026-09-01
 status: draft
 ---
 
-# MongoDB cascade-delete strategies
+# MongoDB 캐스케이드 삭제 전략
 
-Reference note from a design discussion (2026-08-14) about replacing the legacy
-Kafka-based cascade path. Not yet applied to any codebase.
+레거시 Kafka 기반 캐스케이드 경로를 대체하는 설계 논의(2026-08-14)에서 나온 참고 노트.
+아직 어떤 코드베이스에도 적용하지 않았다.
 
-## Context at work
+## 실무 맥락
 
-- The in-house legacy codebase publishes to **Kafka** whenever a cascade delete is needed on MongoDB.
-- The app runs as **multiple instances on a single server** (PM2-style, not separate K8s deployments).
-- Unresolved: whether the Kafka topic's consumer is the **same service** or a **different service**.
-  This single fact decides the whole answer — see Open questions in [[now]].
+- 사내 레거시 코드베이스는 MongoDB에서 캐스케이드 삭제가 필요할 때마다 **Kafka**로 발행한다.
+- 앱은 **단일 서버에서 여러 인스턴스**로 돈다 (별도 K8s 디플로이먼트가 아니라 PM2 방식).
+- 미해결: Kafka 토픽의 컨슈머가 **같은 서비스**인지 **다른 서비스**인지.
+  이 사실 하나가 답 전체를 결정한다 — [[now]]의 미해결 질문 참고.
 
-## Decision table
+## 결정 표
 
-| Situation                                    | Approach                                     | New infra |
-| -------------------------------------------- | -------------------------------------------- | --------- |
-| 1:1, always read together                    | Embed — delete the child collection entirely  | none      |
-| Same DB, 3–5 collections, replica set        | **Multi-document transaction**                | none      |
-| Consistency required at response time        | **Multi-document transaction**                | none      |
-| Async OK, single service                     | Change Stream + one dedicated worker          | none      |
-| Heavy fan-out or retries needed              | Change Stream + BullMQ                        | Redis     |
-| Consumer is a different service              | Keep Kafka, add **Transactional Outbox**      | existing  |
-| Immediacy not required                       | Soft delete + batch GC                        | none      |
+| 상황                                    | 접근                                     | 새 인프라 |
+| --------------------------------------- | ---------------------------------------- | --------- |
+| 1:1이고 항상 함께 읽는다                | 임베드 — 자식 컬렉션 자체를 삭제         | 없음      |
+| 같은 DB, 컬렉션 3~5개, 레플리카 셋      | **다중 문서 트랜잭션**                    | 없음      |
+| 응답 시점에 일관성이 필요               | **다중 문서 트랜잭션**                    | 없음      |
+| 비동기 허용, 단일 서비스                | Change Stream + 전용 워커 하나            | 없음      |
+| 팬아웃이 무겁거나 재시도가 필요         | Change Stream + BullMQ                    | Redis     |
+| 컨슈머가 다른 서비스                    | Kafka 유지 + **Transactional Outbox** 추가 | 기존       |
+| 즉시성이 필요 없음                      | 소프트 삭제 + 배치 GC                     | 없음      |
 
-Default answer for the work case is the **transaction** row — it removes the worker,
-the queue, the duplicate-execution problem and eventual-consistency reasoning at once.
+실무 케이스의 기본 답은 **트랜잭션** 행이다 — 워커, 큐, 중복 실행 문제, 최종 일관성 추론을
+한 번에 없앤다.
 
-## Change Stream — what it actually is
+## Change Stream — 실체가 무엇인가
 
-- A public API over the **oplog**, not a DB-side trigger. Requires a replica set
-  (`rs.initiate()` gives a single-node replica set for local/dev).
-- `watch()` returns a **cursor**, held open for the process lifetime. It is application code,
-  so **N processes ⇒ N cursors ⇒ N executions**. There is no consumer-group concept.
-  Same class of problem as `@Cron` firing once per instance.
-- Fix: run `watch()` in **one** process. Either a separate PM2 app entry gated on `ROLE=worker`,
-  or `NODE_APP_INSTANCE === '0'` in cluster mode (breaks the moment a second server is added).
-- Only **majority-committed** writes are emitted, so a rolled-back delete can never trigger a cascade.
-  Lower bound on latency is therefore replication lag.
+- DB 쪽 트리거가 아니라 **oplog** 위의 공개 API다. 레플리카 셋이 필요하다
+  (로컬/개발에서는 `rs.initiate()`로 단일 노드 레플리카 셋을 만들 수 있다).
+- `watch()`는 **커서**를 반환하고, 프로세스 수명 동안 열려 있다. 애플리케이션 코드이므로
+  **프로세스 N개 ⇒ 커서 N개 ⇒ 실행 N번**이다. 컨슈머 그룹 개념이 없다.
+  인스턴스마다 한 번씩 터지는 `@Cron`과 같은 종류의 문제다.
+- 해결: `watch()`를 **한 프로세스**에서만 돌린다. `ROLE=worker`로 게이팅한 별도 PM2 앱 엔트리를 쓰거나,
+  클러스터 모드에서 `NODE_APP_INSTANCE === '0'`을 쓴다 (두 번째 서버가 추가되는 순간 깨진다).
+- **majority-commit된** 쓰기만 방출되므로, 롤백된 삭제가 캐스케이드를 유발할 일은 없다.
+  따라서 지연의 하한은 복제 지연이다.
 
-### Non-obvious details
+### 눈에 안 띄는 세부사항
 
-- Put `$match` **first** — the pipeline is evaluated server-side.
-- `$lookup` / `$group` / `$sort` are not allowed (infinite stream).
-- `delete` events carry only `_id`. For the deleted body, enable pre-images
+- `$match`를 **맨 앞에** 둘 것 — 파이프라인은 서버 쪽에서 평가된다.
+- `$lookup` / `$group` / `$sort`는 허용되지 않는다 (무한 스트림).
+- `delete` 이벤트는 `_id`만 담는다. 삭제된 본문이 필요하면 pre-image를 켤 것
   (`changeStreamPreAndPostImages`, MongoDB 6.0+).
-- Prefer `startAfter` over `resumeAfter` — only `startAfter` survives an `invalidate`.
-- `db.watch()` avoids the `invalidate` that a collection drop causes on `collection.watch()`,
-  and saves connections when several collections are watched.
-- Persist the resume token **after** handling, else restarts silently drop events. Subscribe to
-  `resumeTokenChanged` so quiet collections keep a fresh token.
-- Have a reconciliation fallback for `ChangeStreamHistoryLost` (token aged out of the oplog window):
-  an aggregate `$lookup` sweep for parentless children.
-- Handlers must be idempotent (at-least-once). Cascade deletes naturally are; side effects like
-  notifications are not.
-- `onModuleDestroy` must `close()` the stream, and Mongoose's `Model.watch()` silently buffers if
-  called before the connection is ready.
+- `resumeAfter`보다 `startAfter`를 선호할 것 — `invalidate`를 넘어 살아남는 건 `startAfter`뿐이다.
+- `db.watch()`는 컬렉션 drop이 `collection.watch()`에 일으키는 `invalidate`를 피하고,
+  여러 컬렉션을 감시할 때 커넥션도 절약한다.
+- resume 토큰은 처리 **후에** 영속화할 것. 아니면 재시작 시 이벤트를 조용히 흘린다.
+  조용한 컬렉션도 최신 토큰을 유지하도록 `resumeTokenChanged`를 구독할 것.
+- `ChangeStreamHistoryLost`(토큰이 oplog 윈도우를 벗어나 만료)에 대비해 재조정 폴백을 둘 것:
+  부모 없는 자식을 찾는 `$lookup` 집계 스윕.
+- 핸들러는 멱등해야 한다 (at-least-once). 캐스케이드 삭제는 본래 멱등하지만, 알림 같은 부수 효과는 아니다.
+- `onModuleDestroy`에서 스트림을 `close()`해야 하고, Mongoose의 `Model.watch()`는 커넥션이 준비되기 전에
+  호출하면 조용히 버퍼링한다.
 
-## Why Kafka is not simply wrong
+## Kafka가 그냥 틀린 건 아닌 이유
 
-Kafka's real advantage is not duplicate suppression — it is **crossing service boundaries**
-without handing out DB credentials or coupling to another team's schema. Change Stream requires
-direct access to the source DB, which is the Shared Database anti-pattern across services.
+Kafka의 진짜 장점은 중복 억제가 아니라 DB 자격 증명을 나눠주거나 다른 팀의 스키마에 결합되지 않고
+**서비스 경계를 넘는 것**이다. Change Stream은 원본 DB에 직접 접근해야 하는데, 서비스 간에서는
+그게 Shared Database 안티패턴이다.
 
-If the consumer is a different service, the fix is not removing Kafka but adding a
-**Transactional Outbox**: write the delete and an outbox row in one transaction, then relay the
-outbox to Kafka (Change Stream or Debezium as the relay). Without it, a crash between the delete
-and the publish orphans documents permanently, with no record.
+컨슈머가 다른 서비스라면 해결책은 Kafka를 없애는 게 아니라 **Transactional Outbox**를 추가하는 것이다:
+삭제와 outbox 행을 한 트랜잭션에 쓰고, outbox를 Kafka로 릴레이한다(릴레이는 Change Stream이나 Debezium).
+이게 없으면 삭제와 발행 사이에 크래시가 나는 순간 문서가 영구히 고아가 되고, 기록도 남지 않는다.
 
-## Naive `onSuccess` chaining
+## 단순한 `onSuccess` 체이닝
 
-Sequential deletes in the request path are fine and common, with two corrections:
+요청 경로에서 순차 삭제하는 것 자체는 괜찮고 흔하다. 다만 두 가지 교정이 필요하다:
 
-1. **Delete children first, parent last.** If it fails mid-way, the parent still exists, so the
-   state stays coherent and a retry is trivial. The reverse leaves untraceable orphans.
-2. If it is already sequential in one request, wrap it in `withTransaction` — the cost is a few
-   lines and the partial-delete state stops existing. `onSuccess` chaining is a transaction
-   without atomicity.
+1. **자식을 먼저 지우고 부모를 마지막에.** 중간에 실패해도 부모가 남아 있으니 상태가 일관되고
+   재시도가 사소해진다. 반대로 하면 추적 불가능한 고아가 남는다.
+2. 이미 한 요청 안에서 순차적이라면 `withTransaction`으로 감쌀 것 — 비용은 몇 줄이고, 부분 삭제
+   상태가 아예 존재하지 않게 된다. `onSuccess` 체이닝은 원자성 없는 트랜잭션이다.
 
-Where transactions are impossible (standalone mongod), at minimum log failures to a
-`FailedCascade` collection so failures are visible rather than silent.
+트랜잭션이 불가능한 환경(standalone mongod)이라면 최소한 실패를 `FailedCascade` 컬렉션에 로깅해서
+조용한 실패가 아니라 보이는 실패로 만들 것.
 
-## Related
+## 관련
 
-- [[now]] — Edu Vibe runs NestJS + MongoDB + Mongoose, so this applies directly there
-- [[philosophy]] — preference for engine-enforced guarantees over app-level convention
+- [[now]] — Edu Vibe가 NestJS + MongoDB + Mongoose이므로 여기에 곧바로 적용된다
+- [[philosophy]] — 앱 레벨 컨벤션보다 엔진이 강제하는 보장을 선호하는 성향
 
-## Changelog
+## 변경 이력
 
-- 2026-08-14: created from a design discussion on replacing the legacy Kafka cascade path
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-14: 레거시 Kafka 캐스케이드 경로 대체 설계 논의에서 생성

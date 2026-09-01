@@ -1,53 +1,54 @@
 ---
-title: Tech stack & proficiency
+title: 기술 스택 & 숙련도
 area: developer
 tags: [stack, TypeScript, React, Electron, NestJS]
 created: 2026-08-03
-updated: 2026-08-19
+updated: 2026-09-01
 status: draft
 ---
 
-# Tech stack & proficiency
+# 기술 스택 & 숙련도
 
-> Extracted from real project history.
+> 실제 프로젝트 이력에서 추출했다.
 
-## Core (used repeatedly at work + side projects)
+## 코어 (실무 + 사이드 프로젝트에서 반복 사용)
 
-| Tech | Evidence |
+| 기술 | 근거 |
 |---|---|
-| **TypeScript** (strict) | Common to every project. Primary language |
-| **React 19** | Bulk Mail, INOS web, work (edu-core family), Edu Vibe front. `react-router-dom` stops at v7 but its peer is `react: >=18`, so it runs on 19 — only `react-router` **v8** forces a package rename |
-| **Electron** | Bulk Mail — completed through DMG shipping with electron-vite + electron-builder |
-| **Tailwind CSS v4** | Bulk Mail (`@theme inline`, `rgb(from ...)` token derivation), INOS (DaisyUI) |
-| **NestJS + Fastify** | INOS server/ai-server — including SSE streaming |
-| **Prisma + PostgreSQL** | INOS — pgvector search, monorepo shared schema |
-| **NestJS + Express + Mongoose/MongoDB** | Edu Vibe server (2026-08) — global `ValidationPipe`/`ClassSerializerInterceptor` defenses, repository layer, `migrate-mongo` migrations. Pitfalls: [[nestjs-mongoose-pitfalls]] |
+| **TypeScript** (strict) | 모든 프로젝트 공통. 주력 언어 |
+| **React 19** | Bulk Mail, INOS 웹, 실무(edu-core 계열), Edu Vibe 프론트. `react-router-dom`은 v7에서 멈췄지만 peer가 `react: >=18`이라 19에서도 돈다 — 패키지 이름 변경을 강제하는 건 `react-router` **v8**뿐 |
+| **Electron** | Bulk Mail — electron-vite + electron-builder로 DMG 배포까지 완주 |
+| **Tailwind CSS v4** | Bulk Mail (`@theme inline`, `rgb(from ...)` 토큰 파생), INOS (DaisyUI) |
+| **NestJS + Fastify** | INOS server/ai-server — SSE 스트리밍 포함 |
+| **Prisma + PostgreSQL** | INOS — pgvector 검색, 모노레포 공유 스키마 |
+| **NestJS + Express + Mongoose/MongoDB** | Edu Vibe 서버 (2026-08) — 전역 `ValidationPipe`/`ClassSerializerInterceptor` 방어, 리포지토리 레이어, `migrate-mongo` 마이그레이션. 함정: [[nestjs-mongoose-pitfalls]] |
 
-## Work domain specialties
+## 실무 도메인 전문 영역
 
-- **Realtime collaborative editing**: Yjs, hocuspocus, y-prosemirror, ProseMirror/TipTap — patched a library ([[y-prosemirror-nodeselection-crash]])
-  - goorm `goorm-hocuspocus` + `edu-core` — designed/operates **epoch-based document versioning**
-- **Editor/block systems**: goorm edu-core, mist-blocks-react (inferred)
-- **In-house AI infra**: connected Claude Code to goorm's internal LiteLLM proxy; GitHub MCP over an HTTP endpoint
+- **실시간 협업 편집**: Yjs, hocuspocus, y-prosemirror, ProseMirror/TipTap — 라이브러리를 직접 패치했다 ([[y-prosemirror-nodeselection-crash]])
+  - goorm `goorm-hocuspocus` + `edu-core` — **epoch 기반 문서 버저닝**을 설계하고 운영 중
+- **에디터/블록 시스템**: goorm edu-core, mist-blocks-react (추론)
+- **사내 AI 인프라**: Claude Code를 goorm 사내 LiteLLM 프록시에 연결. GitHub MCP를 HTTP 엔드포인트로 연동
 
-## Tools & infra
+## 도구 & 인프라
 
-- pnpm workspace + Turborepo monorepo
-- BullMQ + ioredis (queues), JWT + Passport + Google OAuth
+- pnpm workspace + Turborepo 모노레포
+- BullMQ + ioredis (큐), JWT + Passport + Google OAuth
 - TanStack Router/Query, Radix UI, CVA, sonner
-- nodemailer, OpenAI API (Images, streaming)
-- Claude Code power user — large fleet of skills/agents/hooks/MCP
-- Deploy/infra: EKS-based Kubernetes, Jenkins pipelines
+- nodemailer, OpenAI API (Images, 스트리밍)
+- Claude Code 파워 유저 — skill/agent/hook/MCP를 대규모로 운용
+- 배포/인프라: EKS 기반 Kubernetes, Jenkins 파이프라인
 
-## Environment
+## 개발 환경
 
-- **MacBook Pro (Mac15,6) / Apple M3 Pro** — 11-core CPU (5P+6E), 14-core GPU, 18GB RAM, macOS arm64
-  - 18GB is the bottleneck for concurrent monorepo builds + local DB + Electron; watch concurrent process count
-- Displays: LG ultrawide 2560x1080 main + built-in Liquid Retina XDR (always dual-monitor)
+- **MacBook Pro (Mac15,6) / Apple M3 Pro** — 11코어 CPU (5P+6E), 14코어 GPU, 18GB RAM, macOS arm64
+  - 모노레포 동시 빌드 + 로컬 DB + Electron을 함께 돌릴 때 18GB가 병목이다. 동시 프로세스 수를 주의할 것
+- 디스플레이: LG 울트라와이드 2560x1080 메인 + 내장 Liquid Retina XDR (항상 듀얼 모니터)
 
-## Changelog
+## 변경 이력
 
-- 2026-08-19: corrected an earlier mistake — `react-router-dom` v7 does NOT force React 18 (its peer is `>=18`). Edu Vibe front moved to React 19
-- 2026-08-14: added NestJS+Express+Mongoose/MongoDB (Edu Vibe); corrected the React row
-- 2026-08-03: added work collab-editing details (epoch versioning, LiteLLM proxy) and exact machine specs
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-19: 이전 오류 정정 — `react-router-dom` v7은 React 18을 강제하지 않는다 (peer가 `>=18`). Edu Vibe 프론트를 React 19로 이동
+- 2026-08-14: NestJS+Express+Mongoose/MongoDB (Edu Vibe) 추가, React 행 정정
+- 2026-08-03: 실무 협업 편집 상세(epoch 버저닝, LiteLLM 프록시)와 정확한 머신 스펙 추가
+- 2026-08-03: 영어로 전환

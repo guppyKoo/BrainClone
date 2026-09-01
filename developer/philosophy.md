@@ -1,52 +1,53 @@
 ---
-title: Development philosophy
+title: 개발 철학
 area: developer
 tags: [philosophy, architecture, AI-collaboration, portability, data-integrity]
 created: 2026-08-03
-updated: 2026-08-14
+updated: 2026-09-01
 status: draft
 ---
 
-# Development philosophy
+# 개발 철학
 
-> Draft reverse-engineered from how he works. Worth rewriting in his own words.
+> 일하는 방식에서 역으로 뽑아낸 초안. 본인의 언어로 다시 쓸 가치가 있다.
 
-## Observed philosophy (inferred)
+## 관찰된 철학 (추론)
 
-1. **Ship all the way**: "it builds" isn't done — "the packaged app runs" is done.
-   Bulk Mail was verified through typecheck → build → dev → DMG → packaged-app run before calling it complete.
-2. **Dig to the root cause**: went down into library source (y-prosemirror) to add a null guard instead of routing around symptoms.
-   Disproved the wrong hypothesis with tests and kept the record.
-3. **Rules as systems, not documents**: conventions are enforced by hooks (GateGuard), rulesets (ECC), and frameworks (OKF), not memory.
-4. **Stand on proven ground, but own it**: uses proven bases (Radix/TanStack), yet re-implemented ~30 UI components to own and understand the core layer.
-5. **AI executes, humans design the structure**: define folder structure and rules first, then delegate execution to AI.
+1. **끝까지 출시한다**: "빌드가 된다"는 완료가 아니다 — "패키징된 앱이 실행된다"가 완료다.
+   Bulk Mail은 typecheck → build → dev → DMG → 패키징 앱 실행까지 확인하고 나서야 완료로 봤다.
+2. **근본 원인까지 파고든다**: 증상을 우회하는 대신 라이브러리 소스(y-prosemirror)까지 내려가 null 가드를 추가했다.
+   틀린 가설은 테스트로 반증하고 그 기록을 남겼다.
+3. **규칙은 문서가 아니라 시스템으로**: 컨벤션은 기억이 아니라 hook(GateGuard), 룰셋(ECC), 프레임워크(OKF)로 강제한다.
+4. **검증된 토대 위에 서되, 소유한다**: 검증된 기반(Radix/TanStack)을 쓰면서도 UI 컴포넌트 30여 개를 다시 구현해 핵심 레이어를 직접 소유하고 이해한다.
+5. **AI는 실행하고, 사람은 구조를 설계한다**: 폴더 구조와 규칙을 먼저 정의하고 실행을 AI에 위임한다.
 
-## Stated principles
+## 본인이 진술한 원칙
 
-- **Portable over machine-local**: agent config and conventions must work on every machine he uses.
-  Enforcement that lives on a single device is rejected even when it works — the rule text in a
-  synced file wins over a locally installed script. This refines observed principle 3: rules should
-  be systems, but not device-bound ones.
-- **Guarantees belong in the engine, not in convention** (stated 2026-08-14): prefers RDBMS
-  specifically because `ON DELETE CASCADE` is enforced regardless of how many app instances run or
-  which path issued the delete. Frames MongoDB's app-level cascade as the messy alternative rather
-  than as a legitimate trade. Same shape as principle 3 — a rule that depends on everyone remembering
-  it is not a rule. See [[mongodb-cascade-strategies]].
-  - Corollary he accepts once shown: this cleanliness is conditional on a single un-sharded database.
-    Once services or shards split, RDBMS lands in the same place (Outbox + events).
+- **머신 로컬보다 이식 가능하게**: 에이전트 설정과 컨벤션은 자기가 쓰는 모든 머신에서 동작해야 한다.
+  한 기기에만 존재하는 강제 장치는 동작하더라도 거부한다 — 로컬에 설치된 스크립트보다
+  동기화되는 파일에 적힌 규칙 텍스트가 이긴다. 관찰된 원칙 3을 정교화한 것이다: 규칙은
+  시스템이어야 하지만, 기기에 묶인 시스템이어서는 안 된다.
+- **보장은 컨벤션이 아니라 엔진에 있어야 한다** (2026-08-14 진술): RDBMS를 선호하는 이유가
+  정확히 `ON DELETE CASCADE`가 앱 인스턴스가 몇 개든, 어느 경로로 삭제가 들어왔든 상관없이
+  강제된다는 점이다. MongoDB의 앱 레벨 캐스케이드는 정당한 트레이드오프가 아니라 지저분한
+  대안으로 본다. 원칙 3과 같은 모양이다 — 모두가 기억해야만 지켜지는 규칙은 규칙이 아니다.
+  [[mongodb-cascade-strategies]] 참고.
+  - 설명을 들으면 받아들이는 따름정리: 이 깔끔함은 샤딩되지 않은 단일 데이터베이스라는 조건부다.
+    서비스나 샤드가 쪼개지는 순간 RDBMS도 같은 자리(Outbox + 이벤트)에 도착한다.
 
-## Architectural leanings (inferred)
+## 아키텍처 성향 (추론)
 
-- Monorepo + shared packages (prisma/types/utils) for type consistency
-- Service separation (INOS: API server / AI server; Bulk Mail: settings/mail/image services)
-- Explicit bridges at IPC/API boundaries (`window.api` preload bridge)
-- (inferred) Skeptical of infrastructure added to solve a problem that a smaller change would solve —
-  pushed back hard on the idea of introducing Redis Streams merely to deduplicate Change Stream consumers
+- 타입 일관성을 위한 모노레포 + 공유 패키지(prisma/types/utils)
+- 서비스 분리 (INOS: API 서버 / AI 서버, Bulk Mail: settings/mail/image 서비스)
+- IPC/API 경계에 명시적 브리지 (`window.api` preload 브리지)
+- (추론) 더 작은 변경으로 풀릴 문제에 인프라를 추가하는 것에 회의적이다 —
+  Change Stream 컨슈머 중복 제거만을 위해 Redis Streams를 도입하자는 안에 강하게 반대했다
 
-## Changelog
+## 변경 이력
 
-- 2026-08-14: added stated principle — engine-enforced guarantees over app-level convention
-  (RDBMS cascade preference, from the MongoDB cascade design discussion)
-- 2026-08-07: added stated principle — portable agent config over machine-local enforcement
-  (declined a Stop hook for the BrainClone auto-record rule because it would live on one machine only)
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-14: 진술 원칙 추가 — 앱 레벨 컨벤션보다 엔진이 강제하는 보장
+  (MongoDB 캐스케이드 설계 논의에서 나온 RDBMS 캐스케이드 선호)
+- 2026-08-07: 진술 원칙 추가 — 머신 로컬 강제보다 이식 가능한 에이전트 설정
+  (BrainClone 자동 기록 규칙용 Stop hook을 한 머신에만 존재한다는 이유로 거절)
+- 2026-08-03: 영어로 전환

@@ -1,36 +1,37 @@
 ---
-title: Investing & macroeconomics
+title: 투자 & 거시경제
 area: interest
 tags: [investing, stocks, macro, market-analysis]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-09-01
 status: draft
 ---
 
-# Investing & macroeconomics
+# 투자 & 거시경제
 
-A hobby and long-standing interest. The fun is in **building the analysis and the argument**, more than trading itself.
+취미이자 오래된 관심사. 매매 자체보다 **분석과 논리를 세우는 과정**이 재미있다.
 
-## Style
+## 스타일
 
-- Runs both Korean and US equities
-- Risk management like DCA-ing to dilute concentration when one position grows too large
-- Digs into structural factors per name — valuation, float, lock-ups
-- Has researched Korean specifics directly (ISA accounts, domestic/foreign stock taxation)
+- 한국 주식과 미국 주식을 함께 운용한다
+- 한 종목 비중이 너무 커지면 분할 매수로 집중도를 희석하는 식의 리스크 관리
+- 종목마다 구조적 요인을 파고든다 — 밸류에이션, 유통 물량, 락업
+- 한국 특유의 제도를 직접 찾아봤다 (ISA 계좌, 국내/해외 주식 과세)
 
-## Themes
+## 관심 테마
 
-- AI infrastructure (semiconductors, datacenters)
-- Humanoid robotics
-- Korean macro — weak won, KOSPI supply/demand, foreign fund flows
-- Connecting structural issues (population decline, semiconductor export concentration) to personal strategy
+- AI 인프라 (반도체, 데이터센터)
+- 휴머노이드 로보틱스
+- 한국 거시 — 원화 약세, 코스피 수급, 외국인 자금 흐름
+- 구조적 이슈(인구 감소, 반도체 수출 편중)를 개인 전략으로 연결하기
 
-## Observation
+## 관찰
 
-- The area where "dislikes unfounded assertions" shows most — builds his own argument instead of adopting others' forecasts
+- "근거 없는 단정을 싫어한다"는 성향이 가장 뚜렷하게 드러나는 영역 — 남의 전망을 받아들이는 대신 자기 논리를 세운다
 
-> Holdings and amounts are recorded only on direct user request, per the OKF sensitive-info rule.
+> 보유 종목과 금액은 OKF 민감정보 규칙에 따라 사용자가 직접 요청할 때만 기록한다.
 
-## Changelog
+## 변경 이력
 
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-03: 영어로 전환

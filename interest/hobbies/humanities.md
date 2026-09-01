@@ -1,78 +1,104 @@
 ---
-title: Humanities — book & film club
+title: 인문학 — 독서 & 영화 동아리
 area: interest
 tags: [humanities, reading, film, club]
 created: 2026-08-03
-updated: 2026-08-24
+updated: 2026-09-01
 status: draft
 ---
 
-# Humanities — book & film club
+# 인문학 — 독서 & 영화 동아리
 
-Loved enough to build a whole platform for it ([[inos]] — "the OS of humanities").
+이걸 위해 플랫폼을 통째로 만들 만큼 좋아한다 ([[inos]] — "인문학의 OS").
 
-## Activities
+## 활동
 
-- **4-person monthly humanities club** — role: **film curator**
-- Designs director-based curricula — first director: the **Coen brothers** (Fargo, No Country for Old Men, …), a 6-month course
-- Writes discussion guides himself — pre-watch guide for *Anatomy of a Fall*, discussion prompt for *Good News* (2025), etc.
-- Experiments with AI-generated discussion prompts → the direct origin of [[inos]]
+- **4인 월간 인문학 동아리** — 역할: **영화 큐레이터**
+- 감독 기반 커리큘럼을 설계한다 — 첫 감독은 **코엔 형제**(파고, 노인을 위한 나라는 없다 등), 6개월 과정
+- 토론 가이드를 직접 쓴다 — *추락의 해부* 사전 관람 가이드, *굿뉴스*(2025) 토론 발제문 등
+- AI 생성 토론 발제문을 실험한다 → [[inos]]의 직접적인 기원
 
-## Curation goal
+## 큐레이션 목표
 
-The stated aim is not film literacy for its own sake but a single moment of recognition:
-members realizing that the pleasure of cinema lives outside the story. Members are strong
-readers (non-linear narrative is no obstacle) but have no film-technique vocabulary.
+목표는 영화 문해력 자체가 아니라 단 하나의 깨닫는 순간이다:
+영화의 즐거움이 이야기 바깥에 있다는 것을 멤버들이 알아차리는 것. 멤버들은 독서력이 강하지만
+(비선형 서사도 장애물이 아니다) 영화 기법 어휘가 없다.
 
-## The six-element framework
+## 여섯 요소 프레임워크 (영화)
 
-A checklist he uses to read a film. Each item is deliberately framed from the **director's**
-side, not the viewer's — what was chosen, not what was enjoyed.
+영화를 읽을 때 쓰는 체크리스트. 각 항목은 관객이 아니라 의도적으로 **감독** 쪽에서 프레이밍되어 있다 —
+무엇이 즐거웠는가가 아니라 무엇이 선택되었는가.
 
-1. **Mise-en-scène** — angle, lighting, actor placement, props, color
-2. **Editing** — why *this* shot after *that* one; the meaning made by the join
-3. **Camera movement** — handheld (raw, unstable) vs steadicam (controlled, elegant)
-4. **Sound design** — not just music; how **silence** is used
-5. **Directing the actor** — not whether the performance was good, but what the director drew out
-6. **Narrative structure** — non-linear order, POV shifts, planted foreshadowing
+1. **미장센** — 앵글, 조명, 배우 배치, 소품, 색
+2. **편집** — 왜 *저 숏* 다음에 *이 숏*인가. 이음새가 만들어내는 의미
+3. **카메라 움직임** — 핸드헬드(날것, 불안정) vs 스테디캠(통제된, 우아한)
+4. **사운드 디자인** — 음악만이 아니다. **침묵**을 어떻게 쓰는가
+5. **배우 연출** — 연기가 좋았는가가 아니라 감독이 무엇을 끌어냈는가
+6. **서사 구조** — 비선형 순서, 시점 전환, 심어둔 복선
 
-Note the two easy-to-slip items: "sound design" is not "music" (a film with no score can still
-score high here), and "narrative structure" is not "story" (delivery, not content).
+미끄러지기 쉬운 두 항목에 주의: "사운드 디자인"은 "음악"이 아니고(스코어가 없는 영화도 여기서
+높은 점수를 받을 수 있다), "서사 구조"는 "이야기"가 아니다(내용이 아니라 전달 방식).
 
-## Curation principles (worked out 2026-08-24)
+## 책을 위한 다섯 요소 프레임워크 (2026-08-25 결정, 아직 세션에서 쓰지 않음)
 
-- **One viewing focus per film.** Handing members three or more items means they track none and
-  fall back to following the plot. The goal is one moment of recognition, not a checklist drill.
-- **Give the place to look, not the thing to find.** Naming the answer in the pre-watch note turns
-  the discussion into a confirmation ritual — everyone arrives with the same sentence.
-- **Make the focus countable.** "Count how many times X happens" forces attention onto the screen;
-  "notice the composition" is functionally the same as "watch carefully."
-- **Hold the best question back** as a facilitator card for when discussion stalls. Given before
-  the screening it is homework; asked afterwards it is a discovery.
-- **Sequence the difficulty.** Composition and sound are observable from a still moment; editing
-  rhythm requires comparing durations, so it belongs later in a curriculum.
-- Tools should be **spent one per month**, not all at once, so later sessions still have material.
+영화 프레임워크는 1:1로 옮겨지지 않는다 — 멤버들은 독서력이 강하므로 부족한 것은 이해가 아니라
+구성을 알아차리는 것이다. 같은 저자 쪽 프레이밍, 문학 버전. **여섯이 아니라 다섯**이다:
+"문장 / 문체" 항목을 검토했다가 **의도적으로 뺐다** — 번역에서는 그것이 저자가 아니라 역자를
+측정하고, 동아리는 대부분 번역서를 읽는다.
 
-## Current program (2026-08)
+1. **목소리 & 시점** — 누가 서술하는가, 믿을 만한가, 왜 이 화자인가 (추론)
+2. **순서** — 무엇을 언제 말하고 무엇을 보류하는가 (추론)
+3. **요약 vs 장면** — 3년을 한 문장으로, 10분을 20페이지로 (추론)
+4. **디테일의 선택** — 무엇을 묘사하고 무엇을 빼는가 (추론)
+5. **대화 & 침묵** — 말해지지 않는 것 (추론)
 
-A two-month block covering two films, watched at home and discussed in one session:
+다섯 모두 번역을 견딘다. 책은 영화와 달리 가이드에 인용문을 인쇄할 수 있다는 장점도 있다 —
+"포커스를 셀 수 있게 만들라"의 책 버전이다.
 
-| Film | Viewing focus |
+## 저자의 입장 — 여섯 요소와는 별개의 축
+
+어떤 작품은 저자나 감독의 강하고 명시적인 세계관을 담고 있다 (사용자가 든 예:
+「안녕이라 그랬어」 — 신자유주의를 비판하는 단편집, *슬픔의 삼각형* — 루벤 외스틀룬드의 자본주의 비판).
+이것은 여섯 요소 중 하나가 **아니다**. 여섯은 기법의 축이고, 이것은 의도의 축이다.
+[[inos]]에서는 별도의 질문 슬롯으로 다룬다.
+
+## 큐레이션 원칙 (2026-08-24 정리)
+
+- **영화 한 편에 관람 포커스 하나.** 멤버에게 세 개 이상을 주면 아무것도 추적하지 못하고
+  줄거리 따라가기로 돌아간다. 목표는 체크리스트 훈련이 아니라 하나의 깨닫는 순간이다.
+- **찾아야 할 것이 아니라 볼 자리를 준다.** 사전 노트에서 답을 말해버리면 토론이 확인 의식이 된다 —
+  모두가 같은 문장을 들고 온다.
+- **포커스를 셀 수 있게 만든다.** "X가 몇 번 일어나는지 세어 보라"는 화면에 주의를 강제하지만,
+  "구도를 눈여겨보라"는 사실상 "잘 보라"와 같다.
+- **가장 좋은 질문은 아껴둔다.** 토론이 멈췄을 때 꺼낼 진행자 카드로. 상영 전에 주면 숙제지만,
+  끝난 뒤에 물으면 발견이 된다.
+- **난이도를 배열한다.** 구도와 사운드는 정지된 한 순간에서도 관찰 가능하지만, 편집 리듬은
+  길이를 비교해야 하므로 커리큘럼 뒤쪽에 놓는다.
+- 도구는 한꺼번에 쓰지 말고 **한 달에 하나씩 소진**해야 뒤 세션에도 재료가 남는다.
+
+## 현재 프로그램 (2026-08)
+
+집에서 관람하고 한 세션에서 토론하는, 영화 두 편짜리 2개월 블록:
+
+| 영화 | 관람 포커스 |
 | --- | --- |
-| *Lost in Translation* (2003, Sofia Coppola) | Composition — rule of thirds, negative space; count the shots holding both leads |
-| *The Substance* (2024, Coralie Fargeat) | Sound — which ordinary sounds are amplified; is the discomfort from story or from sound |
+| *사랑도 통역이 되나요*(2003, 소피아 코폴라) | 구도 — 삼분할, 여백. 두 주인공을 한 프레임에 담은 숏을 세어볼 것 |
+| *서브스턴스*(2024, 코랄리 파르자) | 사운드 — 어떤 일상적 소리가 증폭되는가. 불쾌함이 이야기에서 오는가 사운드에서 오는가 |
 
-The pairing is built on contrast (restraint vs excess) over a shared subject: aging and
-self-perception. Order is fixed — the quiet film first, or it registers as nothing.
-Editing rhythm is reserved for the following film.
+이 짝은 노화와 자기 인식이라는 공통 주제 위에서 대비(절제 vs 과잉)로 구성했다.
+순서는 고정이다 — 조용한 영화가 먼저여야 한다. 아니면 아무것도 남지 않는다.
+편집 리듬은 다음 영화를 위해 아껴둔다.
 
-## Connection
+## 연결
 
-- Designed INOS as **invite-only, friends-based** to avoid the risks and churn of meeting strangers online
+- 온라인에서 낯선 사람을 만나는 리스크와 이탈을 피하기 위해 INOS를 **초대 기반, 친구 중심**으로 설계했다
 
-## Changelog
+## 변경 이력
 
-- 2026-08-24: recorded the six-element viewing framework, the curation principles, and the
-  Lost in Translation / The Substance two-film program
-- 2026-08-03: replaced inferred club details with confirmed facts (4-person monthly, film curator, Coen curriculum)
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-25: 책 프레임워크를 **다섯** 요소로 확정 — 문장/문체 항목은 번역에서 신뢰할 수 없어 제외
+- 2026-08-25: 책을 위한 여섯 요소 프레임워크 초안과 저자 입장 축 추가
+- 2026-08-24: 여섯 요소 관람 프레임워크, 큐레이션 원칙, 사랑도 통역이 되나요 / 서브스턴스
+  2편 프로그램 기록
+- 2026-08-03: 추론이던 동아리 정보를 확정 사실로 교체 (4인 월간, 영화 큐레이터, 코엔 커리큘럼)
+- 2026-08-03: 영어로 전환

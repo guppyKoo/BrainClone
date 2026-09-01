@@ -1,66 +1,65 @@
 ---
-title: Bulk Mail — Electron desktop app
+title: Bulk Mail — Electron 데스크톱 앱
 area: career
 tags: [portfolio, Electron, React, side-project]
 created: 2026-08-03
-updated: 2026-08-07
+updated: 2026-09-01
 status: draft
 ---
 
-# Bulk Mail (Post Office) — Electron desktop app
+# Bulk Mail (Post Office) — Electron 데스크톱 앱
 
-macOS bulk-mail desktop app. Personal project, solo-built.
-Repos: github.com/guppyKoo (original: Bulk-email → migration: bulk-mail-electron)
+macOS 대량 메일 데스크톱 앱. 개인 프로젝트, 혼자 만들었다.
+저장소: github.com/guppyKoo (원본: Bulk-email → 마이그레이션: bulk-mail-electron)
 
-## Problem & story
+## 문제 & 서사
 
-- First built on Glaze (low-code platform), which **couldn't produce a DMG** → decided in 2026-07 to rebuild on vanilla Electron
-- Migrated in 3 phases from an electron-vite + electron-builder skeleton: backend → UI components → renderer
-- **Core goal achieved**: arm64/x64 DMG builds + verified packaged-app run
-- v1.1.0 since: Linear/Notion-style UI redesign, recipient tags, ad-hoc codesigning for the Gatekeeper issue
+- 처음에는 Glaze(로우코드 플랫폼)로 만들었는데 **DMG를 만들 수 없었다** → 2026-07에 순수 Electron으로 재구축 결정
+- electron-vite + electron-builder 골격에서 3단계로 마이그레이션: 백엔드 → UI 컴포넌트 → 렌더러
+- **핵심 목표 달성**: arm64/x64 DMG 빌드 + 패키징 앱 실행 확인
+- 이후 v1.1.0: Linear/Notion 스타일 UI 재디자인, 수신자 태그, Gatekeeper 문제를 위한 ad-hoc 코드사인
 
-## Tech
+## 기술
 
-- **Stack**: Electron 34, React 19, Tailwind v4, TanStack Router/Query, Radix, nodemailer, OpenAI Images API
-- **Architecture**: main process split into 3 services (settings/mail/image) + IPC handlers + multi-window manager (broadcast)
-- **UI**: ~30 hand-built Radix + CVA components, design tokens (`rgb(from ...)` derivation) + dark mode
-- **Features**: rich text editor, recipient management (tags/sidebar), AI image generation, send-result report, settings window (⌘,)
+- **스택**: Electron 34, React 19, Tailwind v4, TanStack Router/Query, Radix, nodemailer, OpenAI Images API
+- **아키텍처**: 메인 프로세스를 3개 서비스(settings/mail/image)로 분리 + IPC 핸들러 + 멀티 윈도우 매니저(브로드캐스트)
+- **UI**: 직접 만든 Radix + CVA 컴포넌트 약 30개, 디자인 토큰(`rgb(from ...)` 파생) + 다크 모드
+- **기능**: 리치 텍스트 에디터, 수신자 관리(태그/사이드바), AI 이미지 생성, 발송 결과 리포트, 설정 윈도우(⌘,)
 
-## Actual usage (dogfooding)
+## 실사용 (도그푸딩)
 
-- Used continuously since **2026-04** to send a personal daily/weekly letter to friends — the app's real proving ground, not a demo.
-- Current list: **7 recipients**, including the user's own work address (self-check copy).
-- Cadence: irregular but roughly 2–4 times a week, sent on weekday afternoons (KST).
-- Started as a one-to-one letter (addressed to a single person by name) and grew into a group send.
-- Early sends carried a fixed sign-off asking recipients not to block the address; later ones dropped it.
-- Recipients reply to the letters, so each send turns into individual threads — the letter functions as a conversation starter.
-- **Known incident (2026-07-14)**: a mail already sent on 2026-07-01 went out again unprompted, and the user
-  sent a follow-up saying they had not triggered it. Suggests a re-send/scheduling bug worth reproducing.
-- **Known incident (2026-08-10, 13:35 KST)**: another unprompted send. Evidence points to a **legacy script, not the app** —
-  it went to a single address (the user's own work account) instead of the 7-person list, and its body carries the
-  April-era sign-off template the app stopped using in May. The user suspects a leftover macOS Automator job.
-  Note the two incidents differ in shape (7/14 re-sent a real campaign to all 7; 8/10 sent a fixed debug template to one),
-  so they may be two separate causes.
+- **2026-04부터** 친구들에게 개인 데일리/위클리 레터를 보내는 데 계속 쓰고 있다 — 데모가 아니라 이 앱의 진짜 시험대.
+- 현재 목록: **수신자 7명**, 본인의 회사 주소 포함(자가 확인용 사본).
+- 주기: 불규칙하지만 대략 주 2~4회, 평일 오후(KST)에 발송.
+- 한 사람 이름을 부르는 일대일 편지로 시작해서 단체 발송으로 커졌다.
+- 초기 발송에는 주소를 차단하지 말아 달라는 고정 맺음말이 붙어 있었고, 나중에는 뺐다.
+- 수신자들이 편지에 답장하기 때문에 발송 한 번이 개별 스레드들로 이어진다 — 편지가 대화의 물꼬 역할을 한다.
+- **알려진 사고 (2026-07-14)**: 2026-07-01에 이미 보낸 메일이 요청 없이 다시 나갔고, 사용자가 자기가 보낸 게
+  아니라는 후속 메일을 보냈다. 재현해볼 가치가 있는 재발송/스케줄링 버그로 보인다.
+- **알려진 사고 (2026-08-10, 13:35 KST)**: 또 한 번의 무단 발송. 증거는 **앱이 아니라 레거시 스크립트**를 가리킨다 —
+  7명 목록이 아니라 단일 주소(사용자 본인의 회사 계정)로 갔고, 본문에는 앱이 5월에 쓰지 않게 된
+  4월경 맺음말 템플릿이 들어 있었다. 사용자는 남아 있는 macOS Automator 작업을 의심한다.
+  두 사고는 모양이 다르다는 점에 유의(7/14는 실제 캠페인을 7명 전원에게 재발송, 8/10은 고정 디버그 템플릿을 한 명에게).
+  원인이 둘일 수 있다.
 
-## Direction — public subscription letter (decided 2026-08-07)
+## 방향 — 공개 구독 레터 (2026-08-07 결정)
 
-- Turning the personal letter into an **opt-in newsletter**: anyone can subscribe, and the letter lands in their inbox.
-- Concept: a deliberately useless, funny letter arriving in the early-afternoon slump at work or school.
-- **Subscribe and unsubscribe both handled by Instagram DM**, processed manually — no signup form, no database.
-  MVP-first, on the principle that shipping beats polishing.
-- Deferred until volume demands it: automated subscribe/unsubscribe, dedicated sending domain with SPF/DKIM/DMARC,
-  an SMTP relay instead of personal Gmail, and a threshold for when to switch.
-- Open item: put unsubscribe instructions in the mail footer before taking public signups, and settle the
-  unprompted-send incidents first.
+- 개인 편지를 **옵트인 뉴스레터**로 전환 중: 누구나 구독할 수 있고, 편지가 받은편지함에 도착한다.
+- 콘셉트: 회사나 학교에서 이른 오후에 나른할 때 도착하는, 일부러 쓸모없고 웃긴 편지.
+- **구독과 해지 모두 인스타그램 DM으로** 받아 수동 처리한다 — 가입 폼도, 데이터베이스도 없다.
+  다듬는 것보다 출시가 낫다는 원칙에 따른 MVP 우선.
+- 물량이 요구할 때까지 보류: 자동 구독/해지, SPF/DKIM/DMARC를 갖춘 전용 발송 도메인,
+  개인 Gmail 대신 SMTP 릴레이, 그리고 언제 전환할지의 임계값.
+- 미해결 항목: 공개 신청을 받기 전에 메일 푸터에 수신 거부 안내를 넣을 것, 그리고 무단 발송 사고를 먼저 정리할 것.
 
-## Talking points
+## 어필 포인트
 
-- When the platform blocked the goal, swapped the entire stack and **finished the full migration + release solo in a short window** (started 2026-07-13)
-- Incremental migration strategy passing typecheck/build/dev at every phase
+- 플랫폼이 목표를 막자 스택 전체를 갈아엎고 **짧은 기간 안에 마이그레이션 + 릴리스를 혼자 끝냈다** (2026-07-13 시작)
+- 매 단계에서 typecheck/build/dev를 통과시키는 점진적 마이그레이션 전략
 
-## Changelog
+## 변경 이력
 
-- 2026-08-10: logged the 2026-08-10 unprompted send (legacy-script evidence); added the public-subscription direction
-
-- 2026-08-07: added real-usage section (7-recipient personal letter since 2026-04) and the 2026-07-14 duplicate-send incident
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-10: 2026-08-10 무단 발송 기록(레거시 스크립트 증거), 공개 구독 방향 추가
+- 2026-08-07: 실사용 섹션(2026-04부터 7명 개인 편지)과 2026-07-14 중복 발송 사고 추가
+- 2026-08-03: 영어로 전환

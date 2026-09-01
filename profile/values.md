@@ -1,41 +1,42 @@
 ---
-title: Values & decision principles
+title: 가치관 & 의사결정 원칙
 area: profile
 tags: [values, priorities, decisions]
 created: 2026-08-03
-updated: 2026-08-07
+updated: 2026-09-01
 status: draft
 ---
 
-# Values & decision principles
+# 가치관 & 의사결정 원칙
 
-> Partly inferred from work history; the "Life philosophy" section below is stated directly by the user.
+> 일부는 작업 이력에서 추론한 것이다. 아래 "삶의 철학" 섹션은 사용자가 직접 말한 내용이다.
 
-## Observed values (inferred)
+## 관찰된 가치관 (추론)
 
-- **Automation > repetitive labor**: recurring work gets systematized into rules/hooks/agents; human time goes to judgment
-- **Completeness**: shipping (DMG, release) matters more than half-built work
-- **Root-cause first**: fixes causes rather than patching symptoms — even patching library source
-- **Tech is a means**: builds tools for life and community (INOS for the humanities club, Bulk Mail)
+- **자동화 > 반복 노동**: 반복되는 일은 규칙/hook/에이전트로 체계화하고, 사람의 시간은 판단에 쓴다
+- **완결성**: 절반쯤 만들어둔 것보다 출시(DMG, 릴리스)가 중요하다
+- **근본 원인 우선**: 증상에 반창고를 붙이는 대신 원인을 고친다 — 라이브러리 소스를 패치해서라도
+- **기술은 수단**: 삶과 커뮤니티를 위한 도구를 만든다 (인문학 동아리를 위한 INOS, Bulk Mail)
 
-## Life & work priorities
+## 삶과 일의 우선순위
 
-## Decision principles
+## 의사결정 원칙
 
-- (inferred) Tool choice: start on proven foundations; build your own when you hit their limits
+- (추론) 도구 선택: 검증된 토대 위에서 시작하고, 그 한계에 부딪히면 직접 만든다
 
-## Life philosophy
+## 삶의 철학
 
-### No comparison with others — only with yesterday's self (stated)
+### 남과 비교하지 않는다 — 어제의 나와만 비교한다 (본인 진술)
 
-- Core principle: **the only valid benchmark is his own past self**. Comparing himself to other
-  people used to weigh on him, so he deliberately stopped and now measures progress only as
-  yesterday-me vs today-me.
-- Comparison still surfaces involuntarily sometimes (e.g. a friend's employer vs his own).
-  His handling move: **congratulate the other person and voice the envy openly**, framing it as
-  praise. This vents his own feeling and raises the friend at the same time.
+- 핵심 원칙: **유효한 기준점은 오직 과거의 자신뿐**이다. 남과 자신을 비교하는 것이
+  마음을 무겁게 했기 때문에 의식적으로 그만뒀고, 지금은 어제의 나와 오늘의 나만으로
+  진척을 측정한다.
+- 그래도 비교가 저절로 떠오를 때가 있다 (예: 친구의 회사와 자기 회사).
+  그때의 대처법은 **상대를 축하하고 부러움을 솔직히 말로 꺼내는 것**이다. 칭찬의 형태로.
+  자기 감정을 해소하는 동시에 친구를 띄워주는 방법이다.
 
-## Changelog
+## 변경 이력
 
-- 2026-08-07: added stated life philosophy — no comparison with others, self-referential progress; open-envy-as-praise coping move
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-07: 본인이 진술한 삶의 철학 추가 — 남과 비교하지 않고 스스로를 기준 삼는 태도, 부러움을 칭찬으로 드러내는 대처법
+- 2026-08-03: 영어로 전환

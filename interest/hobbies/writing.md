@@ -1,211 +1,211 @@
 ---
-title: Writing — velog blog
+title: 글쓰기 — velog 블로그
 area: interest
 tags: [writing, blog, velog, essay, travel]
 created: 2026-08-07
-updated: 2026-08-14
+updated: 2026-09-01
 status: draft
 ---
 
-# Writing — velog blog
+# 글쓰기 — velog 블로그
 
-Runs a personal blog on velog. Two distinct modes: technical series and travel/daily essays.
+velog에서 개인 블로그를 운영한다. 뚜렷하게 다른 두 모드가 있다: 기술 시리즈와 여행/일상 에세이.
 
-## Blog basics
+## 블로그 기본 정보
 
 - URL: https://velog.io/@yunchan312
-- Pen name: **Kychann**
-- Tagline: "컴포넌트는 재사용, 감성은 1회용"
-- Also linked from the profile: GitHub `yunchan312`, a Notion page, and a personal email
+- 필명: **Kychann**
+- 소개 문구: "컴포넌트는 재사용, 감성은 1회용"
+- 프로필에 함께 걸린 링크: GitHub `yunchan312`, Notion 페이지, 개인 이메일
 
-## Series
+## 시리즈
 
-### 클라우드 위를 걷는 기분은 뭐랄까 (7 posts, 2025-04)
+### 클라우드 위를 걷는 기분은 뭐랄까 (7편, 2025-04)
 
-Kubernetes fundamentals, then hands-on deployment of a Spring Boot backend onto the
-Hankuk University of Foreign Studies cluster (Ingress NGINX, cert-manager, self-signed certs,
-and why Let's Encrypt was unusable there). Related dev context: [[interest|developer/interest.md]].
+Kubernetes 기초부터 시작해, Spring Boot 백엔드를 한국외국어대학교 클러스터에 직접 배포하는 실습
+(Ingress NGINX, cert-manager, 자체 서명 인증서, 그리고 왜 거기서 Let's Encrypt를 쓸 수 없었는지).
+관련 개발 맥락: [[interest|developer/interest.md]].
 
-### 어쩌면 여행을 위한 일상을 보낸 걸지도 몰라 (6 posts, 2025-07 → 2026-08)
+### 어쩌면 여행을 위한 일상을 보낸 걸지도 몰라 (6편, 2025-07 → 2026-08)
 
-Travel essays with friends from high school. Sokcho (prequel) → Boryeong (roulette-picked
-destination) → Chuncheon/Hwacheon Sancheoneo Festival (Chapter 1 & 2) → the Hongcheon piece,
-published as 「뇌가 뜨거워서 그랬어: 첫날」 (2026-08-15) and 「뇌가 뜨거워서 그랬어: 마지막 날」 (2026-08-17).
+고등학교 친구들과의 여행 에세이. 속초(프리퀄) → 보령(룰렛으로 정한 목적지) →
+춘천/화천 산천어축제(1장 & 2장) → 홍천 편, 「뇌가 뜨거워서 그랬어: 첫날」(2026-08-15)과
+「뇌가 뜨거워서 그랬어: 마지막 날」(2026-08-17)로 발행.
 
-- Chapters 1 and 2 were **written as a single piece** and split only because of length.
-- Recurring bit: a running gag repeating one friend's height every time he is mentioned.
+- 1장과 2장은 **한 편으로 쓴 글**이고 길이 때문에만 나눴다.
+- 반복 개그: 한 친구가 언급될 때마다 그의 키를 반복하는 러닝 개그.
 
-## Style — self-assessed strengths
+## 문체 — 스스로 평가한 강점
 
-- No formal writing training; entirely self-taught through practice
-- **Core intent: writing as if transcribing a film.** Deliberate camera-like construction — pans that end on a
-  reveal (Deungseon Falls), montage with voice-over (the grocery-run operation), a repeated "헙!" acting as a
-  cut/sound cue, and a voice-over ending (the closing "winter" passage). This is the through-line of the work
-  and the angle to lead with in any writer application.
-  Stated in his own words (2026-08-14): *"글을 쓸 줄 모르니까 상황을 머릿속에서 영화의 한 장면처럼
-  각색하고 그것을 그대로 글로 풀어낸다."* Framed as a workaround, but it is the method.
-  Corollary the user already knows but broke: film cannot show taste — convey it through a reaction shot
-  (the Kanghodong-face line) rather than stacked adjectives.
+- 정식 글쓰기 훈련은 받지 않았고 전부 연습으로 독학했다
+- **핵심 의도: 영화를 받아 적듯이 쓰기.** 의도적으로 카메라처럼 구성한다 — 리빌로 끝나는 팬(등선폭포),
+  보이스오버가 깔린 몽타주(장보기 작전), 컷/사운드 큐 역할을 하는 반복되는 "헙!", 보이스오버 엔딩
+  (마지막 "겨울" 단락). 이것이 작업 전체를 관통하는 축이고, 작가 지원에서 앞세울 각도다.
+  본인의 말(2026-08-14): *"글을 쓸 줄 모르니까 상황을 머릿속에서 영화의 한 장면처럼
+  각색하고 그것을 그대로 글로 풀어낸다."* 우회로처럼 말하지만 이게 그의 방법론이다.
+  본인도 알면서 어긴 따름정리: 영화는 맛을 보여줄 수 없다 — 형용사를 쌓지 말고 리액션 숏
+  (강호동 얼굴 문장)으로 전달할 것.
 
-- Turning trivial events (grocery runs, folding boxes, a cup ramen) into deliberately epic narrative
-- Scene construction and dialogue rhythm; running gags used as structural devices
-- Switching tone at the end — dropping the comedy to land on something sincere
-  (e.g. the Deungseon Falls passage, and the closing "winter" passage listing childhood memories)
+- 사소한 사건(장보기, 상자 접기, 컵라면 하나)을 의도적으로 서사시처럼 만든다
+- 장면 구성과 대사 리듬. 러닝 개그를 구조적 장치로 쓴다
+- 마지막에 톤을 전환한다 — 코미디를 내려놓고 진심 하나로 착지한다
+  (예: 등선폭포 단락, 어린 시절 기억을 나열하는 마지막 "겨울" 단락)
 
-## Style — known weaknesses (agreed in conversation)
+## 문체 — 인지된 약점 (대화에서 합의)
 
-- Encyclopedic asides (wiki-style trivia sections) that break the reading flow
-- Heavy inline linking (many Namuwiki links per paragraph)
-- Food descriptions fall into repeated stock phrasing across posts
-- Running gags run past their limit; overall difficulty **cutting** material rather than adding
-- Occasional typos and broken sentences
-- **Sentence-level control is the real gap** (measured on the Ocean World draft, 2026-08-14):
-  `~느낌` 12+ times, `~하기 시작했다` 6 times, seven sentences over 60 chars, one opening sentence
-  packing six actions into one clause. The scenes are strong; the sentences leak them.
-- **Over-helpful foreshadowing**: the narrator names the pattern out loud (`'이 느낌이 아침부터 뭐지?'`),
-  which removes the reader's discovery. Misattribution by the narrator (`'내일이 월요일이라 그런가'`)
-  does the opposite and works — keep those, cut the pattern-naming.
-- **Motif wording drifts**: the same recurring sensation was phrased four different ways, so it never
-  registers as one motif. Contrast with `수범이는 카메라를 멈추지 않았다`, which lands precisely because
-  it is repeated verbatim. He can already do this; it just was not applied consistently.
+- 백과사전식 곁가지(위키 스타일 잡학 섹션)가 읽는 흐름을 끊는다
+- 인라인 링크가 과하다 (한 문단에 나무위키 링크가 여러 개)
+- 음식 묘사가 글마다 같은 상투 표현으로 떨어진다
+- 러닝 개그가 한계를 넘어간다. 전반적으로 추가보다 **덜어내는 것**이 어렵다
+- 가끔 오타와 비문
+- **진짜 격차는 문장 단위 통제력이다** (오션월드 초고에서 측정, 2026-08-14):
+  `~느낌` 12회 이상, `~하기 시작했다` 6회, 60자 넘는 문장 일곱 개, 한 절에 여섯 동작을 밀어 넣은
+  첫 문장 하나. 장면은 강한데 문장이 그걸 새게 한다.
+- **과잉 친절한 복선**: 화자가 패턴을 소리 내어 짚어버린다(`'이 느낌이 아침부터 뭐지?'`).
+  독자의 발견을 없앤다. 화자의 오귀속(`'내일이 월요일이라 그런가'`)은 반대로 작동하고 잘 먹힌다 —
+  그건 남기고, 패턴을 짚는 문장을 잘라낼 것.
+- **모티프 표현이 흔들린다**: 같은 반복 감각이 네 가지 다른 표현으로 쓰여서 하나의 모티프로 각인되지
+  않는다. `수범이는 카메라를 멈추지 않았다`와 대비된다. 이건 토씨까지 똑같이 반복되기 때문에 정확히 꽂힌다.
+  이미 할 줄 아는 것이고, 일관되게 적용하지 않았을 뿐이다.
 
-## Hongcheon piece — published 2026-08 as 「뇌가 뜨거워서 그랬어」 (첫날 / 마지막 날)
+## 홍천 편 — 2026-08 「뇌가 뜨거워서 그랬어」(첫날 / 마지막 날)로 발행
 
-- **Published on velog, not Brunch** — the 2026-08-07 platform-split plan (velog = tech only) is not
-  abandoned, just deferred: he says he will move the essays over later (stated 2026-08-18).
-  Earlier working title: "우리 너무 똑똑하게 살았어".
-- Trip: Hongcheon with four friends — valley + barbecue day one,
-  Ocean World day two. **Part 2 (Ocean World → jjimjilbang → drive home) drafted 2026-08-14.**
-- Opens from the user's developer identity: overheating a brain like a computer, needing a reboot — the trip as the reboot.
-- **Structural upgrade over the previous series**: each friend is assigned a mock "officer" role (lookout, security, music,
-  everything-else, transport), which turns the old height running gag into a setup that actually pays off in the hornet-fight
-  climax. Setup-and-payoff rather than plain repetition. Part 2 extends the same device into the wave-pool rescue sequence
-  (transport / security / record / assembly-point / sound-technique roles).
-- **Part 2's motif — the floating-then-sinking sensation.** Stated design intent: the unconscious refusing to return
-  to reality. It starts the morning of the last day, because the body knows before the mind does; it is entirely
-  **absent** during the Ocean World fantasy sequence; it returns while preparing to leave, with the sinking half
-  growing heavier; the final line has no floating left, only sinking.
-- **Target tone for part 2**: funny on the surface, but leaving a serious afterglow — the reader should reread it
-  differently once finished.
-- Strongest passages so far: the abandoned Homeplus mall, the restaurant owner's dialogue, the Blue Marble/hornet scene
-  where an earlier ambient sound turns out to have been the hornet all along, and in part 2 the POV cut to a friend's
-  perspective and the gag where a rescue attempt sends the target into a wall instead.
+- **브런치가 아니라 velog에 발행했다** — 2026-08-07의 플랫폼 분리 계획(velog = 기술 전용)을 폐기한 건
+  아니고 미룬 것이다. 에세이는 나중에 옮기겠다고 했다(2026-08-18 진술).
+  이전 가제: "우리 너무 똑똑하게 살았어".
+- 여행: 친구 넷과 홍천 — 첫날은 계곡 + 바비큐, 둘째 날은 오션월드.
+  **2부(오션월드 → 찜질방 → 귀가 드라이브)는 2026-08-14에 초고 작성.**
+- 개발자로서의 정체성에서 시작한다: 컴퓨터처럼 과열된 뇌, 리부팅이 필요하다 — 여행이 그 리부팅.
+- **이전 시리즈보다 구조적으로 업그레이드**: 친구마다 가짜 "담당관" 역할을 부여했고(망보기, 경호, 음악,
+  기타 전부, 수송), 그 덕에 예전의 키 러닝 개그가 말벌 전투 클라이맥스에서 실제로 회수되는 설정이 됐다.
+  단순 반복이 아니라 설정-회수. 2부는 같은 장치를 파도풀 구조 시퀀스로 확장한다
+  (수송 / 경호 / 기록 / 집결지 / 음향 기술 역할).
+- **2부의 모티프 — 붕 떴다가 가라앉는 감각.** 진술한 설계 의도: 무의식이 현실로 돌아가기를 거부하는 것.
+  마지막 날 아침에 시작한다. 몸이 머리보다 먼저 알기 때문이다. 오션월드 판타지 시퀀스 동안에는
+  완전히 **부재**한다. 떠날 준비를 하면서 돌아오는데, 가라앉는 쪽이 점점 무거워진다.
+  마지막 문장에는 뜨는 것이 남아 있지 않고 가라앉기만 한다.
+- **2부의 목표 톤**: 표면은 웃기지만 진지한 여운을 남길 것 — 다 읽고 나면 독자가 다시 읽을 때
+  다르게 읽혀야 한다.
+- 지금까지 가장 강한 대목: 버려진 홈플러스 몰, 식당 사장님 대사, 앞서 깔아둔 환경음이 알고 보니
+  말벌이었다는 부루마불/말벌 장면, 그리고 2부에서 친구 시점으로 넘어가는 POV 컷과 구조하려던 시도가
+  대상을 오히려 벽으로 보내버리는 개그.
 
-### Author's stated intent (2026-08-18) — corrections to the critique above
+### 저자가 진술한 의도 (2026-08-18) — 위 비평에 대한 교정
 
-He pushed back on four of the points, and most of the pushback holds:
+네 가지 지적에 반박했고, 반박 대부분이 타당하다:
 
-- **Motif drift is deliberate escalation**, not carelessness: 늘어지다 → 가라앉다 → 떨어지다, with `붕 뜨는`
-  held constant as the anchor. Reclassify item (2) as designed. Remaining flaw: the ladder is not monotone —
-  the final line reverts to `가라앉기만`, and `가라앉다` is used both mid-ladder (반신욕) and as the terminal
-  state, so the last rung does not read as the strongest.
-- **The near-accident beat is the point**: distraction by the sensation → almost hitting the car behind →
-  shows refusal to go home. It works, and the 말벌 flashback is the right distractor. Only the narrator's
-  pattern-naming line (`아니 아침부터 이 느낌이 뭐지?`) is separable and still worth cutting.
-- **Ocean World is deliberately thin**: one exaggerated event instead of a list of rides. Agreed as a
-  principle, and the 온수풀 바람 line already gives a physical anchor. Earlier criticism overweighted this.
-- **The character intros are a heist-movie convention**, deliberate. Valid — and all four assigned traits
-  do fire later (주짓수, 키, 락, 사진). What does not fire is the surrounding biography
-  (핵융합 연구, 영상 편집 외주, 방송부, 학원 시절): trim that, keep trait + role.
-- He wants the reader to *notice* `느낌`, via an **absence-and-return structure**: plant it low-key at the
-  start of part 2 (bed, car), remove it entirely through the Ocean World fantasy, bring it back at 반신욕 —
-  so the reader goes "별거 아니네" → forgets → recognises it and tenses up. The device is sound and it does
-  work in part 2 (the whole ladder lives inside part 2; part 1 only carries the linked `뇌가 뜨거운 느낌`).
-  Two residual notes: absence needs a **positive trace** (the wave pool is literally full of floating — one
-  benign `붕 뜨다` with no sinking half would make the removal felt). **Correction:** the 찜질방
-  `뇌의 시냕스가 끕끕해지는 느낌` line is NOT filler — stated intent (2026-08-18) is that recalling the
-  trip *is* the rise half of that beat, and reality then yanks him down (`확- 떨어지는`). Conceptually the
-  strongest beat in the piece: memory as the float, the everyday as the drop, which retroactively makes the
-  final line mean "no memories left to lift me". Under-executed only at word level — `끕끕해지다` is an
-  adhesive/settling image, not a lift, so the reader cannot read it as the ascent. Give that beat the
-  anchor word (`붕 뜨다`) instead of deleting it.
+- **모티프 흔들림은 의도된 상승**이지 부주의가 아니다: 늘어지다 → 가라앉다 → 떨어지다, 그리고 `붕 뜨는`을
+  앵커로 고정. (2)번 항목은 설계된 것으로 재분류. 남은 결함: 사다리가 단조롭게 상승하지 않는다 —
+  마지막 문장이 `가라앉기만`으로 되돌아가고, `가라앉다`가 사다리 중간(반신욕)과 종착 상태 양쪽에
+  쓰여서 마지막 계단이 가장 강하게 읽히지 않는다.
+- **접촉 사고 직전 비트가 핵심이다**: 감각에 정신이 팔림 → 뒤차를 칠 뻔함 → 집에 가기 싫다는 거부를
+  보여준다. 잘 작동하고, 말벌 플래시백이 알맞은 주의 분산 장치다. 화자가 패턴을 짚는 문장
+  (`아니 아침부터 이 느낌이 뭐지?`)만 떼어낼 수 있고 여전히 자를 가치가 있다.
+- **오션월드는 일부러 얇다**: 놀이기구 나열 대신 과장된 사건 하나. 원칙적으로 동의하고,
+  온수풀 바람 문장이 이미 물리적 앵커를 준다. 앞선 비평이 이 지점을 과대평가했다.
+- **인물 소개는 하이스트 영화의 관습**이고 의도적이다. 타당하다 — 부여한 네 특성이 전부 나중에
+  발화한다(주짓수, 키, 락, 사진). 발화하지 않는 것은 주변 신상이다
+  (핵융합 연구, 영상 편집 외주, 방송부, 학원 시절). 그건 덜어내고 특성 + 역할만 남길 것.
+- 그는 독자가 `느낌`을 *알아차리기를* 원하고, 그 수단이 **부재-복귀 구조**다: 2부 초반에 낮은 톤으로
+  심어두고(침대, 차), 오션월드 판타지 구간에서 완전히 없애고, 반신욕에서 되돌린다 —
+  독자가 "별거 아니네" → 잊음 → 알아보고 긴장하게. 장치는 타당하고 2부에서 실제로 작동한다
+  (사다리 전체가 2부 안에 있다. 1부는 링크된 `뇌가 뜨거운 느낌`만 지고 간다).
+  남는 메모 두 개: 부재에는 **긍정적 흔적**이 필요하다 (파도풀은 말 그대로 부유로 가득하다 —
+  가라앉는 절반이 없는 온건한 `붕 뜨다` 하나면 제거가 체감된다). **교정:** 찜질방의
+  `뇌의 시냅스가 끕끕해지는 느낌` 문장은 군더더기가 **아니다** — 진술된 의도(2026-08-18)는
+  여행을 회상하는 것 자체가 그 비트의 상승 절반이고, 그다음 현실이 그를 아래로 확 끌어내린다는
+  것이다(`확- 떨어지는`). 개념적으로 이 글에서 가장 강한 비트다: 기억이 부력이고 일상이 낙하이며,
+  그 결과 마지막 문장이 소급적으로 "나를 띄워줄 기억이 더는 없다"는 뜻이 된다. 미달인 곳은 단어
+  수준뿐이다 — `끕끕해지다`는 들러붙고 가라앉는 이미지지 부양이 아니라서 독자가 상승으로 읽을 수 없다.
+  그 비트를 지우지 말고 앵커 단어(`붕 뜨다`)를 줄 것.
 
-### Revision plan for part 2 (agreed 2026-08-14) — what actually landed in the published version
+### 2부 수정 계획 (2026-08-14 합의) — 발행본에 실제로 반영된 것
 
-Read of the published text, 2026-08-18: **2 of 5 applied.**
+발행된 텍스트 검토, 2026-08-18: **5개 중 2개 반영.**
 
-- ❌ (1) "last day" planting — not done. Part 2 still opens straight into the sensation with no signal.
-- △ (2) verbatim motif — partially. The `확-` marker is now consistent, but the second half still drifts
-  (`늘어지는` / `가라앉는` / `떨어지는`). Final line (`뜨는 느낌도 없이 확- 가라앉기만`) lands anyway.
-- ❌ (3) pattern-naming line — survived verbatim (`아니 아침부터 이 느낌이 뭐지?`). The misattribution line was correctly kept.
-- ❌ (4) literal buoyancy during Ocean World — not written; the motif is simply absent.
-- ✅ (5) officer roles dissolve back into plain names after the fantasy ends, with no commentary. The
-  camera gag (`수범이는 카메라를 멈추지 않았다`) is repeated verbatim 4× and works — but is never negated.
+- ❌ (1) "마지막 날" 심어두기 — 안 됐다. 2부는 여전히 아무 신호 없이 곧장 감각으로 시작한다.
+- △ (2) 토씨 그대로의 모티프 — 부분 반영. `확-` 마커는 이제 일관되지만 뒷부분은 여전히 흔들린다
+  (`늘어지는` / `가라앉는` / `떨어지는`). 그래도 마지막 문장(`뜨는 느낌도 없이 확- 가라앉기만`)은 착지한다.
+- ❌ (3) 패턴을 짚는 문장 — 그대로 살아남았다(`아니 아침부터 이 느낌이 뭐지?`). 오귀속 문장은 옳게 남겼다.
+- ❌ (4) 오션월드 구간의 문자 그대로의 부력 — 쓰지 않았다. 모티프가 그냥 부재한다.
+- ✅ (5) 판타지가 끝난 뒤 담당관 역할이 아무 설명 없이 평범한 이름으로 녹아 사라진다.
+  카메라 개그(`수범이는 카메라를 멈추지 않았다`)는 토씨 그대로 4회 반복되고 잘 작동한다 —
+  다만 한 번도 부정되지 않는다.
 
-**Unplanned payoff that works better than the plan:** the ending reveals a literal fever (mother touching
-his forehead), so "뇌가 뜨거워서" turns out to be physically true and the float/sink motif retroactively
-reads as chills. Risk: it tilts the motif toward pure illness; the emotional reading is only seeded in
-part 1's closing (fear of losing what you have) and never echoed in part 2.
+**계획에 없었지만 계획보다 잘 작동한 회수:** 엔딩에서 문자 그대로의 발열이 드러나면서(어머니가 이마를
+짚는다) "뇌가 뜨거워서"가 물리적으로 사실이 되고, 뜨고 가라앉는 모티프가 소급적으로 오한으로 읽힌다.
+리스크: 모티프가 순전한 질병 쪽으로 기운다. 정서적 독해는 1부 마지막(가진 것을 잃는 두려움)에만
+심어져 있고 2부에서 한 번도 메아리치지 않는다.
 
-**Habits actually fixed in this piece:** no Namuwiki link dumps at all; the dinner course is compressed to
-a one-line list instead of a dish-by-dish essay; the height gag is now a dynamic state gauge
-(190→210→180→198→205) used functionally in the hornet fight and the wave-pool rescue.
+**이 글에서 실제로 고쳐진 습관:** 나무위키 링크 덤프가 전혀 없다. 저녁 코스는 요리별 에세이가 아니라
+한 줄 나열로 압축됐다. 키 개그가 이제 동적인 상태 게이지가 되어(190→210→180→198→205) 말벌 전투와
+파도풀 구조에서 기능적으로 쓰인다.
 
-**Still open:** `느낌` is both the filler word and the motif carrier, so the motif hides in noise; part 1
-front-loads a ~500-word character-sheet block for the four friends (telling); Ocean World itself is
-skipped in one summary sentence, so the destination is never shown; part 2 is much shorter than part 1;
-the "그 동네" scene (forgetting the route, the 7-years line, the study room) is the best quiet moment in
-part 1 and is never paid off.
+**여전히 미해결:** `느낌`이 군더더기 단어이자 모티프 운반체라서 모티프가 잡음 속에 숨는다.
+1부는 친구 네 명의 약 500단어짜리 인물 소개 블록을 앞에 몰아넣는다(telling). 오션월드 자체는 요약
+한 문장으로 건너뛰어서 목적지가 한 번도 보여지지 않는다. 2부가 1부보다 훨씬 짧다.
+"그 동네" 장면(길을 잊은 것, 7년이라는 문장, 독서실)은 1부에서 가장 좋은 조용한 순간인데 회수되지 않는다.
 
-1. Plant "today is the last day" in the morning scene — luggage loaded into the car, no emotion attached.
-   Currently the reader gets no signal until ~80% through, so the motif's first appearance reads as fatigue.
-2. Fix one verbatim phrasing for the motif and repeat it across all five appearances, so its final
-   half-disappearance is visible.
-3. Delete the narrator's pattern-naming line; keep the misattribution line.
-4. Fill the motif's absence during Ocean World with **literal buoyancy** (feet leaving the pool floor)
-   rather than stating that the sensation was gone.
-5. For the afterglow: one negated instance of the camera running gag when the fantasy ends, and let the
-   officer roles dissolve back into plain names without commentary. No explanatory closing paragraph.
+1. 아침 장면에 "오늘이 마지막 날"을 심을 것 — 짐을 차에 싣는 것으로, 감정은 붙이지 말고.
+   지금은 80% 지점까지 독자에게 아무 신호가 없어서 모티프의 첫 등장이 피로로 읽힌다.
+2. 모티프의 표현을 하나로 고정하고 다섯 번의 등장 전부에 그대로 반복할 것. 그래야 마지막의
+   절반 소멸이 보인다.
+3. 화자가 패턴을 짚는 문장을 삭제할 것. 오귀속 문장은 유지.
+4. 오션월드 구간의 모티프 부재를 감각이 사라졌다고 진술하는 대신 **문자 그대로의 부력**
+   (발이 바닥에서 떨어지는 것)으로 채울 것.
+5. 여운을 위해: 판타지가 끝날 때 카메라 러닝 개그를 한 번 부정하고, 담당관 역할은 설명 없이
+   평범한 이름으로 녹아 사라지게 할 것. 설명하는 마무리 문단은 없이.
 
-## Learning plan (2026-08-14)
+## 학습 계획 (2026-08-14)
 
-Diagnosis: the gap is sentence-level control, which is a motor skill, not knowledge — so practice over reading.
+진단: 격차는 문장 단위 통제력이고, 그건 지식이 아니라 운동 기술이다 — 그러므로 독서보다 연습.
 
-- **Transcription (필사), 3×/week, 20 min** — type, don't read; structure enters through the hands.
-  Targets matched to his register: 박민규 (『삼미 슈퍼스타즈의 마지막 팬클럽』, 『카스테라』) as the closest
-  model for "trivial events told epically"; 성석제 for pace. 김훈 for one chapter only — sustained short-sentence
-  pressure suits print, not web, and longer exposure would distort his voice.
-- **Revise old posts weekly** rather than drafting new ones, so the same habits do not recur.
-- **Read aloud before publishing** — the eye skips awkward sentences, the mouth cannot.
-- **Constraint drills**: 40-char sentence cap; no adverbs; ban `느낌/생각/것 같다` for one scene.
-- **Books**: 스티븐 킹 『유혹하는 글쓰기』 (practical), 이오덕 『우리 글 바로 쓰기』 (as a lookup reference for
-  translationese). **Not** screenwriting texts — the film-thinking is already the surplus, the prose is the deficit.
-- **Metrics before publishing** (worth scripting): avg sentence length < 40 chars, `느낌` ≤ 3/post,
-  sentences > 50 chars ≤ 5/post, `~하기 시작했다` = 0.
-- Deliberately **not** doing: vocabulary notebooks, grammar study, "finding a voice". Spelling is a
-  final-pass batch job, not a current concern.
+- **필사, 주 3회, 20분** — 읽지 말고 타이핑할 것. 구조는 손을 통해 들어온다.
+  그의 결에 맞춘 대상: 박민규(『삼미 슈퍼스타즈의 마지막 팬클럽』, 『카스테라』)가 "사소한 사건을
+  서사시처럼"의 가장 가까운 모델. 속도는 성석제. 김훈은 딱 한 챕터만 — 짧은 문장의 지속적인 압력은
+  웹이 아니라 지면에 맞고, 더 오래 노출되면 그의 목소리가 왜곡된다.
+- 새 글을 쓰는 대신 **매주 옛 글을 고칠 것**. 그래야 같은 습관이 되풀이되지 않는다.
+- **발행 전에 소리 내어 읽을 것** — 눈은 어색한 문장을 건너뛰지만 입은 못 건너뛴다.
+- **제약 훈련**: 문장 40자 상한, 부사 금지, 한 장면 동안 `느낌/생각/것 같다` 금지.
+- **책**: 스티븐 킹 『유혹하는 글쓰기』(실용), 이오덕 『우리 글 바로 쓰기』(번역투 찾아보는 레퍼런스로).
+  시나리오 작법서는 **아니다** — 영화적 사고는 이미 잉여이고, 부족한 건 산문이다.
+- **발행 전 지표** (스크립트로 만들 가치 있음): 평균 문장 길이 40자 미만, `느낌` 글당 3회 이하,
+  50자 초과 문장 글당 5개 이하, `~하기 시작했다` 0회.
+- 의도적으로 **하지 않는 것**: 어휘 노트, 문법 공부, "나만의 목소리 찾기". 맞춤법은 마지막 패스의
+  일괄 작업이지 지금의 관심사가 아니다.
 
-### Note on external feedback
+### 외부 피드백에 대한 메모
 
-An earlier AI critique of the draft was scored and largely affirming (9/10 on unmeasurable axes,
-5.5 on sentence craft) and advised **against** working on prose so as not to lose his voice.
-That advice is rejected here: craft is a scope, not a personality transplant, and the "don't fix it,
-it's your style" framing reclassifies a weakness as an identity. The concrete parts of that critique
-(splitting overloaded sentences, cutting `~느낌이 들었다`, over-friendly foreshadowing) do hold.
+이 초고에 대한 이전 AI 비평은 점수를 매겼고 대체로 긍정적이었으며(측정 불가능한 축에서 9/10,
+문장력에서 5.5), 목소리를 잃지 않도록 산문을 손대지 **말라**고 조언했다.
+그 조언은 여기서 기각한다: 기술은 범위지 인격 교체가 아니고, "고치지 마라, 그게 네 스타일이다"라는
+프레이밍은 약점을 정체성으로 재분류해버린다. 그 비평의 구체적인 부분들(과적된 문장 분리,
+`~느낌이 들었다` 덜어내기, 과잉 친절한 복선)은 유효하다.
 
-## Direction
+## 방향
 
-- **Platform split (decided 2026-08-07)**: velog becomes tech-writing only; travel/daily essays move off it.
-  Naver Blog rejected — its inbound traffic is information-seekers, a mismatch for narrative essays.
-  Target is **Brunch(브런치스토리)**: essay readership, and the Brunch Book publishing project as a real route to print.
-  Requires passing writer approval before publishing; the platform's constraints should also curb the
-  heavy-inline-linking and wiki-aside habits.
-- Working principle taken from feedback: when a post grows long enough to split, **cut instead of splitting**.
-- Sharper editing rule than "cut when long": ask **"am I showing or telling?"** — the dull stretches were all
-  points where scene-building switched to exposition (trivia asides, festival logistics, repeated food description).
-  Long passages that keep showing (the grocery-run operation, Deungseon Falls) never dragged.
+- **플랫폼 분리 (2026-08-07 결정)**: velog는 기술 글 전용으로, 여행/일상 에세이는 밖으로 옮긴다.
+  네이버 블로그는 기각 — 유입 트래픽이 정보 탐색자라서 서사 에세이와 맞지 않는다.
+  목표는 **브런치스토리**: 에세이 독자층이 있고, 브런치북 출판 프로젝트가 지면으로 가는 실제 경로다.
+  발행 전에 작가 승인을 통과해야 하고, 이 플랫폼의 제약이 과한 인라인 링크와 위키식 곁가지 습관도
+  억제해줄 것이다.
+- 피드백에서 가져온 작업 원칙: 글이 나눌 만큼 길어지면 **나누지 말고 덜어낼 것.**
+- "길면 자른다"보다 날카로운 편집 규칙: **"지금 보여주고 있는가, 말하고 있는가?"**를 물을 것 —
+  지루한 구간은 전부 장면 구성이 설명으로 넘어간 지점이었다(잡학 곁가지, 축제 동선, 반복되는 음식 묘사).
+  계속 보여주는 긴 대목(장보기 작전, 등선폭포)은 한 번도 늘어지지 않았다.
 
-## Changelog
+## 변경 이력
 
-- 2026-08-18: Hongcheon piece published on velog as two posts (「뇌가 뜨거워서 그랬어: 첫날/마지막 날」);
-  travel series now 6 posts. Noted the platform-split plan was not followed for it
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-18: 홍천 편을 velog에 두 편(「뇌가 뜨거워서 그랬어: 첫날/마지막 날」)으로 발행.
+  여행 시리즈는 이제 6편. 이 글에는 플랫폼 분리 계획을 따르지 않았다는 점 기록
 
-- 2026-08-14: logged Hongcheon part 2 (Ocean World) draft, its floating/sinking motif design and target tone,
-  the revision plan, measured sentence-level weaknesses, and a practice-first learning plan
+- 2026-08-14: 홍천 2부(오션월드) 초고, 뜨고 가라앉는 모티프 설계와 목표 톤, 수정 계획,
+  측정된 문장 단위 약점, 연습 우선 학습 계획 기록
 
-- 2026-08-10: logged the in-progress Hongcheon piece and its officer-role structure
+- 2026-08-10: 진행 중인 홍천 편과 담당관 역할 구조 기록
 
-- 2026-08-07: recorded the cinematic-narration intent as the core creative axis; noted Brunch platform mechanics research
+- 2026-08-07: 영화적 서술 의도를 핵심 창작 축으로 기록. 브런치 플랫폼 구조 조사 메모
 
-- 2026-08-07: added platform-split decision (velog = tech only, travel essays → Brunch) and the show-vs-tell editing rule
-- 2026-08-07: created — blog identity, both series, style strengths/weaknesses from a full read-through of the travel series
+- 2026-08-07: 플랫폼 분리 결정(velog = 기술 전용, 여행 에세이 → 브런치)과 show-vs-tell 편집 규칙 추가
+- 2026-08-07: 생성 — 블로그 정체성, 두 시리즈, 여행 시리즈 정독에서 나온 문체 강점/약점

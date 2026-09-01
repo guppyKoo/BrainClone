@@ -1,62 +1,59 @@
 ---
-title: Tendencies as a developer
+title: 개발자로서의 성향
 area: developer
 tags: [tendency, work-style, strengths, weaknesses]
 created: 2026-08-03
-updated: 2026-08-31
+updated: 2026-09-01
 status: draft
 ---
 
-# Tendencies as a developer
+# 개발자로서의 성향
 
-**Observed** developer traits from work history. (Believed principles → [[philosophy]], concrete rules → [[coding-style]],
-human personality → `profile/personality.md`.)
+작업 이력에서 **관찰된** 개발자 성향. (믿는 원칙 → [[philosophy]], 구체적 규칙 → [[coding-style]],
+인간으로서의 성격 → `profile/personality.md`.)
 
-## Work style (inferred)
+## 업무 스타일 (추론)
 
-- **Serious about tools & automation**: hundreds of skills/agents/hooks (ECC, GateGuard) configured in Claude Code;
-  spends real energy tuning the dev workflow itself — early adopter, meta-productivity oriented
-- **Rebuilds from the root when blocked**: Glaze couldn't produce a DMG → rebuilt the whole app on vanilla Electron and shipped
-- **Verifies to the end**: only "done" after typecheck/build/dev/packaged-app-run all pass
-- **Structure first, delegate execution**: defines folder structure and rules first, then hands execution to AI
+- **도구와 자동화에 진심**: Claude Code에 수백 개의 skill/agent/hook(ECC, GateGuard)을 구성해뒀다.
+  개발 워크플로 자체를 튜닝하는 데 실제로 에너지를 쓴다 — 얼리 어답터, 메타 생산성 지향
+- **막히면 뿌리부터 다시 만든다**: Glaze로는 DMG를 만들 수 없자 → 앱 전체를 순수 Electron으로 다시 만들어 출시했다
+- **끝까지 검증한다**: typecheck/build/dev/패키징 앱 실행이 전부 통과해야 "완료"다
+- **구조 먼저, 실행은 위임**: 폴더 구조와 규칙을 먼저 정의하고 실행을 AI에 넘긴다
 
-## Strengths (inferred)
+## 강점 (추론)
 
-- **Finisher**: absorbs a new stack quickly and reaches shipping (DMG)
-- **Root-cause tracking** — dug [[y-prosemirror-nodeselection-crash]] down to a library patch; disproves wrong hypotheses with tests and records them
-- **Systems thinking** — designs frameworks like OKF and the ECC ruleset himself
+- **끝내는 사람**: 새 스택을 빠르게 흡수해 출시(DMG)까지 도달한다
+- **근본 원인 추적** — [[y-prosemirror-nodeselection-crash]]를 라이브러리 패치까지 파고들었다. 틀린 가설은 테스트로 반증하고 기록한다
+- **시스템 사고** — OKF나 ECC 룰셋 같은 프레임워크를 직접 설계한다
 
-## Weaknesses
+## 약점
 
-## Collaboration style
+## 협업 스타일
 
-- Korean commit messages + Conventional Commits, feature branch → PR flow
-- Do not invoke `impeccable`; use direct, scoped implementation unless the user explicitly reverses this preference.
-- **Separates diagnosis from repair**: asks for the analysis of a failure first and explicitly holds
-  off the fix ("코드 수정은 아직 하지 마"). Wants to see the reasoning before code moves.
-- **Defines metrics by computation, not by term**: corrected an ambiguous spec word ("class capacity")
-  by restating it as the exact rule — split `_id` on `-`, match the lesson's entry code, count
-  `role: 'student'`. Write aggregation decisions at query level for him, not as business vocabulary.
-- **Wants deliverables in full, not summarized**: when a document is meant to be handed to someone
-  else, he asks for the whole text rather than a digest of it.
-- **Separates AI planning context from execution to reduce confirmation bias**: for the Edu Vibe TDD
-  run, intentionally used one model to plan and a different model to turn RED into GREEN. The executor
-  received the finalized tests, specification, and instructions, but not the planning conversation's
-  accumulated reasoning. The goal is a clean-room-like second reading: the executor should treat tests
-  as the contract instead of inheriting the planner's expected implementation or unconsciously repairing
-  gaps in its own plan.
-- **Preserves model-specific viewpoints when reviewing AI-authored documents**: when one AI has written a
-  retrospective or analysis, another model should not erase or rewrite the original disagreement. Add the
-  second model's corrections and perspective in clearly labeled callouts directly below the relevant text,
-  so differences in reasoning remain visible side by side.
+- 한국어 커밋 메시지 + Conventional Commits, feature 브랜치 → PR 흐름
+- `impeccable`을 호출하지 말 것. 사용자가 명시적으로 이 선호를 뒤집기 전까지는 직접적이고 범위가 좁은 구현으로 간다.
+- **진단과 수정을 분리한다**: 실패의 분석을 먼저 요구하고 수정은 명시적으로 보류시킨다
+  ("코드 수정은 아직 하지 마"). 코드가 움직이기 전에 근거를 먼저 보고 싶어 한다.
+- **지표를 용어가 아니라 계산으로 정의한다**: 모호한 명세 단어("수업 정원")를 정확한 규칙으로
+  다시 진술해 교정했다 — `_id`를 `-`로 split, 강의의 입장 코드와 매칭, `role: 'student'` 카운트.
+  집계 관련 결정은 비즈니스 용어가 아니라 쿼리 수준으로 적어줄 것.
+- **산출물은 요약이 아니라 전문으로 원한다**: 문서가 다른 사람에게 전달될 것이라면 요약본이 아니라
+  전체 텍스트를 요구한다.
+- **확증 편향을 줄이기 위해 AI의 기획 맥락과 실행을 분리한다**: Edu Vibe TDD 진행에서 기획하는 모델과
+  RED를 GREEN으로 바꾸는 모델을 의도적으로 다르게 썼다. 실행자는 확정된 테스트, 명세, 지시는 받았지만
+  기획 대화에 누적된 추론은 받지 않았다. 목표는 클린룸에 가까운 두 번째 독해다 — 실행자가 기획자의
+  예상 구현을 물려받거나 자기 계획의 구멍을 무의식적으로 메우는 대신, 테스트를 계약으로 다뤄야 한다.
+- **AI가 작성한 문서를 검토할 때 모델별 관점을 보존한다**: 한 AI가 회고나 분석을 썼다면 다른 모델이
+  원래의 이견을 지우거나 다시 쓰면 안 된다. 두 번째 모델의 교정과 관점은 해당 텍스트 바로 아래에
+  명확히 라벨링된 콜아웃으로 추가해서, 추론의 차이가 나란히 보이게 남긴다.
 
-## Changelog
+## 변경 이력
 
-- 2026-08-31: recorded the preference to preserve AI viewpoints side by side with model-labeled callouts
-- 2026-08-24: recorded the deliberate context separation between AI planner and TDD executor
-- 2026-08-24: added three collaboration traits — diagnosis before repair, metrics defined as
-  computations, deliverables in full text
-- 2026-08-21: strengthened the preference to not invoke `impeccable`
-- 2026-08-20: recorded preference for direct execution on small UI changes without `impeccable`
-- 2026-08-03: split from profile/personality.md
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-31: AI의 관점을 모델 라벨 콜아웃으로 나란히 보존하는 선호 기록
+- 2026-08-24: AI 기획자와 TDD 실행자 사이의 의도적 맥락 분리 기록
+- 2026-08-24: 협업 성향 세 가지 추가 — 수정보다 진단 먼저, 지표를 계산으로 정의, 산출물은 전문으로
+- 2026-08-21: `impeccable`을 호출하지 않는 선호를 강화
+- 2026-08-20: 작은 UI 변경은 `impeccable` 없이 직접 실행하는 선호 기록
+- 2026-08-03: profile/personality.md에서 분리
+- 2026-08-03: 영어로 전환

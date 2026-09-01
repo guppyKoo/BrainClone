@@ -1,37 +1,38 @@
 ---
-title: Anime, movies & games
+title: 애니메이션, 영화 & 게임
 area: interest
 tags: [anime, manga, movies, games, pop-culture]
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-09-01
 status: draft
 ---
 
-# Anime · Movies · Games
+# 애니메이션 · 영화 · 게임
 
-Consumes enough pop culture that references spill into everyday conversation.
-Serious cinema for the club lives in [[humanities]]; this is pure taste.
+일상 대화에 레퍼런스가 흘러넘칠 만큼 대중문화를 많이 소비한다.
+동아리용 진지한 영화는 [[humanities]]에 있고, 여기는 순수한 취향이다.
 
-## Anime / manga
+## 애니메이션 / 만화
 
-- Reads/watches Japanese manga and anime broadly — fluent in the classics (Naruto, One Piece, Death Note)
-- Frequently used as material for analogies and jokes
+- 일본 만화와 애니를 폭넓게 본다 — 고전급(나루토, 원피스, 데스노트)에 능통
+- 비유와 농담의 재료로 자주 쓴다
 
-## Movies / TV
+## 영화 / 드라마
 
-- Deep on big franchise lore — Game of Thrones, Star Wars
-- *Sing Street* actually changed behavior (triggered the original-song attempt with the band)
+- 대형 프랜차이즈 세계관에 깊다 — 왕좌의 게임, 스타워즈
+- *Sing Street*는 실제로 행동을 바꿨다 (밴드와 자작곡을 시도하게 만든 계기)
 
-## Games
+## 게임
 
-- F1 (racing), Hearts of Iron IV (grand strategy), League of Legends
-- For LoL, digs into the **lore/universe** as much as playing
+- F1(레이싱), Hearts of Iron IV(대전략), 리그 오브 레전드
+- LoL은 플레이만큼 **롤 세계관/설정**을 파고든다
 
-## Original character
+## 오리지널 캐릭터
 
-- **Ppeokkumi (뻐끔이)** — a blunt, cold-on-the-outside, warm-on-the-inside fish character.
-  Started as a fish-raising web-game idea, evolved into an AI persona experiment
+- **뻐끔이** — 무뚝뚝하고 겉은 차갑지만 속은 따뜻한 물고기 캐릭터.
+  물고기 키우기 웹게임 아이디어에서 시작해 AI 페르소나 실험으로 발전했다
 
-## Changelog
+## 변경 이력
 
-- 2026-08-03: migrated to English
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-03: 영어로 전환

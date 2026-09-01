@@ -1,50 +1,50 @@
 ---
-title: Food & dining taste
+title: 음식 & 식당 취향
 area: interest
 tags: [food, dining, nopo, taste, aesthetics]
 created: 2026-08-10
-updated: 2026-08-10
+updated: 2026-09-01
 status: draft
 ---
 
-# Food & dining taste
+# 음식 & 식당 취향
 
-## The Five Conditions of a Nopo (노포)
+## 노포의 다섯 가지 조건
 
-The user has a fully-formed personal rubric for identifying a real *nopo* (old-establishment
-restaurant). Notably it is almost entirely **material/sensory evidence**, not reputation, reviews,
-or advertised years in business — the signal is physical accumulation that cannot be faked.
+진짜 노포를 판별하는 자기만의 기준이 완성되어 있다. 흥미로운 점은 그 기준이 거의 전부
+**물성·감각의 증거**라는 것이다 — 평판이나 리뷰, 간판에 적힌 연혁이 아니라, 꾸며낼 수 없는
+물리적 축적이 신호다.
 
-Finalized as **five conditions** (trimmed from an initial eight by the user):
+처음 여덟 개였던 항목을 사용자가 직접 다듬어 **다섯 가지 조건**으로 확정했다:
 
-1. **Walls** — stained, blotchy from grime. Bonus if wallpaper differs section to section, or paint
-   color and degree of wear are inconsistent across the room.
-2. **Tableware / fittings that make you pause** — water bottles with missing or badly-closing caps;
-   bonus for old-design "Chilsung Cider" or "Miranda" branding on the bottle. Extra bonus for
-   stainless steel cups (paper cups also acceptable).
-3. **Tables and chairs** — dark brown wooden chairs score well; extra points if the table and chairs
-   clearly don't match as a set.
-4. **The owner picks your order** — if you're still deciding and the owner comes over and says
-   "just have X and Y", it's very likely a good nopo.
-5. **No per-table menus** — the menu hangs on the wall as a banner (현수막).
+1. **벽** — 때가 타서 얼룩덜룩하다. 구역마다 벽지가 다르거나, 페인트 색과 마모 정도가
+   방 안에서 제각각이면 가점.
+2. **눈길이 멈추는 식기/집기** — 뚜껑이 없거나 잘 안 닫히는 물병. 병에 옛날 디자인의
+   "칠성사이다"나 "미란다" 브랜딩이 남아 있으면 가점. 스테인리스 컵이면 추가 가점
+   (종이컵도 인정).
+3. **테이블과 의자** — 짙은 갈색 나무 의자가 점수가 높다. 테이블과 의자가 세트가 아닌 게
+   눈에 보이면 추가 점수.
+4. **사장님이 메뉴를 골라준다** — 아직 고민하고 있는데 사장님이 와서 "그냥 이거랑 이거 먹어"
+   라고 하면 좋은 노포일 확률이 매우 높다.
+5. **테이블마다 메뉴판이 없다** — 메뉴가 벽에 현수막으로 걸려 있다.
 
-### Dropped criteria
+### 탈락한 기준
 
-The user removed three items from the original draft list, judging them weak signals:
+초안에 있던 세 항목은 신호가 약하다고 판단해 사용자가 직접 뺐다:
 
-- Old signboard covered with a banner rather than replaced — deemed a rural-nopo trait rather than
-  a general one.
-- A radio playing in the dining room — deemed a stretch.
-- A resident dog or cat — deemed a stretch (and easily faked by themed cafés).
+- 낡은 간판을 교체하지 않고 현수막으로 덮어둔 것 — 일반적인 특징이라기보다 시골 노포의 특징이라고 판단.
+- 홀에 라디오가 켜져 있는 것 — 억지스럽다고 판단.
+- 가게에 사는 개나 고양이 — 억지스럽다고 판단 (테마 카페가 쉽게 흉내 낼 수도 있고).
 
-### Underlying pattern (inferred)
+### 밑에 깔린 패턴 (추론)
 
-The rubric rewards **unintentional accumulation over curated design** — the common thread is that
-every signal is a side effect of decades of operating, not a decision anyone made. This mirrors the
-user's broader taste for authenticity over presentation (see [[values|profile/values.md]]).
-Notably, the three items the user cut were the ones a place could *choose* to have.
+이 기준은 **의도된 디자인이 아니라 의도치 않은 축적**에 점수를 준다. 모든 신호의 공통점은
+누군가 내린 결정이 아니라 수십 년 영업의 부산물이라는 것이다. 연출보다 진짜를 좋아하는
+사용자의 넓은 취향과 같은 결이다 ([[values|profile/values.md]] 참고).
+사용자가 잘라낸 세 항목이 하필 가게가 *선택할 수 있는* 것들이었다는 점이 특히 그렇다.
 
-## Changelog
+## 변경 이력
 
-- 2026-08-10: created — recorded the user's nopo identification criteria (8 items)
-- 2026-08-10: trimmed to the final "Five Conditions of a Nopo" at the user's direction
+- 2026-09-01: 문서를 한국어로 전환
+- 2026-08-10: 생성 — 사용자의 노포 판별 기준 기록 (8개 항목)
+- 2026-08-10: 사용자 지시에 따라 최종 "노포의 다섯 가지 조건"으로 정리
