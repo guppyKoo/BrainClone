@@ -1,7 +1,7 @@
 ---
 title: 개발 관심사
 area: developer
-tags: [interests, AI, agents, CRDT, learning, cdc, C]
+tags: [interests, AI, agents, CRDT, learning, cdc, C, open-source, translation]
 created: 2026-08-03
 updated: 2026-09-01
 status: draft
@@ -32,8 +32,25 @@ status: draft
 
 - Yjs 내부 구조(item 병합, GC), 다른 CRDT와의 비교(Automerge, Loro)
 
+## 데이터베이스 설계
+
+- 별도 ChatGPT 프로젝트 `데이터베이스설계`를 두고 있다. 현재 로컬 미러에는 첨부 자료와 과거 대화가
+  없어 구체적인 학습 목표·진도는 확인되지 않았다.
+- 이미 다뤄 온 구현 축은 **Prisma + PostgreSQL/pgvector**와 **Mongoose + MongoDB**다. 단순 CRUD보다
+  스키마·식별자·인덱스·마이그레이션·일관성 보장을 함께 설계하는 문제에 관심이 이어진다.
+- 현재 연결되는 설계 주제:
+  - MongoDB `_id`와 외부에 노출하는 문자열 도메인 `id`의 역할 분리 ([[coding-style]])
+  - `autoIndex: false` 환경에서 실제 마이그레이션을 테스트 DB에도 실행해 인덱스 드리프트를 잡는 법
+    ([[nestjs-e2e-test-harness]])
+  - 동일 밀리초의 `createdAt`만으로 정렬하지 않고 `_id`를 최종 타이브레이커로 두는 안정적 정렬
+    ([[nestjs-e2e-test-harness]])
+  - 같은 DB 안의 원자성은 다중 문서 트랜잭션으로, 서비스 경계를 넘으면 Transactional Outbox와
+    이벤트로 해결하는 캐스케이드 삭제 전략 ([[mongodb-cascade-strategies]])
+  - 앱 코드의 관례보다 DB 엔진이 무결성을 강제하는 설계를 선호한다 ([[philosophy]])
+
 ## 학습 단계 기술 (호기심 ~ 초급)
 
+- **오픈소스 SW 수업** — 영어로 된 강의자료를 한국어로 번역하며 학습한다. 현재 프로젝트는 강의자료의 핵심 의미와 기술 용어를 보존한 한국어 번역을 지원하는 용도다
 - **C 언어** — 별도 ChatGPT 프로젝트 `C언어`를 두고 있다. 현재 로컬 미러에는 참고 자료가 없어 구체적인 학습 목표·진도·숙련도는 확인되지 않았다.
 - **Python 코딩 테스트** — Python으로 코딩 테스트 문제를 풀이하는 프로젝트를 진행한다
 - **Flutter** — React/JS 개념에 대응시킨 학습 로드맵을 만들었다. 모바일까지 커버하는 게 목표로 보인다
@@ -61,6 +78,8 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-01: `데이터베이스설계` 프로젝트와 기존 DB 설계 지식의 연결 지도를 추가; 자료 부재로 세부 목표와 진도는 유보
+- 2026-09-01: 오픈소스 SW 수업 수강과 영어 강의자료 번역 학습을 추가
 - 2026-09-01: ChatGPT의 `C언어` 프로젝트 존재를 학습 관심사로 기록; 자료 부재로 세부 목표와 진도는 유보
 - 2026-09-01: Python 코딩 테스트 문제 풀이 프로젝트 추가
 - 2026-09-01: 문서를 한국어로 전환

@@ -1,7 +1,7 @@
 ---
 title: 기술 스택 & 숙련도
 area: developer
-tags: [stack, JavaScript, TypeScript, React, Node.js, Electron, NestJS]
+tags: [stack, JavaScript, TypeScript, React, Node.js, Express, oRPC, Electron, NestJS]
 created: 2026-08-03
 updated: 2026-09-01
 status: draft
@@ -23,6 +23,7 @@ status: draft
 | **NestJS + Fastify** | INOS server/ai-server — SSE 스트리밍 포함 |
 | **Prisma + PostgreSQL** | INOS — pgvector 검색, 모노레포 공유 스키마 |
 | **NestJS + Express + Mongoose/MongoDB** | Edu Vibe 서버 (2026-08) — 전역 `ValidationPipe`/`ClassSerializerInterceptor` 방어, 리포지토리 레이어, `migrate-mongo` 마이그레이션. 함정: [[nestjs-mongoose-pitfalls]] |
+| **Express 5 + oRPC + Inversify + Mongoose** | goorm `edu-ai-course` — Zod/oRPC 계약 공유, feature별 router/service/module, DI container, MongoDB 트랜잭션. 구조: [[edu-ai-course-architecture]] |
 
 ## 실무 도메인 전문 영역
 
@@ -35,6 +36,7 @@ status: draft
 
 - pnpm workspace + Turborepo 모노레포
 - BullMQ + ioredis (큐), JWT + Passport + Google OAuth
+- LangChain/LangGraph, OpenAI·Anthropic 멀티 provider LLM 구성, retry/backoff와 token·latency 계측 ([[llm-rate-limit-defense]])
 - TanStack Router/Query, Radix UI, CVA, sonner
 - nodemailer, OpenAI API (Images, 스트리밍)
 - Claude Code 파워 유저 — skill/agent/hook/MCP를 대규모로 운용
@@ -49,6 +51,7 @@ status: draft
 ## 변경 이력
 
 - 2026-09-01: 프로젝트 지침에서 확인된 주력 역할과 기술을 반영해 JavaScript 풀스택, React, Node.js(Express)를 명시
+- 2026-09-01: `edu-ai-course`에서 반복 사용한 Express 5 + oRPC + Inversify와 LangChain/LangGraph 운영 패턴 추가
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-19: 이전 오류 정정 — `react-router-dom` v7은 React 18을 강제하지 않는다 (peer가 `>=18`). Edu Vibe 프론트를 React 19로 이동
 - 2026-08-14: NestJS+Express+Mongoose/MongoDB (Edu Vibe) 추가, React 행 정정

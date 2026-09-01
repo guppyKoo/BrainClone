@@ -22,6 +22,7 @@ Personal knowledge base cloning guppy's brain. Rules & OKF spec: [CLAUDE.md](CLA
 
 - [topics/](interest/topics/) — non-dev learning & interest topics
   - [investing.md](interest/topics/investing.md) — investing & macroeconomics
+  - [opic.md](interest/topics/opic.md) — OPIc 영어 말하기 준비 (현재 IM3, 난이도 5-5)
 - [hobbies/](interest/hobbies/) — hobbies
   - [humanities.md](interest/hobbies/humanities.md) — humanities book/film club (film curator role)
   - [pop-culture.md](interest/hobbies/pop-culture.md) — anime, movies, games

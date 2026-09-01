@@ -48,6 +48,8 @@ Last updated: 2026-08-24
   (08-15) and 「마지막 날」 (08-17). Travel series now 6 posts. Details in [[writing|interest/hobbies/writing.md]]. Also started a deliberate prose-practice routine
   (transcription + weekly revision + read-aloud) aimed at sentence-level control
 - **Humanities club**: film curator in a 4-person monthly club. Current block is **two films over two
+- **OPIc**: 현재 IM3. 난이도 5-5와 선택한 Background Survey를 기준으로 영어 실전 질문에 답하고,
+  답변별 피드백을 받는 방식으로 준비 중. 상세는 [[opic|interest/topics/opic.md]].
   months, discussed in one session** — *Lost in Translation* (focus: composition) then *The Substance*
   (focus: sound). Pre-watch guide written 2026-08-24. Method and the six-element framework:
   [[humanities|interest/hobbies/humanities.md]]. The Coen brothers curriculum is the earlier plan
@@ -81,6 +83,7 @@ Last updated: 2026-08-24
 
 - 2026-08-19: Edu Vibe front moved to React 19 — the earlier "pinned to 18" note was wrong (`react-router-dom` v7 accepts React >=18)
 - 2026-08-14: Edu Vibe corrected — both repos are past M0 (front routing scaffolded, server API built and verified); front is a single package, not a Turborepo workspace; React pinned to 18, Node 24
+- 2026-09-01: OPIc 준비 현황 추가 — 현재 IM3, 난이도 5-5, Background Survey 기반 영어 문답 연습
 - 2026-08-14: added the cascade-delete redesign thread and its two open questions; logged travel-essay part 2 and the writing-practice routine
 - 2026-08-12: work focus updated — Edu Vibe (V2 Tech Spec, NestJS+Mongoose stack decided, M0 scaffolding pending)
 - 2026-08-03: added frontmatter (OKF compliance), expanded with work & non-dev activities
