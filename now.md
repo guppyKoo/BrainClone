@@ -3,7 +3,7 @@ title: Now — 현재 스냅샷
 area: profile
 tags: [now, 스냅샷, 진행중]
 created: 2026-08-03
-updated: 2026-09-02
+updated: 2026-09-09
 last_review: 2026-09-01
 status: draft
 ---
@@ -13,7 +13,7 @@ status: draft
 > 현재 상태 스냅샷. AI는 어떤 작업이든 `index.md`와 이 파일을 먼저 읽는다.
 > 갱신 빈도 최상 — 과거 상태는 git 이력에 있다.
 
-마지막 갱신: 2026-09-02
+마지막 갱신: 2026-09-09
 
 ## 진행 중
 
@@ -24,15 +24,18 @@ status: draft
   - 다음: `decisions/` 최초 생성, draft → confirmed 승격, 빈 섹션 채우기
   - 큰 그림은 [[second-brain]] 개념 — 최우선 요구사항은 폰/회사 머신/집 머신이 **하나의** 지식베이스를 공유하는 것
 - **회사(goorm) — Edu Vibe**: 현재 주력. 두 레포 소유(`edu-vibe-front`, `edu-vibe-server`).
-  2026-08-14 기준 **둘 다 M0 통과** — 프론트는 라우팅 + Tailwind/Vapor-ui 스캐폴딩, 서버는 스키마·리포지토리 계층·
-  MVP API 전체(로컬 Mongo로 end-to-end 검증 완료). V2 Tech Spec, DB 스키마 문서, API 명세를 직접 작성했고
-  AI는 저자가 아니라 비판적 리뷰어로 사용
+  **아키텍처를 내가 설계했고, MVP 단계지만 이 구조 그대로 정식 서비스로 올라간다.**
+  결정·기각 근거는 [[2026-09-09-edu-vibe-architecture]], 성과 서사는 [[edu-vibe]]
   - 서버: NestJS 11 (**Express** 어댑터) + MongoDB + **Mongoose** + `migrate-mongo`
   - 프론트: **워크스페이스가 아닌 단일 패키지** — pnpm + Vite + **React 19** + `react-router-dom` v7 + Tailwind v4 + Vapor-ui + TanStack Query, **Node 24**
-  - 아직 연결 안 됨: LiteLLM 프록시, S3 스토리지, 웹 배포 — 서버 코드에서 세 지점 모두 명시적 경계로 표시
-  - 학습창은 다른 팀(Devth)에서 `@devth/learn-*` SDK 패키지로 올 것이라 가정 — 아키텍처 전체가 이 가정 위에 서 있음
-  - **EDU VIBE 실습 페이지 경계 논의(2026-08-18)**: 선호 방향은 프로젝트/파일/챗/빌드/아티팩트를 소유하는
-    독립 API 서비스, 주요 대안은 소비자가 데이터를 소유하는 SDK. 아직 확정 안 됨
+  - 학습창은 다른 팀(Devth)에서 `@devth/learn-*` SDK 패키지로 올 것이라 가정 — 아키텍처 전체가 이 가정 위에 서 있음.
+    독립 앱으로 나오면 V1의 **Plan B(4앱 완전 분리)**로 회귀
+  - 2026-08-19~29 프론트 4화면 완성(커밋 202, PR 25, 78파일 10,712줄), 서버는 spec 327 · e2e 94테스트까지 확장.
+    양쪽 개발회고를 2026-08-31에 작성 — 결론이 같다: **만드는 힘은 충분했고 만든 것을 지키는 장치가 약하다**
+  - **2026-09-17 학교 시연**이 첫 목표. 배포 준비 진행 중 — OP DB(`edu_vibe`), 도메인, S3(`grm-edu-vibe`),
+    Jenkins/ArgoCD 파이프라인, Vault, k8s, Elastic APM. LLM은 사내 **TokenHub** 경유(모델 `gpt-5-mini`)
+  - 남은 부채: 프론트 테스트 **0건**(Vitest 계획만), `openapi.json`이 실제 동작과 어긋나 아직 계약으로 승격 못 함
+    → [[cross-repo-api-contract-drift]]
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
   구조·패턴은 [[edu-ai-course-architecture]], [[spreadsheet-import-stable-ids]],
   [[llm-rate-limit-defense]], [[monaco-model-lifecycle]]에 분리 기록
@@ -108,6 +111,10 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-09: Edu Vibe 아키텍처를 노션 Tech Spec 트리 전체에서 BrainClone으로 이관 —
+  `decisions/2026-09-09-edu-vibe-architecture.md`, `career/portfolio/edu-vibe.md`,
+  스니펫 2건(`cross-repo-api-contract-drift`, `notion-jira-reference-links`) 신설.
+  `index.md`의 "이관 대기: Prisma 기각 근거, Express 어댑터 선택" 항목 해소
 - 2026-09-01: 대규모 구조 변경 반영 — `idea/service/` 3건, `interest/persona/` 2건,
   포트폴리오 6건, 스니펫 4건, `divine-embrace`, `opic` 추가. 아이디어·비개발 섹션 신설.
   라우팅 테이블 누락 2건을 미해결 질문으로 등록

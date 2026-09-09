@@ -3,7 +3,7 @@ title: NestJS e2e 테스트 하네스 — 아무것도 증명하지 않고 통�
 area: developer
 tags: [nestjs, jest, mongodb-memory-server, migrate-mongo, testing, pitfalls]
 created: 2026-08-21
-updated: 2026-09-01
+updated: 2026-09-09
 status: confirmed
 ---
 
@@ -12,6 +12,7 @@ status: confirmed
 > Edu Vibe 서버에 테스트를 붙이면서 만들었다(2026-08-21). [[nestjs-mongoose-pitfalls]]의 짝이다:
 > 같은 실패 형태, 한 레이어 위. 망가진 하네스는 스위트를 빨갛게 만들지 않는다 —
 > **엉뚱한 이유로 초록**으로 만든다. 테스트가 아예 없는 것보다 나쁘다.
+> 이 하네스가 지키려던 계약의 출처: [[2026-09-09-edu-vibe-architecture]]
 
 ## 1. `autoIndex: false`면 테스트에 유니크 제약이 존재하지 않는다
 
@@ -119,6 +120,7 @@ if (connection.name !== dbName) {
 
 ## 변경 이력
 
+- 2026-09-09: 아키텍처 결정 문서로 역링크 추가
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-24: 모듈 평가 순서 버그로 `deleteMany({})`가 로컬 데이터베이스를 가리킨 뒤 파괴적 e2e 정리를 금지.
   일회용 데이터베이스, 멱등 픽스처, 닫히는 쪽으로 실패하는 가드를 쓸 것

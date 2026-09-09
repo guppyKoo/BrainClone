@@ -3,7 +3,7 @@
 guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUDE.md](CLAUDE.md) (= [AGENTS.md](AGENTS.md)).
 **AI는 어떤 작업이든 이 파일과 [now.md](now.md)를 먼저 읽는다.**
 
-> 마지막 갱신: 2026-09-02 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
+> 마지막 갱신: 2026-09-09 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
 > 경계: **개발 관련은 전부 `developer/`**, `profile/`·`interest/`는 비개발 영역, `idea/`는 미착수 구상
 > 언어: 모든 문서 한국어 (CLAUDE.md §0 참조)
 
@@ -22,7 +22,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
 
 - `decisions/` — 무엇을 택했고 무엇을 기각했고 왜. 판단이 뒤집히면 새 문서 + 역링크
   - [2026-09-02-lesson-period-policy.md](decisions/2026-09-02-lesson-period-policy.md) — edu-core 강의 공개 기간 검증 정책 (비공개 시 검증 스킵, `time_set` 정규화)
-  - 최초 이관 대기: Prisma-MongoDB 기각 근거, Express 어댑터 선택 (현재 git 이력에만 존재)
+  - [2026-09-09-edu-vibe-architecture.md](decisions/2026-09-09-edu-vibe-architecture.md) — Edu Vibe MVP 아키텍처 확정 (NestJS(Express)·Mongoose 채택, Fastify·Prisma·4앱 분리 기각)
 
 ## 💡 Idea — 아직 만들지 않은 것 (공모전·해커톤 구상)
 
@@ -68,12 +68,15 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [nestjs-e2e-test-harness.md](developer/snippets/nestjs-e2e-test-harness.md) — 아무것도 증명하지 못한 채 통과하는 e2e 스위트
   - [y-prosemirror-nodeselection-crash.md](developer/snippets/y-prosemirror-nodeselection-crash.md) — 협업 에디터 크래시 디버깅 노트
   - [electron-patterns.md](developer/snippets/electron-patterns.md) — 실제 프로젝트에서 나온 Electron 패턴
+  - [cross-repo-api-contract-drift.md](developer/snippets/cross-repo-api-contract-drift.md) — 레포가 갈린 프론트·서버에서 계약이 조용히 어긋나는 지점
+  - [notion-jira-reference-links.md](developer/snippets/notion-jira-reference-links.md) — 노션·피그마·Jira를 코드에서 참조할 때 깨진 것들
   - [korean-text-wrapping.md](developer/snippets/korean-text-wrapping.md) — `break-keep`이 공백 없는 한글을 넘치게 만드는 이유와 세 속성 해법
 
 ## 🚀 Career — 사회적 자아와 성과 (표현 계층, developer/를 링크로 참조)
 
 - [resume.md](career/resume.md) — 이력 기본 정보, 커리어 요약
 - [portfolio/](career/portfolio/) — 프로젝트별 성과
+  - [edu-vibe.md](career/portfolio/edu-vibe.md) — Edu Vibe: K-12 바이브코딩 실습·학습관리 플랫폼 (아키텍처 설계 + 양쪽 레포 구현)
   - [edu-ai-course.md](career/portfolio/edu-ai-course.md) — goorm AI 맞춤형 교육 플랫폼 (구 `new-edu`)
   - [inos.md](career/portfolio/inos.md) — INOS (인문학 모임 플랫폼)
   - [bulk-mail-electron.md](career/portfolio/bulk-mail-electron.md) — Bulk Mail (Electron 데스크톱 앱)

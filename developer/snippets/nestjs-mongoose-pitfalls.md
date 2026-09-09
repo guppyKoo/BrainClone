@@ -3,7 +3,7 @@ title: 조용히 실패하는 NestJS + Mongoose 함정들
 area: developer
 tags: [nestjs, mongoose, swagger, migrate-mongo, validation, pitfalls]
 created: 2026-08-14
-updated: 2026-09-01
+updated: 2026-09-09
 status: confirmed
 ---
 
@@ -12,6 +12,7 @@ status: confirmed
 > Edu Vibe 서버를 만들면서 밟은 것들(2026-08-14 이후). 공통점이 하나 있다: **아무것도 throw하지 않는다.**
 > 필드가 하나 없거나, 문서가 비어 있거나, 마이그레이션이 다시 도는 형태로만 드러난다. 그래서 적어둘 가치가 있다.
 > 스택 맥락: [[stack]] · 관련 결정 기록: [[mongodb-cascade-strategies]]
+> 이 스택을 고른 근거: [[2026-09-09-edu-vibe-architecture]] · 레포 경계 쪽 짝: [[cross-repo-api-contract-drift]]
 
 ## 1. `ClassSerializerInterceptor`는 `@Expose`를 빠뜨린 필드를 삭제한다
 
@@ -124,6 +125,7 @@ const limit = query.limit ?? 20
 
 ## 변경 이력
 
+- 2026-09-09: 아키텍처 결정 문서와 레포 경계 스니펫으로 역링크 추가
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-24: `@IsOptional()`과 TypeScript 속성 형태 사이의 Swagger 필수 여부 불일치 추가
 - 2026-08-21: 5~6번 추가 — 쿼리 파라미터는 전역 파이프 밖이고, 기본 거부 가드는 기계 호출 엔드포인트에
