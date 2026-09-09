@@ -3,7 +3,7 @@ title: 기술 스택 & 숙련도
 area: developer
 tags: [stack, JavaScript, TypeScript, React, Node.js, Express, oRPC, Electron, NestJS]
 created: 2026-08-03
-updated: 2026-09-01
+updated: 2026-09-09
 status: draft
 ---
 
@@ -35,12 +35,29 @@ status: draft
 ## 도구 & 인프라
 
 - pnpm workspace + Turborepo 모노레포
+- **Kafka**: 현 회사 제품의 application server에서 사용 중. producer/consumer를 애플리케이션에 연동해 본 경험은
+  있지만 Kafka cluster를 직접 구축하거나 운영한 경험은 없다.
+- **Redis**: 현 회사에서 캐싱 용도로 적극 사용하며, INOS에서는 BullMQ + ioredis 기반 기능을 직접 구현했다.
+  Redis cluster 자체를 구축·운영한 경험과 대규모 캐시 최적화 경험은 별도로 확인되지 않았다.
 - BullMQ + ioredis (큐), JWT + Passport + Google OAuth
 - LangChain/LangGraph, OpenAI·Anthropic 멀티 provider LLM 구성, retry/backoff와 token·latency 계측 ([[llm-rate-limit-defense]])
 - TanStack Router/Query, Radix UI, CVA, sonner
 - nodemailer, OpenAI API (Images, 스트리밍)
 - Claude Code 파워 유저 — skill/agent/hook/MCP를 대규모로 운용
 - 배포/인프라: EKS 기반 Kubernetes, Jenkins 파이프라인
+
+## AI/Data Platform 전환 관점의 경험 경계
+
+- **AI model serving**: 회사의 Edu Vibe와 `edu-ai-course`, 개인 프로젝트 INOS에서 모델을 서비스에
+  연결하고 API·비동기 작업·스트리밍 흐름을 구현했다. 대규모 트래픽의 고가용성 서빙과 모델 배포
+  플랫폼을 직접 구축한 경험은 부족하다.
+- **Vector 검색**: NestJS + PostgreSQL/pgvector를 소규모로 사용해 봤다. RAG 파이프라인을 구축하거나
+  검색 품질·성능을 최적화한 경험은 없다.
+- **Python**: 코딩 테스트 풀이 경험이 많다. 프로덕션 AI/Data 애플리케이션 개발 경험으로 보기는 어렵다.
+- **JVM**: Java를 학교 수업에서 사용한 정도이며 실무 경험은 많지 않다. NestJS의 모듈·DI·데코레이터 기반
+  구조 경험을 Spring 학습의 기반으로 활용할 수 있다.
+- **Airflow**: 사용 경험이 없다.
+- **핀테크**: 결제·송금 등 핀테크 도메인 경험과 지식이 아직 부족하다.
 
 ## 개발 환경
 
@@ -50,6 +67,8 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-09: Kafka·Redis의 회사 사용 경험과 구축 경험의 경계, AI model serving·Python·JVM 및
+  Airflow/RAG/핀테크 경험 수준을 사용자 확인 내용으로 추가
 - 2026-09-01: 프로젝트 지침에서 확인된 주력 역할과 기술을 반영해 JavaScript 풀스택, React, Node.js(Express)를 명시
 - 2026-09-01: `edu-ai-course`에서 반복 사용한 Express 5 + oRPC + Inversify와 LangChain/LangGraph 운영 패턴 추가
 - 2026-09-01: 문서를 한국어로 전환
