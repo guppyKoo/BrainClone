@@ -23,6 +23,8 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
 - `decisions/` — 무엇을 택했고 무엇을 기각했고 왜. 판단이 뒤집히면 새 문서 + 역링크
   - [2026-09-02-lesson-period-policy.md](decisions/2026-09-02-lesson-period-policy.md) — edu-core 강의 공개 기간 검증 정책 (비공개 시 검증 스킵, `time_set` 정규화)
   - [2026-09-09-edu-vibe-architecture.md](decisions/2026-09-09-edu-vibe-architecture.md) — Edu Vibe MVP 아키텍처 확정 (NestJS(Express)·Mongoose 채택, Fastify·Prisma·4앱 분리 기각)
+  - [2026-09-09-edu-vibe-student-id-pii.md](decisions/2026-09-09-edu-vibe-student-id-pii.md) — 학생 식별자를 합성 값에서 무작위 값으로 (위 문서 D6을 **대체**)
+  - [2026-09-09-edu-vibe-front-no-tests.md](decisions/2026-09-09-edu-vibe-front-no-tests.md) — 프론트는 테스트를 쓰지 않기로 하고 하네스 제거 (서버는 반대)
 
 ## 💡 Idea — 아직 만들지 않은 것 (공모전·해커톤 구상)
 
@@ -69,6 +71,8 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [y-prosemirror-nodeselection-crash.md](developer/snippets/y-prosemirror-nodeselection-crash.md) — 협업 에디터 크래시 디버깅 노트
   - [electron-patterns.md](developer/snippets/electron-patterns.md) — 실제 프로젝트에서 나온 Electron 패턴
   - [cross-repo-api-contract-drift.md](developer/snippets/cross-repo-api-contract-drift.md) — 레포가 갈린 프론트·서버에서 계약이 조용히 어긋나는 지점
+  - [mongo-migration-safety.md](developer/snippets/mongo-migration-safety.md) — migrate-mongo로 안전하게 데이터를 옮기는 규칙 (부분 인덱스, 이관 순서, 재실행 안전)
+  - [figma-design-implementation.md](developer/snippets/figma-design-implementation.md) — 시안을 코드로 옮길 때 어긋나는 지점과 CDP 브라우저 실측
   - [notion-jira-reference-links.md](developer/snippets/notion-jira-reference-links.md) — 노션·피그마·Jira를 코드에서 참조할 때 깨진 것들
   - [korean-text-wrapping.md](developer/snippets/korean-text-wrapping.md) — `break-keep`이 공백 없는 한글을 넘치게 만드는 이유와 세 속성 해법
 

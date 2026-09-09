@@ -43,7 +43,7 @@ status: draft
 | D3 | **MongoDB + Mongoose + `migrate-mongo`** | 새 DB를 띄우고 검증할 시간이 없다. 표준프레임워크 v5부터 MongoDB 공식 지원이라 이관 전제와 충돌하지 않는다 |
 | D4 | 계약은 코드 공유가 아니라 **OpenAPI → FE codegen** | `@nestjs/swagger`가 스펙 원천. 레포가 갈려도 드리프트를 codegen diff가 잡는 구조 |
 | D5 | 실시간은 **SSE**, 교사 패널은 폴링으로 시작 | 학교망/프록시가 WebSocket Upgrade를 자주 차단한다 — 이 제품 최대의 인프라 리스크 |
-| D6 | 학생은 **무계정**, `id = {entryCode}-{nickName}` upsert + 단기 JWT | 동명이인 방지를 DB unique 제약으로 보장. 이어하기(UC04)가 깨지지 않는 최소선 |
+| D6 | 학생은 **무계정**, `id = {entryCode}-{nickName}` upsert + 단기 JWT ⚠️**대체됨** | 동명이인 방지를 DB unique 제약으로 보장. 이어하기(UC04)가 깨지지 않는 최소선 |
 | D7 | 문서 id는 ObjectId가 아니라 **접두사 붙은 base36 문자열** (`class-`, `proj-`, `arti-`, `clpj-`, `chat-`) | 값만 보고 무엇의 id인지 알 수 있고, 잘못된 id를 DTO 경계에서 거를 수 있다 |
 | D8 | 서버 경로를 **프론트 라우팅과 동일한 3중 키**로 (`/classrooms/:classroomId/projects/:projectId/artifacts/:userId`) | 프론트가 `/learn/:classId/:studentId/:projectId`를 쓰므로 id 변환 계층이 아예 생기지 않는다 |
 | D9 | **Redis · 메시지 큐 미도입** | 공유 상태가 필요한 지점이 없다. JWT는 stateless, rate limit은 Mongo `$inc`, SSE는 요청 스코프, 교사 패널은 폴링 |
@@ -134,6 +134,11 @@ Prisma를 1차 후보로 검토했다. 우위는 실재한다 — `schema.prisma
 
 ### D6 · D10 — 무계정 학생 식별과 인증 경계
 
+> ⚠️ **D6의 식별자 부분은 [[2026-09-09-edu-vibe-student-id-pii]]로 대체됐다.**
+> 학생 id가 URL과 S3 경로에 실려 **주소만 봐도 이름이 읽혔기 때문**이다(EDU-650).
+> 지금은 무작위 `stu-*`이고 신원은 `(classroomProjectId, nickName)` 부분 unique 인덱스가 보장한다.
+> 아래는 그 전환의 출발점이 된 원래 판단이므로 그대로 둔다 — 무계정·upsert·정규화·JWT는 지금도 유효하다.
+
 V1의 초안은 **localStorage `deviceId`(UUID v4)** 기반이었다. 최종은 다르다.
 
 - 학생 식별자는 **`{entryCode}-{nickName}`**이고, 입장 시 User와 Artifact를 **upsert 한 연산**으로 만든다.
@@ -189,6 +194,29 @@ JWT는 서명 시크릿만 있으면 어느 파드든 동일하게 동작한다.
 **(H) 프론트에서 `studentId`를 세션 사용자와 대조** — URL 값은 사용자가 바꿀 수 있어 인가는 전적으로 서버 일이다.
 프론트에서 먼저 막으면 **보안 기능처럼 보이는 코드만 늘고 서버의 인가 누락을 가린다.** → D10
 
+## 설계 후 코드에서 확정된 것 (2026-09-09 확인)
+
+노션 문서가 「미결」로 두었던 것들이 구현에서 닫혔다. 문서만 읽으면 아직 열려 있는 것처럼 보인다.
+
+- **SSE 인증 토큰 전달 방식(V1 §9 미결: 쿼리 파라미터 vs 쿠키)이 사라졌다.**
+  **EventSource를 쓰지 않기 때문**이다 — `POST` + `fetch` + `response.body.getReader()`로
+  스트림을 읽으므로 `Authorization` 헤더가 그대로 실린다. EventSource가 헤더를 못 싣는다는 제약 자체가 적용되지 않는다.
+  서버도 대칭으로, **헤더를 열기 전에 인가를 끝내** 실패가 SSE 프레임이 아니라 평범한 403/404로 나가게 했다.
+  프레임은 `data: {type:"user"|"delta"|"done"|"error"}` + 종료 시 `data: [DONE]`.
+- **S3가 붙었다.** 쓰기는 서버만 하고(브라우저에 PUT 서명을 주지 않는다) 읽기는 15분 서명 URL이다.
+  버킷은 비공개, `ACL` 없음, `CacheControl`은 짧게(같은 키를 덮어쓰므로 `immutable` 금지).
+  **설정이 없으면 미리보기만 꺼지고 나머지는 뜬다** — 필수로 만들면 AWS 접근 없이 로컬·e2e가 아예 못 뜬다.
+- **배포는 k8s + nginx**로 갔다. 프론트는 `/api`를 백엔드로 프록시하고, 환경별 값은
+  배포 매니페스트(`gitops-apps`) overlay가 만드는 `/config.js`를 런타임에 읽는다 —
+  **한 이미지를 dev·stage·운영에 그대로 쓴다.** 정적 에셋은 CDN 도메인도 런타임 값이다.
+- **LLM은 사내 TokenHub를 OpenAI SDK로 부른다**(`baseURL`만 바꾸고 `apiKey`는 검사되지 않아 더미).
+  시스템 프롬프트는 Langfuse에 두고 `prompt_name`으로 참조하는데, **비어 있으면 아예 안 보내
+  프롬프트 없이 개발이 진행된다.** 스트리밍(채팅)과 논스트리밍(추천 질문 생성) 두 경로가 있다.
+- **환경변수는 부팅 시점에 세운다.** `class-validator`로 형태까지 검증하고
+  (`MONGODB_URI`는 스킴, `JWT_SECRET`은 16자 이상, `CORS_ORIGINS`는 오리진 목록 정규식),
+  **기본값을 두는 것은 `PORT` 하나뿐**이다 — 틀려도 「안 붙는다」로 즉시 드러나고 부팅 로그에 남기 때문이다.
+  나머지는 잘못된 값으로 뜬 서버가 조용히 위험하므로 부팅을 세운다.
+
 ## 실제로 물린 곳 (설계가 예측하지 못한 것)
 
 - **`User`만 도메인 id를 `_id`가 아니라 별도 `id` 필드에 둔다**(다른 다섯 컬렉션은 `_id`에 직접 넣는다).
@@ -220,12 +248,14 @@ JWT는 서명 시크릿만 있으면 어느 파드든 동일하게 동작한다.
 
 - `openapi.json`을 "참고 문서"에서 **"계약"으로 승격** — 지금은 실제 동작과 어긋나는 곳이 있어 믿고 붙일 수 없다.
   그 위에 codegen을 올려야 D4가 설계대로 작동한다. 상세는 [[cross-repo-api-contract-drift]]
-- 프론트 회귀 테스트 0건 — Vitest 도입 계획까지 세우고 일정상 보류
+- 프론트 회귀 테스트 0건 — **보류가 아니라 결정이다.** [[2026-09-09-edu-vibe-front-no-tests]]
 - 한글 정렬이 두 곳에서 다르게 풀려 있다 (collation 인덱스 vs 기본 이진 비교) — 통일 기준 미정
 - spec 스위트의 병렬 흔들림, `--forceExit` 없이 종료하지 않는 원인
 
 ## 변경 이력
 
+- 2026-09-09: D6의 식별자 부분이 [[2026-09-09-edu-vibe-student-id-pii]]로 대체됨.
+  코드에서 확정된 것(SSE 인증·S3·배포 형태·TokenHub·env 검증)을 절로 추가
 - 2026-09-09: 최초 작성. 노션 V1/V2 Tech Spec, DB 스키마 문서, 설계 원칙 문서, 서버·프론트 개발회고,
   MVP 배포 준비, Fastify 도입 제안, 양쪽 레포 `docs/references.md`에서 결정과 기각 근거를 이관.
   `index.md`에 "git 이력에만 존재"로 남아 있던 **Prisma-MongoDB 기각 근거**와 **Express 어댑터 선택**을 여기서 해소했다

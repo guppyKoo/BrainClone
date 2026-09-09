@@ -34,8 +34,11 @@ status: draft
     양쪽 개발회고를 2026-08-31에 작성 — 결론이 같다: **만드는 힘은 충분했고 만든 것을 지키는 장치가 약하다**
   - **2026-09-17 학교 시연**이 첫 목표. 배포 준비 진행 중 — OP DB(`edu_vibe`), 도메인, S3(`grm-edu-vibe`),
     Jenkins/ArgoCD 파이프라인, Vault, k8s, Elastic APM. LLM은 사내 **TokenHub** 경유(모델 `gpt-5-mini`)
-  - 남은 부채: 프론트 테스트 **0건**(Vitest 계획만), `openapi.json`이 실제 동작과 어긋나 아직 계약으로 승격 못 함
-    → [[cross-repo-api-contract-drift]]
+  - 프론트 테스트 **0건은 결정이다** — 하네스를 걷어냈고(10파일 2,228줄) 서버는 반대로 유지한다
+    → [[2026-09-09-edu-vibe-front-no-tests]]
+  - **EDU-650**: 학생 id가 URL·S3 경로에 실려 이름이 노출돼 무작위 `stu-*`로 이관.
+    신원은 `(classroomProjectId, nickName)` 부분 unique로 옮김 → [[2026-09-09-edu-vibe-student-id-pii]]
+  - 남은 부채: `openapi.json`이 실제 동작과 어긋나 아직 계약으로 승격 못 함 → [[cross-repo-api-contract-drift]]
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
   구조·패턴은 [[edu-ai-course-architecture]], [[spreadsheet-import-stable-ids]],
   [[llm-rate-limit-defense]], [[monaco-model-lifecycle]]에 분리 기록
@@ -111,6 +114,10 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-09: 두 레포 코드에서 기술 보강 — 결정 2건 추가(식별자 PII 이관, 프론트 테스트 정책),
+  스니펫 2건 추가(`mongo-migration-safety`, `figma-design-implementation`),
+  기존 스니펫 2건에 항목 7개 추가. 아키텍처 문서의 D6을 대체 표시하고
+  코드에서 확정된 것(SSE 인증·S3·배포 형태·TokenHub·env 검증) 반영
 - 2026-09-09: Edu Vibe 아키텍처를 노션 Tech Spec 트리 전체에서 BrainClone으로 이관 —
   `decisions/2026-09-09-edu-vibe-architecture.md`, `career/portfolio/edu-vibe.md`,
   스니펫 2건(`cross-repo-api-contract-drift`, `notion-jira-reference-links`) 신설.
