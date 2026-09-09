@@ -75,6 +75,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [figma-design-implementation.md](developer/snippets/figma-design-implementation.md) — 시안을 코드로 옮길 때 어긋나는 지점과 CDP 브라우저 실측
   - [notion-jira-reference-links.md](developer/snippets/notion-jira-reference-links.md) — 노션·피그마·Jira를 코드에서 참조할 때 깨진 것들
   - [korean-text-wrapping.md](developer/snippets/korean-text-wrapping.md) — `break-keep`이 공백 없는 한글을 넘치게 만드는 이유와 세 속성 해법
+  - [google-fonts-korean-subset.md](developer/snippets/google-fonts-korean-subset.md) — 한글 웹폰트 30벌을 `text=` 서브셋 + `unicode-range` 병합으로 증분 로딩
 
 ## 🚀 Career — 사회적 자아와 성과 (표현 계층, developer/를 링크로 참조)
 

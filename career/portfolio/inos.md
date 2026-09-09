@@ -1,9 +1,9 @@
 ---
 title: INOS — 인문학 모임 플랫폼
 area: career
-tags: [portfolio, NestJS, AI, monorepo, side-project]
+tags: [portfolio, NestJS, AI, monorepo, side-project, Electron, 실시간]
 created: 2026-08-03
-updated: 2026-09-01
+updated: 2026-09-09
 status: draft
 ---
 
@@ -15,13 +15,22 @@ status: draft
 ## 기술
 
 - **모노레포**: pnpm workspace + Turborepo
-  - `apps/server` (3000): NestJS + Fastify — Auth/Group/Content/Schedule/Archive API
-  - `apps/ai-server` (3001): NestJS + Fastify — 발제문/추천/요약 전용 SSE 스트리밍
-  - `apps/web` (5173): React 19 + Vite + Tailwind v4 + DaisyUI
+  - `apps/server` (3000): NestJS + Fastify — 모듈 12개
+    (`auth` `user` `group` `meeting` `library` `board` `notification` `mail` `tmdb` `seoji` `showcase` `admin`)
+  - `apps/ai-server` (3001): NestJS + Fastify — 발제문 생성 SSE + **socket.io 게이트웨이 단독 소유**.
+    모듈은 `discussion` 하나뿐(1,349줄)
+  - `apps/web` (5173): React 19 + Vite + Tailwind + TanStack Query
+  - `apps/desktop`: web을 감싼 Electron 셸
   - `packages/prisma|types|utils`: 공유 스키마, DTO, 유틸리티
-- **데이터**: Prisma + PostgreSQL (Supabase) + **pgvector** — `$queryRaw`로 벡터 검색
-- **인프라**: BullMQ + ioredis 큐, JWT + Passport + Google OAuth
-- **LLM**: 단일 모델 — **Claude Sonnet**. 멀티 모델 라우팅도, 작업별 모델 분리도 없다
+- **데이터**: Prisma + PostgreSQL 16 (EC2 위 Docker 컨테이너, 관리형 아님). **확장 없음**
+- **인프라**: BullMQ + ioredis 큐, JWT + Google OAuth(axios 직접 구현) + 로컬 로그인 + 초대 링크
+- **외부 API**: TMDB(영화), 국립중앙도서관 서지정보(도서). 키가 없으면 해당 검색만 503이고 나머지는 정상
+- **LLM**: 단일 모델 — **`claude-sonnet-4-6`**. 멀티 모델 라우팅도, 작업별 모델 분리도 없다
+
+> **정정(2026-09-09):** 이 문서는 오랫동안 스택에 **pgvector와 벡터 검색**을 올려두고 있었으나
+> 사실이 아니다. 초기 스키마에는 실제로 있었지만(`extensions = [pgvector]`,
+> `Unsupported("vector(1536)")` 컬럼 3개) 전면 개편 커밋 `5625f44`에서 **삭제**됐다.
+> 추천 기능용이었는데 채울 데이터를 모을 현실적 방법이 없어 걷어냈다. 지금 코드에 흔적이 없다.
 
 ## 설계 포인트
 
@@ -108,19 +117,54 @@ AI 생성 토론 발제문에 대해 진술한 요구사항: **한 세트에 최
 - 논픽션은 아예 다른 세트로 분기한다 — 기법 요소가 적용되지 않는다. 논증 축(주장, 증거 유형,
   가장 약한 고리, 다루지 않은 반론, 저자의 이해관계)이 필요하고, 거기서 `stance`는 nullable이 아니라 필수다
 
+## 서가와 작품 메타데이터 (2026-09-09)
+
+"발제문이 생성된다"에서 한 발 더 나가, **모임이 끝난 뒤에 남는 것**을 만든 작업.
+
+- **서가**: 끝난 모임이 책등으로 꽂혀 누적된다. 개인 서가는 공유 링크(`libraryShareId`)로 공개 가능.
+  화면은 넷(`/`, `/library`, `/orgs/:id/library`, `/s/:shareId`)인데 코드 경로는 둘이었고,
+  랜딩에만 있던 30벌 책등 스타일이 나머지에 빠져 있었다. `SpineFace` 컴포넌트로 추출해 합쳤다 —
+  **화면 수와 코드 경로 수를 착각하면 "적용 완료"가 거짓말이 된다.**
+- **작품 검색 자동완성**: 서버는 `bookIsbn`을 받아 도서를 확정하는 경로를 생성·수정·재시도 세 곳에
+  갖고 있었는데 **웹이 한 번도 호출하지 않았다.** `bookWork`이 붙은 모임이 하나도 없었다.
+  영화는 TMDB로 골라 보내면서 책만 손으로 친 문자열을 보내고 있었다 → [[cross-repo-api-contract-drift]] §13
+- **붙이기 전에 재봤다**: 랜딩 서가를 서지 API로 자동 생성하려다, 실측(표지 0/25·0/309·0/1308건,
+  랭킹 개념 없음, 부분 일치로 엉뚱한 책)에서 접고 큐레이션 목록을 정식 출처로 승격했다.
+  ②편의 pgvector와 같은 벽인데, **이번엔 붙이기 전에 쟀다는 게 다르다.**
+- 한글 책등 폰트는 Google Fonts `text=` 서브셋으로 30벌을 받되, 응답에 `unicode-range`가 실려
+  스타일시트가 코드포인트 단위로 병합된다는 걸 확인하고 **증분 요청**으로 만들었다
+  → [[google-fonts-korean-subset]]
+
+## 개발기 5편 (2026-09-09)
+
+전체 회고(`docs/RETROSPECTIVE.md`)와 블로그 시리즈 5편(`docs/blog/`)을 작성.
+기획 / 아키텍처 / 디자인 / Main server / AI-server.
+
+관통하는 결론 하나: **이 프로젝트의 실패 다섯 건이 전부 에러를 내지 않는 "끊긴 경로"였다.**
+pgvector(데이터 없음), 큐 재시도(`await` 누락으로 영영 미발동), 죽은 `bookIsbn` 경로,
+compose에 빠진 환경변수(프로덕션 검색이 조용히 503), `GENERATING`에 31일 갇힌 발제문.
+타입체크·빌드·배포가 전부 통과한다. 누가 "이거 왜 안 되죠"라고 물어야 보인다.
+
 ## 어필 포인트
 
 - 자기 취미의 진짜 불편함을 풀스택 + AI로 풀었다 — 본인이 동아리의 영화 큐레이터([[humanities]])이자 사용자다
-- 개인 프로젝트에서 실무급 구성 요소(벡터 검색, 큐, OAuth)를 혼자 설계했다
+- 개인 프로젝트에서 실무급 구성 요소(큐·지연 잡, OAuth, 실시간 게이트웨이, 자동 배포)를 혼자 설계했다
 - **새 메커니즘을 추가하기보다 기존 것을 재사용하는 것을 선호한다**: 알림 수신함은 이메일 중복 방지 로그에
   올라타고, 실시간 업데이트는 토론 소켓 게이트웨이에 올라탄다. "인프라를 언제 추가할지 어떻게 판단하나요"에
   대한 좋은 답변이다.
 - **다시 이야기할 만한 실시간 관련 교훈**: 메인 서버가 행을 쓰고 나서 AI 서버에 HTTP로 브로드캐스트를
   요청하는 구조에서는 감상 저장이 불안정했다. 소켓 게이트웨이를 소유한 서버로 쓰기를 옮기니 해결됐다 —
   게이트웨이를 소유한 쪽이 쓰기도 소유해야 한다.
+- **재기 전에는 붙이지 않는다**: 랜딩 자동 큐레이션과 표지 API를 실측 숫자로 기각했다.
+  "왜 그 기능을 안 넣었나요"에 감이 아니라 표로 답할 수 있다.
+- **기록을 스스로 정정한다**: 이 문서가 한 달 넘게 스택에 pgvector를 올려두고 있었다.
+  git으로 확인해 삭제 시점(`5625f44`)까지 특정하고 정정했다.
 
 ## 변경 이력
 
+- 2026-09-09: **스택 정정 — pgvector·벡터 검색은 사실이 아니었다**(`5625f44`에서 삭제됨).
+  Supabase → EC2 자체 호스팅 Postgres 16으로 정정, 모듈 목록·인증 방식·외부 API 실제 상태 반영.
+  서가/작품 검색 작업과 개발기 5편 기록. 어필 포인트 2건 추가
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-25: 가이드는 모임 자리에서 처음 본다 — 준비가 필요한 질문(세기, 찾아보기)을 두 매체 모두에서 전면 금지
 - 2026-08-25: element를 모델이 고르도록 변경(주입과 소진 추적 모두 제거), 인용문에서 페이지 번호 제외, 각자 관람 전제 기록
