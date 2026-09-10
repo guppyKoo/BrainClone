@@ -3,7 +3,7 @@ title: 기술 스택 & 숙련도
 area: developer
 tags: [stack, JavaScript, TypeScript, React, Node.js, Express, oRPC, Electron, NestJS]
 created: 2026-08-03
-updated: 2026-09-09
+updated: 2026-09-10
 status: draft
 ---
 
@@ -46,6 +46,15 @@ status: draft
 - Claude Code 파워 유저 — skill/agent/hook/MCP를 대규모로 운용
 - 배포/인프라: EKS 기반 Kubernetes, Jenkins 파이프라인
 
+## 테스트 & 품질 보증
+
+- **Edu Vibe 서버**: spec-first TDD로 RED를 구현 갭 목록으로 사용하고, spec 327개와 e2e 94개까지
+  확장했다. 실제 마이그레이션과 운영 전역 설정을 테스트에서도 공유하고, 테스트 DB 격리 실패가
+  닫히는 쪽으로 동작하도록 하네스를 보강했다 ([[nestjs-e2e-test-harness]]).
+- **edu-core**: 품질 보증과 고객 CS가 발생하기 전 오류를 선제적으로 검출하기 위한 e2e 테스트 작성 경험이 있다.
+- 따라서 테스트는 새로 확보해야 할 기초 역량이 아니다. 다음 과제는 개인 프로젝트 INOS에도 자동화
+  테스트를 적용하고, 운영 위험에 맞게 어떤 계층을 보호할지 결정하는 것이다.
+
 ## AI/Data Platform 전환 관점의 경험 경계
 
 - **AI model serving**: 회사의 Edu Vibe와 `edu-ai-course`, 개인 프로젝트 INOS에서 모델을 서비스에
@@ -67,6 +76,7 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-10: Edu Vibe의 TDD·e2e와 edu-core의 선제적 오류 검출 e2e 경험을 품질 보증 역량으로 명시
 - 2026-09-09: Kafka·Redis의 회사 사용 경험과 구축 경험의 경계, AI model serving·Python·JVM 및
   Airflow/RAG/핀테크 경험 수준을 사용자 확인 내용으로 추가
 - 2026-09-01: 프로젝트 지침에서 확인된 주력 역할과 기술을 반영해 JavaScript 풀스택, React, Node.js(Express)를 명시
