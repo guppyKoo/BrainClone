@@ -3,7 +3,7 @@
 guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUDE.md](CLAUDE.md) (= [AGENTS.md](AGENTS.md)).
 **AI는 어떤 작업이든 이 파일과 [now.md](now.md)를 먼저 읽는다.**
 
-> 마지막 갱신: 2026-09-09 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
+> 마지막 갱신: 2026-09-10 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
 > 경계: **개발 관련은 전부 `developer/`**, `profile/`·`interest/`는 비개발 영역, `idea/`는 미착수 구상
 > 언어: 모든 문서 한국어 (CLAUDE.md §0 참조)
 
@@ -17,6 +17,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
 - [values.md](profile/values.md) — 삶의 철학, 우선순위, 의사결정 원칙
 - [journal/](profile/journal/) — 깊은 성찰, 간헐적 회고 (append-only)
   - [2026-08-03-brainclone-start.md](profile/journal/2026-08-03-brainclone-start.md) — BrainClone 시작
+  - [2026-09-10-inos-ai-quality-focus.md](profile/journal/2026-09-10-inos-ai-quality-focus.md) — INOS 성장 목표를 운영 경험에서 AI 발제문 평가·검색 최적화로 변경
 
 ## 🧭 Decisions — 기술·설계 판단 (append-only)
 
