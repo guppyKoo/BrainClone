@@ -26,6 +26,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [2026-09-09-edu-vibe-architecture.md](decisions/2026-09-09-edu-vibe-architecture.md) — Edu Vibe MVP 아키텍처 확정 (NestJS(Express)·Mongoose 채택, Fastify·Prisma·4앱 분리 기각)
   - [2026-09-09-edu-vibe-student-id-pii.md](decisions/2026-09-09-edu-vibe-student-id-pii.md) — 학생 식별자를 합성 값에서 무작위 값으로 (위 문서 D6을 **대체**)
   - [2026-09-09-edu-vibe-front-no-tests.md](decisions/2026-09-09-edu-vibe-front-no-tests.md) — 프론트는 테스트를 쓰지 않기로 하고 하네스 제거 (서버는 반대)
+  - [2026-09-11-edu-vibe-llm-evaluation.md](decisions/2026-09-11-edu-vibe-llm-evaluation.md) — LLM 품질을 명세량 S에 따른 Q·정정률 두 곡선으로 측정하는 이론 설계
 
 ## 💡 Idea — 아직 만들지 않은 것 (공모전·해커톤 구상)
 

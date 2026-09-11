@@ -42,7 +42,7 @@ status: draft
   - **LLM 품질 평가 체계 구축이 다음 우선순위**: 서비스 코드는 e2e·테스트로 검증하지만 핵심인 LLM 출력은
     현재 프롬프트만으로 관리하고 있어, 개선 전제인 품질 측정·추적 지표를 먼저 마련하기로 함.
     평가 지표의 이론 문서는 작성했으며 **구현 방법론은 아직 미정**
-    ([Notion 문서](https://app.notion.com/p/EDU-VIBE-LLM-3d74e6997fb080cc9476c45736aec07c))
+    → [[2026-09-11-edu-vibe-llm-evaluation]]
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
   구조·패턴은 [[edu-ai-course-architecture]], [[spreadsheet-import-stable-ids]],
   [[llm-rate-limit-defense]], [[monaco-model-lifecycle]]에 분리 기록
