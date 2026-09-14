@@ -122,6 +122,10 @@ status: draft
   1차 범위를 로그 수집·R 추출·전후 브라우저 실행·검사 DSL·결정론적 Q1까지로 확정. 생성 AI는
   Ambiguity만 기록하며 측정 실패를 `false`가 아닌 `null`로 남긴다. Q2·Q3는 B·D·M 증거 구조가
   안정된 뒤 추가한다. (오늘 decisions 1건 작성으로 상한 도달 → 다음 트리거일에 `decisions/`로 승격)
+- 2026-09-14: TokenHub/Langfuse export 26건의 `userId`·`sessionId`가 전부 `null`인 원인을 추적.
+  서비스 DB에는 `scope.userId`로 대화를 저장하지만 TokenHub에는 메시지 배열만 보내 식별 정보가
+  trace로 전달되지 않는다. 누적 메시지 prefix로 6개 대화 체인은 복원할 수 있지만 실제 사용자 간
+  귀속은 복원 불가능하다. (오늘 기록 상한 도달 → 다음 트리거일에 `decisions/`로 승격)
 
 ## 미해결 질문 (AI가 물어볼 것)
 
@@ -148,6 +152,7 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-14: TokenHub 요청에 사용자·세션 식별 정보가 빠져 Langfuse export가 전부 익명화되는 원인 확인
 - 2026-09-14: Edu Vibe LLM eval의 구현 방법을 서비스 로그 수집과 오프라인 평가 처리로 분리하고,
   R·브라우저 증거·검사 DSL·Q1까지를 첫 구현 범위로 확정
 - 2026-09-14: Edu Vibe LLM eval을 종합점수·과제별 계약 없이 독립 턴의
