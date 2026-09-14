@@ -41,8 +41,9 @@ status: draft
   - 남은 부채: `openapi.json`이 실제 동작과 어긋나 아직 계약으로 승격 못 함 → [[cross-repo-api-contract-drift]]
   - **LLM 품질 평가 체계 구축이 다음 우선순위**: 서비스 코드는 e2e·테스트로 검증하지만 핵심인 LLM 출력은
     현재 프롬프트만으로 관리하고 있어, 개선 전제인 품질 측정·추적 지표를 먼저 마련하기로 함.
-    평가 지표의 이론 문서는 작성했으며 **구현 방법론은 아직 미정**
-    이론의 출발점은 [[2026-09-11-edu-vibe-llm-evaluation]], 현재 확정한 관측 모델은
+    서비스는 턴별 원본·Ambiguity만 기록하고, 별도 오프라인 처리기가 R·S·L 추출 → 전후 HTML 격리 실행 →
+    범용 검사 DSL 실행 → Q1 계산을 먼저 담당한다. 증거 구조가 안정되면 B·D·M을 이용한 Q2·Q3를 붙인다.
+    이론의 출발점은 [[2026-09-11-edu-vibe-llm-evaluation]], 기존 관측 모델은
     [[2026-09-14-edu-vibe-llm-eval-observation-model]]
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
   구조·패턴은 [[edu-ai-course-architecture]], [[spreadsheet-import-stable-ids]],
@@ -117,6 +118,10 @@ status: draft
   현재 결론은 "안전하다"가 아니라, 신입 채용이 줄기 전에 진입해 경력자 구간으로 이동 중인 상대적
   이점이 있으며 그 이점을 연차가 아닌 시스템 소유·운영 성과·AI 결과 검증 경험으로 굳혀야 한다는 것.
   (오늘 journal 1건 작성으로 상한 도달 → 다음 트리거일에 `profile/journal/`로 승격)
+- 2026-09-14: Edu Vibe LLM eval 구현을 서비스 로그 수집부와 오프라인 평가 처리기로 분리하고,
+  1차 범위를 로그 수집·R 추출·전후 브라우저 실행·검사 DSL·결정론적 Q1까지로 확정. 생성 AI는
+  Ambiguity만 기록하며 측정 실패를 `false`가 아닌 `null`로 남긴다. Q2·Q3는 B·D·M 증거 구조가
+  안정된 뒤 추가한다. (오늘 decisions 1건 작성으로 상한 도달 → 다음 트리거일에 `decisions/`로 승격)
 
 ## 미해결 질문 (AI가 물어볼 것)
 
@@ -143,6 +148,8 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-14: Edu Vibe LLM eval의 구현 방법을 서비스 로그 수집과 오프라인 평가 처리로 분리하고,
+  R·브라우저 증거·검사 DSL·Q1까지를 첫 구현 범위로 확정
 - 2026-09-14: Edu Vibe LLM eval을 종합점수·과제별 계약 없이 독립 턴의
   Q1~Q4·L·S·`utteranceAmbiguity`·`contextualAmbiguity`를 수집하는 관측 모델로 좁힘
 - 2026-09-11: Edu Vibe의 다음 LLM 품질 과제를 프롬프트 개선보다 평가 지표·추적 체계 구축으로 확정.
