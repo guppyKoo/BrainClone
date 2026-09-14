@@ -3,7 +3,7 @@ title: Now — 현재 스냅샷
 area: profile
 tags: [now, 스냅샷, 진행중]
 created: 2026-08-03
-updated: 2026-09-11
+updated: 2026-09-14
 last_review: 2026-09-01
 status: draft
 ---
@@ -13,7 +13,7 @@ status: draft
 > 현재 상태 스냅샷. AI는 어떤 작업이든 `index.md`와 이 파일을 먼저 읽는다.
 > 갱신 빈도 최상 — 과거 상태는 git 이력에 있다.
 
-마지막 갱신: 2026-09-11
+마지막 갱신: 2026-09-14
 
 ## 진행 중
 
@@ -42,7 +42,8 @@ status: draft
   - **LLM 품질 평가 체계 구축이 다음 우선순위**: 서비스 코드는 e2e·테스트로 검증하지만 핵심인 LLM 출력은
     현재 프롬프트만으로 관리하고 있어, 개선 전제인 품질 측정·추적 지표를 먼저 마련하기로 함.
     평가 지표의 이론 문서는 작성했으며 **구현 방법론은 아직 미정**
-    → [[2026-09-11-edu-vibe-llm-evaluation]]
+    이론의 출발점은 [[2026-09-11-edu-vibe-llm-evaluation]], 현재 확정한 관측 모델은
+    [[2026-09-14-edu-vibe-llm-eval-observation-model]]
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
   구조·패턴은 [[edu-ai-course-architecture]], [[spreadsheet-import-stable-ids]],
   [[llm-rate-limit-defense]], [[monaco-model-lifecycle]]에 분리 기록
@@ -142,6 +143,8 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-14: Edu Vibe LLM eval을 종합점수·과제별 계약 없이 독립 턴의
+  Q1~Q4·L·S·`utteranceAmbiguity`·`contextualAmbiguity`를 수집하는 관측 모델로 좁힘
 - 2026-09-11: Edu Vibe의 다음 LLM 품질 과제를 프롬프트 개선보다 평가 지표·추적 체계 구축으로 확정.
   이론 문서 작성 완료, 구현 방법론은 미정
 - 2026-09-10: AI 시대의 주니어 채용 축소, 개발자 수요 감소, 이른 경력 시작의 상대적 이점에 관한 커리어 고민을 저널 백로그에 추가
