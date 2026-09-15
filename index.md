@@ -3,7 +3,7 @@
 guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUDE.md](CLAUDE.md) (= [AGENTS.md](AGENTS.md)).
 **AI는 어떤 작업이든 이 파일과 [now.md](now.md)를 먼저 읽는다.**
 
-> 마지막 갱신: 2026-09-10 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
+> 마지막 갱신: 2026-09-15 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
 > 경계: **개발 관련은 전부 `developer/`**, `profile/`·`interest/`는 비개발 영역, `idea/`는 미착수 구상
 > 언어: 모든 문서 한국어 (CLAUDE.md §0 참조)
 
@@ -28,6 +28,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [2026-09-09-edu-vibe-front-no-tests.md](decisions/2026-09-09-edu-vibe-front-no-tests.md) — 프론트는 테스트를 쓰지 않기로 하고 하네스 제거 (서버는 반대)
   - [2026-09-11-edu-vibe-llm-evaluation.md](decisions/2026-09-11-edu-vibe-llm-evaluation.md) — LLM 품질을 명세량 S에 따른 Q·정정률 두 곡선으로 측정하는 이론 설계
   - [2026-09-14-edu-vibe-llm-eval-observation-model.md](decisions/2026-09-14-edu-vibe-llm-eval-observation-model.md) — 종합점수 없이 Q1~Q4·L·S와 발화/맥락 모호함을 독립 턴 단위로 관측
+  - [2026-09-15-edu-vibe-llm-eval-pipeline.md](decisions/2026-09-15-edu-vibe-llm-eval-pipeline.md) — Gate, R·D·B/M 단계 분리, 생성·평가 AX 축 소유권과 평가 전용 호출 태그 확정
 
 ## 💡 Idea — 아직 만들지 않은 것 (공모전·해커톤 구상)
 
