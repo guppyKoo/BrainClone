@@ -41,11 +41,13 @@ status: draft
   - 남은 부채: `openapi.json`이 실제 동작과 어긋나 아직 계약으로 승격 못 함 → [[cross-repo-api-contract-drift]]
   - **LLM 품질 평가 체계 구축이 다음 우선순위**: 서비스 코드는 e2e·테스트로 검증하지만 핵심인 LLM 출력은
     현재 프롬프트만으로 관리하고 있어, 개선 전제인 품질 측정·추적 지표를 먼저 마련하기로 함.
-    서비스는 턴별 원본과 생성 AX의 L·Ambiguity를 기록한다. 오프라인 처리기는 Gate → R·S와 B·D 추출 →
-    M 매칭 → 결정론적 Q1~Q3 계산을 담당한다. 중단·정책 차단·코드 없음은 제외하고, 실행 불가 HTML은
+    서비스는 턴별 원본과 생성 AX의 L·Ambiguity를 기록한다. 오프라인 처리기의 평가 LLM은 발화·맥락을
+    닫힌 실행 스키마 R로 분류하는 Extractor 역할만 맡는다. 코드는 S와 검사항목을 생성하고 브라우저
+    증거에서 B·D 및 변경 허용 여부를 계산하며, M/Judge 단계 없이 Q1~Q3를 산출한다. DSL로 옮기지 못한
+    요구는 `UNMAPPED_REQUIREMENT`로 분리한다. 중단·정책 차단·코드 없음은 제외하고, 실행 불가 HTML은
     Q1~Q3를 0점으로 기록한다. 다만 검증 가능한 R이 없는 턴과 실행 불가 0점은 정상 품질 그래프에서
     제외하고 Gate 목록에서 별도 추적한다. S/L별 그래프를 두 Ambiguity로 필터링하며 평가 호출은
-    TokenHub client tag를 requirements/semantics/matching으로 분리한다.
+    TokenHub client tag `edu-vibe-llm-quality-eval-requirements`로 서비스 호출과 분리한다.
     → [[2026-09-15-edu-vibe-llm-eval-pipeline]], [[2026-09-16-edu-vibe-eval-gate-reporting]]
     이론의 출발점은 [[2026-09-11-edu-vibe-llm-evaluation]], 기존 관측 모델은
     [[2026-09-14-edu-vibe-llm-eval-observation-model]]
@@ -111,6 +113,10 @@ status: draft
 
 <!-- 하루 1건 상한을 넘긴 트리거를 여기 적립. 다음 트리거일 또는 월간 리뷰 때 소진 -->
 
+- 2026-09-16: Edu Vibe eval의 LLM 역할을 닫힌 R 추출로 제한하고 M/Judge를 제거했다. S·검사 컴파일·B·D·
+  Q1~Q3는 코드가 담당하며, DSL 미지원 요구는 부분 채점하지 않고 Gate에서 별도 추적한다.
+  (오늘 decisions 1건 작성으로 상한 도달 → 다음 트리거일에 재현성 결정으로 승격)
+
 - 2026-09-16: Edu Vibe eval은 Q 계산식만 결정론적이고 입력인 R·검사 DSL·B·D·M은 LLM이 매번
   다시 생성해 동일 로그의 점수가 달라질 수 있다는 재현성 문제를 확인. 중간 산출물 고정·재사용과
   평가기 변동성 측정을 분리해야 한다. (오늘 decisions 1건 작성으로 상한 도달 → 다음 트리거일에 검토)
@@ -163,6 +169,7 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-16: 평가 LLM을 닫힌 R Extractor로 제한하고 M/Judge를 제거한 결정론적 채점 구조로 변경
 - 2026-09-16: 검증 가능한 R이 없는 턴과 실행 불가 0점을 정상 품질 집계·그래프에서 분리하고 Gate 목록에서 추적
 - 2026-09-15: Edu Vibe LLM eval의 Gate, R·D·B/M 단계, 생성·평가 AX 소유권과 평가 전용 TokenHub 태그를 확정
 - 2026-09-14: TokenHub 요청에 사용자·세션 식별 정보가 빠져 Langfuse export가 전부 익명화되는 원인 확인
