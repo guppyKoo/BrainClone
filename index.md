@@ -29,6 +29,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [2026-09-11-edu-vibe-llm-evaluation.md](decisions/2026-09-11-edu-vibe-llm-evaluation.md) — LLM 품질을 명세량 S에 따른 Q·정정률 두 곡선으로 측정하는 이론 설계
   - [2026-09-14-edu-vibe-llm-eval-observation-model.md](decisions/2026-09-14-edu-vibe-llm-eval-observation-model.md) — 종합점수 없이 Q1~Q4·L·S와 발화/맥락 모호함을 독립 턴 단위로 관측
   - [2026-09-15-edu-vibe-llm-eval-pipeline.md](decisions/2026-09-15-edu-vibe-llm-eval-pipeline.md) — Gate, R·D·B/M 단계 분리, 생성·평가 AX 축 소유권과 평가 전용 호출 태그 확정
+  - [2026-09-16-edu-vibe-eval-gate-reporting.md](decisions/2026-09-16-edu-vibe-eval-gate-reporting.md) — 검증 가능한 R이 없는 턴과 실행 불가 0점을 품질 그래프에서 분리
 
 ## 💡 Idea — 아직 만들지 않은 것 (공모전·해커톤 구상)
 

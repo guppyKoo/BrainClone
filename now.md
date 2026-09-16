@@ -3,7 +3,7 @@ title: Now — 현재 스냅샷
 area: profile
 tags: [now, 스냅샷, 진행중]
 created: 2026-08-03
-updated: 2026-09-15
+updated: 2026-09-16
 last_review: 2026-09-01
 status: draft
 ---
@@ -13,7 +13,7 @@ status: draft
 > 현재 상태 스냅샷. AI는 어떤 작업이든 `index.md`와 이 파일을 먼저 읽는다.
 > 갱신 빈도 최상 — 과거 상태는 git 이력에 있다.
 
-마지막 갱신: 2026-09-15
+마지막 갱신: 2026-09-16
 
 ## 진행 중
 
@@ -43,8 +43,10 @@ status: draft
     현재 프롬프트만으로 관리하고 있어, 개선 전제인 품질 측정·추적 지표를 먼저 마련하기로 함.
     서비스는 턴별 원본과 생성 AX의 L·Ambiguity를 기록한다. 오프라인 처리기는 Gate → R·S와 B·D 추출 →
     M 매칭 → 결정론적 Q1~Q3 계산을 담당한다. 중단·정책 차단·코드 없음은 제외하고, 실행 불가 HTML은
-    Q1~Q3를 0점 처리한다. S/L별 그래프를 두 Ambiguity로 필터링하며 평가 호출은 TokenHub client tag를
-    requirements/semantics/matching으로 분리한다. → [[2026-09-15-edu-vibe-llm-eval-pipeline]]
+    Q1~Q3를 0점으로 기록한다. 다만 검증 가능한 R이 없는 턴과 실행 불가 0점은 정상 품질 그래프에서
+    제외하고 Gate 목록에서 별도 추적한다. S/L별 그래프를 두 Ambiguity로 필터링하며 평가 호출은
+    TokenHub client tag를 requirements/semantics/matching으로 분리한다.
+    → [[2026-09-15-edu-vibe-llm-eval-pipeline]], [[2026-09-16-edu-vibe-eval-gate-reporting]]
     이론의 출발점은 [[2026-09-11-edu-vibe-llm-evaluation]], 기존 관측 모델은
     [[2026-09-14-edu-vibe-llm-eval-observation-model]]
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
@@ -154,6 +156,7 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-16: 검증 가능한 R이 없는 턴과 실행 불가 0점을 정상 품질 집계·그래프에서 분리하고 Gate 목록에서 추적
 - 2026-09-15: Edu Vibe LLM eval의 Gate, R·D·B/M 단계, 생성·평가 AX 소유권과 평가 전용 TokenHub 태그를 확정
 - 2026-09-14: TokenHub 요청에 사용자·세션 식별 정보가 빠져 Langfuse export가 전부 익명화되는 원인 확인
 - 2026-09-14: Edu Vibe LLM eval의 구현 방법을 서비스 로그 수집과 오프라인 평가 처리로 분리하고,
