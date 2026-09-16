@@ -57,8 +57,14 @@ status: draft
     모델의 S·checks·scores 무시, 자유 서술 차단), 변경 허용 여부를 R에서 역추론하지 않고
     `changeScope`로 명시 선언하도록 바꿨다. "요구 미충족(FAIL)"과 "측정 불가(NOT_OBSERVABLE)"도 분리했다
     → [[2026-09-16-edu-vibe-eval-instrument-contract]]
-  - 계측기로서 남은 선결 조건 3가지: **재현성 통제, 오차 명시, 단위(S) 안정화**.
-    모호성·난이도 파이프라인은 26/26 null이라 리포트 축 6개가 비어 있다
+  - **2026-09-16: 계측기의 선결 조건 3가지를 구현했고 버전 간 비교는 범위에서 뺐다.**
+    시계·타임존을 고정(급식표류가 실행 시각을 읽어 화면을 만들고 있었다)하고, LLM 원본 추출을
+    `data/plans/<turnId>.json`으로 분리해 입력 해시가 같으면 재사용한다. 오차는 `±` 대신
+    `completeness`(재지 못한 몫)로, 단위는 분수 대신 분자·분모와 micro/macro 병기로 바꿨다.
+    난이도는 1~5 스칼라를 만들지 않고 `demand` 축들과 R별 `source`(UTTERANCE/CONTEXT)로 대체했다.
+    **측정: 실행 분산 0/47 검사·0/24 턴. 반면 같은 로그·같은 프롬프트·같은 컴파일러로 돌린 두 배치가
+    Q1 0.835 → 0.735, Q3 0.361 → 0.550.** 흔들리는 것은 전부 추출이고 측정은 이미 재현된다
+    → [[2026-09-16-edu-vibe-eval-instrument-contract]]
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
   구조·패턴은 [[edu-ai-course-architecture]], [[spreadsheet-import-stable-ids]],
   [[llm-rate-limit-defense]], [[monaco-model-lifecycle]]에 분리 기록
