@@ -51,6 +51,14 @@ status: draft
     → [[2026-09-15-edu-vibe-llm-eval-pipeline]], [[2026-09-16-edu-vibe-eval-gate-reporting]]
     이론의 출발점은 [[2026-09-11-edu-vibe-llm-evaluation]], 기존 관측 모델은
     [[2026-09-14-edu-vibe-llm-eval-observation-model]]
+  - **2026-09-16: 산출물의 주장을 "품질 점수"에서 "계측값"으로 낮췄다.** 좋다/나쁘다는 데이터를 보는
+    사람이 판단하고 도구는 수집·계산만 한다. 같은 날 제품 변경 없이 평가기 버전 때문에 Q1 평균이
+    0.697 → 0.835로 움직인 것이 계기다. 함께 Extractor 계약을 코드·테스트로 강제하고(결과물 차단,
+    모델의 S·checks·scores 무시, 자유 서술 차단), 변경 허용 여부를 R에서 역추론하지 않고
+    `changeScope`로 명시 선언하도록 바꿨다. "요구 미충족(FAIL)"과 "측정 불가(NOT_OBSERVABLE)"도 분리했다
+    → [[2026-09-16-edu-vibe-eval-instrument-contract]]
+  - 계측기로서 남은 선결 조건 3가지: **재현성 통제, 오차 명시, 단위(S) 안정화**.
+    모호성·난이도 파이프라인은 26/26 null이라 리포트 축 6개가 비어 있다
 - **회사(goorm) — edu-ai-course**: 2025-11~2026-04 참여분을 2026-09-01 포트폴리오로 정리.
   구조·패턴은 [[edu-ai-course-architecture]], [[spreadsheet-import-stable-ids]],
   [[llm-rate-limit-defense]], [[monaco-model-lifecycle]]에 분리 기록
@@ -117,9 +125,6 @@ status: draft
   Q1~Q3는 코드가 담당하며, DSL 미지원 요구는 부분 채점하지 않고 Gate에서 별도 추적한다.
   (오늘 decisions 1건 작성으로 상한 도달 → 다음 트리거일에 재현성 결정으로 승격)
 
-- 2026-09-16: Edu Vibe eval은 Q 계산식만 결정론적이고 입력인 R·검사 DSL·B·D·M은 LLM이 매번
-  다시 생성해 동일 로그의 점수가 달라질 수 있다는 재현성 문제를 확인. 중간 산출물 고정·재사용과
-  평가기 변동성 측정을 분리해야 한다. (오늘 decisions 1건 작성으로 상한 도달 → 다음 트리거일에 검토)
 - 2026-09-16: Edu Vibe eval의 명세량 S를 LLM이 R과 별도로 출력하는 방식을 폐기하고,
   독립 판정 가능한 원자적 R만 생성한 뒤 코드에서 `S = requirements.length`로 계산하도록 변경.
   R과 S의 모순을 구조적으로 막고 각 R의 constraint를 최대 하나로 제한했다.
@@ -169,6 +174,8 @@ status: draft
 
 ## 변경 이력
 
+- 2026-09-16: eval 산출물을 품질 판단이 아닌 계측값으로 재정의. Extractor 계약을 코드·테스트로 강제하고
+  변경 허용 범위를 `changeScope` 명시 선언으로 이전. 재현성 백로그 항목을 결정 문서로 승격
 - 2026-09-16: 평가 LLM을 닫힌 R Extractor로 제한하고 M/Judge를 제거한 결정론적 채점 구조로 변경
 - 2026-09-16: 검증 가능한 R이 없는 턴과 실행 불가 0점을 정상 품질 집계·그래프에서 분리하고 Gate 목록에서 추적
 - 2026-09-15: Edu Vibe LLM eval의 Gate, R·D·B/M 단계, 생성·평가 AX 소유권과 평가 전용 TokenHub 태그를 확정
