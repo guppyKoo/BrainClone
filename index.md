@@ -3,7 +3,7 @@
 guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUDE.md](CLAUDE.md) (= [AGENTS.md](AGENTS.md)).
 **AI는 어떤 작업이든 이 파일과 [now.md](now.md)를 먼저 읽는다.**
 
-> 마지막 갱신: 2026-09-15 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
+> 마지막 갱신: 2026-09-23 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
 > 경계: **개발 관련은 전부 `developer/`**, `profile/`·`interest/`는 비개발 영역, `idea/`는 미착수 구상
 > 언어: 모든 문서 한국어 (CLAUDE.md §0 참조)
 
@@ -66,6 +66,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
 - [coding-style.md](developer/coding-style.md) — 코드 스타일 & 컨벤션 (구체적 규칙)
 - [snippets/](developer/snippets/) — 패턴 & 디버깅 노트
   - [edu-lesson-period-contract.md](developer/snippets/edu-lesson-period-contract.md) — edu-core 강의 기간 데이터 계약 (V1·V2 공유 날짜 포맷, `time_set`, `isOpenTime`)
+  - [edu-recore-architecture.md](developer/snippets/edu-recore-architecture.md) — RECORE: edu-core/edu-server/edu-front 분리 구조, HTTPRoute 라우팅 함정, integration API 3계층, 배포·모니터링
   - [edu-lecture-v2-editor-schema.md](developer/snippets/edu-lecture-v2-editor-schema.md) — tiptap content expression, 왕복 변환 손실, 저장 버튼 오작동
   - [edu-ai-course-architecture.md](developer/snippets/edu-ai-course-architecture.md) — 계약 공유형 모노레포 구조 (oRPC, Inversify, MSW)
   - [spreadsheet-import-stable-ids.md](developer/snippets/spreadsheet-import-stable-ids.md) — 반복 Import에서 DB ID를 보존하는 upsert/멱등성 패턴
