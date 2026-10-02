@@ -3,7 +3,7 @@
 guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUDE.md](CLAUDE.md) (= [AGENTS.md](AGENTS.md)).
 **AI는 어떤 작업이든 이 파일과 [now.md](now.md)를 먼저 읽는다.**
 
-> 마지막 갱신: 2026-09-23 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
+> 마지막 갱신: 2026-10-02 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
 > 경계: **개발 관련은 전부 `developer/`**, `profile/`·`interest/`는 비개발 영역, `idea/`는 미착수 구상
 > 언어: 모든 문서 한국어 (CLAUDE.md §0 참조)
 
@@ -50,6 +50,11 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [music.md](interest/hobbies/music.md) — 기타, 밴드, 작곡
   - [writing.md](interest/hobbies/writing.md) — velog 블로그(@yunchan312): 기술 시리즈 & 여행 에세이
   - [divine-embrace.md](interest/hobbies/divine-embrace.md) — Divine Embrace: 100년 전쟁 이후를 다루는 중세 정치 판타지 세계관 프로젝트
+  - [red-envelope/](interest/hobbies/red-envelope/) — 붉은 봉투: 영혼 결혼식 소재 미연시 게임 제작 프로젝트
+    - [personas.md](interest/hobbies/red-envelope/personas.md) — 등장인물 설정 (주인공·후배·무당·샤오야·흑막)
+    - [story-outline.md](interest/hobbies/red-envelope/story-outline.md) — 0막 프롤로그 ~ 5막 해소 아웃라인
+    - [endings.md](interest/hobbies/red-envelope/endings.md) — 엔딩 6종 분기 설계
+    - [crack-storychat.md](interest/hobbies/red-envelope/crack-storychat.md) — 크랙 스토리챗 버전 (동일 페르소나·엔딩, 포맷만 변환)
   - [fitness.md](interest/hobbies/fitness.md) — 운동 루틴
   - [food.md](interest/hobbies/food.md) — 음식과 미식 취향 (노포 판별 기준)
 - [persona/](interest/persona/) — 캐릭터·페르소나 설정
