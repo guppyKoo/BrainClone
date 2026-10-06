@@ -3,8 +3,8 @@ title: CHALLKATHON — 대상 수상 해커톤
 area: career
 tags: [portfolio, hackathon, collaboration, leadership, award]
 created: 2026-09-01
-updated: 2026-09-01
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # CHALLKATHON — 대상 수상 해커톤
@@ -24,4 +24,5 @@ status: draft
 
 ## 변경 이력
 
+- 2026-10-06: confirmed 승격
 - 2026-09-01: 공모전·해커톤 프로젝트의 기존 기록을 독립 포트폴리오 문서로 정리

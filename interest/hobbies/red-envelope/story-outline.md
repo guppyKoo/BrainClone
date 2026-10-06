@@ -4,7 +4,7 @@ area: interest
 tags: [미연시, 게임, 창작, 스토리, 시나리오, 붉은봉투, 명혼]
 created: 2026-10-02
 updated: 2026-10-02
-status: draft
+status: confirmed
 ---
 
 # 붉은 봉투 — 스토리 아웃라인

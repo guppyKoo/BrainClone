@@ -4,7 +4,7 @@ area: developer
 tags: [contract, openapi, codegen, cors, monorepo, nestjs, tanstack-query, pitfalls]
 created: 2026-09-09
 updated: 2026-09-09
-status: draft
+status: confirmed
 ---
 
 # 레포가 갈린 프론트·서버에서 계약이 조용히 어긋나는 지점들

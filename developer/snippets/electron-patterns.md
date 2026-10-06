@@ -4,7 +4,7 @@ area: developer
 tags: [Electron, electron-vite, electron-builder, patterns]
 created: 2026-08-03
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # Electron 패턴

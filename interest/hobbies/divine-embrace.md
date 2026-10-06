@@ -4,7 +4,7 @@ area: interest
 tags: [writing, worldbuilding, fantasy, politics, war]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # Divine Embrace — 정치 판타지 세계관 프로젝트
@@ -14,7 +14,7 @@ status: draft
 한국 삼국시대다.
 
 이 문서는 Embrace 프로젝트의 `divine_embrace_complete_worldbuilding.md` 설정집을 2026-09-01에
-요약한 것이다. 아직 사용자 검토를 거치지 않은 초안이다.
+요약한 것이다. 2026-10-06 사용자 확인: 이 문서가 최신본이다.
 
 ## 작품의 중심
 

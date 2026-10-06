@@ -4,7 +4,7 @@ area: developer
 tags: [idea, service, contest, hackathon, zip-up, 빈집, 지역재생, ai매칭, 공동리모델링]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # ZIP-UP

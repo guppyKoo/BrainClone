@@ -4,7 +4,7 @@ area: developer
 tags: [idea, service, contest, hackathon, color-walking, walking, local-tourism, AI]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 컬러워킹

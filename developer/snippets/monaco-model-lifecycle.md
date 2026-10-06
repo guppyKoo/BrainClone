@@ -4,7 +4,7 @@ area: developer
 tags: [Monaco, React, lifecycle, race-condition, debugging]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # React 화면 전환에서 Monaco 모델 수명 관리

@@ -4,7 +4,7 @@ area: interest
 tags: [music, guitar, band, songwriting]
 created: 2026-08-03
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 음악 — 기타 & 밴드

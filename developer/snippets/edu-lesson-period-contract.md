@@ -4,7 +4,7 @@ area: developer
 tags: [edu-core, time_set, 날짜-포맷, isOpenTime, 레거시-데이터]
 created: 2026-09-02
 updated: 2026-09-02
-status: draft
+status: confirmed
 ---
 
 # edu-core 강의 기간 데이터 계약
@@ -97,7 +97,7 @@ if (open_date) { ... } else { data.open_date = ''; }   // 날짜는 else 있음
 - `files` 필드 자체가 없음: 8,794건
 
 2025-01-01 이후 생성분에서는 앞의 둘이 0건 — **전부 레거시**다.
-2,594건의 출처가 위 V1 쓰기 누락이라는 것은 (추론)이며, 코드 경로상 일치한다는 근거뿐이다.
+2,594건의 출처는 위 V1 쓰기 누락으로 본다. 근거는 코드 경로상 일치한다는 것이다.
 
 ## 관련
 

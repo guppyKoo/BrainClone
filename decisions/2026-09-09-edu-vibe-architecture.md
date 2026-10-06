@@ -3,8 +3,8 @@ title: Edu Vibe MVP 아키텍처 확정 (V2 Tech Spec)
 area: developer
 tags: [edu-vibe, goorm, architecture, NestJS, Mongoose, Prisma, Fastify, SSE, JWT, MongoDB]
 created: 2026-09-09
-updated: 2026-09-09
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # 결정: Edu Vibe MVP 아키텍처
@@ -246,14 +246,14 @@ JWT는 서명 시크릿만 있으면 어느 파드든 동일하게 동작한다.
 
 ## 남은 것
 
-- `openapi.json`을 "참고 문서"에서 **"계약"으로 승격** — 지금은 실제 동작과 어긋나는 곳이 있어 믿고 붙일 수 없다.
-  그 위에 codegen을 올려야 D4가 설계대로 작동한다. 상세는 [[cross-repo-api-contract-drift]]
+- ~~`openapi.json`을 "참고 문서"에서 "계약"으로 승격~~ — **2026-10-06 승격 완료** (사용자 확인).
+  경위는 [[cross-repo-api-contract-drift]]
 - 프론트 회귀 테스트 0건 — **보류가 아니라 결정이다.** [[2026-09-09-edu-vibe-front-no-tests]]
-- 한글 정렬이 두 곳에서 다르게 풀려 있다 (collation 인덱스 vs 기본 이진 비교) — 통일 기준 미정
-- spec 스위트의 병렬 흔들림, `--forceExit` 없이 종료하지 않는 원인
 
 ## 변경 이력
 
+- 2026-10-06: confirmed 승격. "남은 것"에서 `openapi.json` 계약 승격 완료 표시, 한글 정렬 불일치·spec 병렬 흔들림·`--forceExit` 항목은
+  사용자 지시로 삭제
 - 2026-09-09: D6의 식별자 부분이 [[2026-09-09-edu-vibe-student-id-pii]]로 대체됨.
   코드에서 확정된 것(SSE 인증·S3·배포 형태·TokenHub·env 검증)을 절로 추가
 - 2026-09-09: 최초 작성. 노션 V1/V2 Tech Spec, DB 스키마 문서, 설계 원칙 문서, 서버·프론트 개발회고,

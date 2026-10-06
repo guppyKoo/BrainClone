@@ -3,8 +3,8 @@ title: WeKick — 교내 풋살 매칭 플랫폼
 area: career
 tags: [portfolio, frontend, product, futsal, startup]
 created: 2026-08-18
-updated: 2026-09-01
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # WeKick — 교내 풋살 매칭 플랫폼
@@ -38,6 +38,7 @@ status: draft
 
 ## 변경 이력
 
+- 2026-10-06: confirmed 승격
 - 2026-09-01: 기간, 기술 스택, 인증·기록·어드민·필터링·협업 역할 보강
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-18: 이전 프로젝트·커리어 관련 대화에서 생성

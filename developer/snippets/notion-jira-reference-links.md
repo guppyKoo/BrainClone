@@ -4,7 +4,7 @@ area: developer
 tags: [notion, figma, jira, mcp, documentation, links, pitfalls]
 created: 2026-09-09
 updated: 2026-09-09
-status: draft
+status: confirmed
 ---
 
 # 노션·피그마·Jira를 코드에서 참조할 때 실제로 깨진 것들

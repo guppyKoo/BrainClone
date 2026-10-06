@@ -4,7 +4,7 @@ area: developer
 tags: [figma, design-token, vapor-ui, responsive, cdp, chrome-devtools, frontend]
 created: 2026-09-09
 updated: 2026-09-09
-status: draft
+status: confirmed
 ---
 
 # 피그마 시안을 코드로 옮길 때 어긋나는 지점과 브라우저 실측

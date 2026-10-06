@@ -3,8 +3,8 @@ title: 코드 스타일 & 컨벤션 선호
 area: developer
 tags: [coding-style, conventions, commits]
 created: 2026-08-03
-updated: 2026-09-01
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # 코드 스타일 & 컨벤션 선호
@@ -35,8 +35,6 @@ status: draft
 - **접두사가 붙은 문자열 도메인 ID**를 선호한다 — `class-`, `proj-`, `arti-` + base36 10자
   (`class-pihtuke4hn`). 접두사 덕분에 로그와 URL에서 엔티티 타입이 보이고, DTO 검증에서 종류가 다른 ID를
   거를 수 있다. 이 선호는 MongoDB의 ObjectId `_id`를 대체하지 않는다. 두 식별자는 역할이 다르다.
-- 학생 참여 레코드도 같은 분리를 따른다: `_id`는 ObjectId, `User.id`는 `{entryCode}-{nickName}`이고
-  유니크 인덱스가 걸린다.
 - enum성 필드는 매직 넘버가 아니라 의미 있는 문자열을 담는다 (`0 | 1 | 2`가 아니라 `'up' | 'down' | null`)
 
 ## 커밋 & Git
@@ -68,7 +66,11 @@ status: draft
 
 ## 테스트
 
-- TDD 지향, 커버리지 80% 목표 (ECC 룰)
+- **TDD 지향. 단 프론트는 테스트를 쓰지 않는다.**
+  - 서버 API는 계약이 확실하기 때문에 TDD를 선호한다. ECC 룰의 "커버리지 80%" 목표는 서버에만 해당한다.
+  - 프론트는 초기 개발에서 사람의 눈으로 확인하는 것이 더 싸고, 유지보수에서도 테스트 때문에
+    공수가 2배가 된다고 본다.
+  - 원칙은 [[philosophy]]의 "API는 TDD, 프론트는 사람의 눈", 적용 결정은 [[2026-09-09-edu-vibe-front-no-tests]].
 - **Edu Vibe 서버 테스트 전략 (2026-08-19 진술)**: Jest로 아웃사이드-인 Red–Green–Refactor. 실패하는 API 계약/E2E 테스트에서 시작하고, 서비스 비즈니스 규칙은 리포지토리 목으로 커버하고, 각 리포지토리 메서드는 `mongodb-memory-server`로 실제 Mongoose 왕복을 통해 검증하고, 가드·검증·직렬화·HTTP 계약은 Supertest로 확인한다. 한 줄짜리 컨트롤러 위임까지 억지로 유닛 테스트하지 않는다.
 - **GREEN은 계약의 모든 표현이 일치한다는 뜻이다** (Edu Vibe TDD 진행에서 확인, 2026-08-24):
   RED 기준선을 개수와 사유와 함께 기록하고, 구현 단계마다 건드린 spec만이 아니라 e2e 스위트 전체를
@@ -77,6 +79,9 @@ status: draft
 
 ## 변경 이력
 
+- 2026-10-06: 리뷰 중 정리 — 학생 참여 레코드 id 항목은 코드 스타일이 아니라는 사용자 판단으로 제거
+  (해당 내용은 [[2026-09-09-edu-vibe-student-id-pii]]에 있음). TDD 범위를 사용자 진술대로
+  "서버 API는 TDD, 프론트는 테스트 없음"으로. confirmed 승격
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-24: INOS에서 관찰한 UI 규칙 네 가지 추가 — 작은 컴포넌트 직접 작성, 콘텐츠보다 조용한 크롬, 개수 대신 점 배지, 한국어 문장 단위 줄바꿈
 - 2026-08-24: 접두사 ID는 별도의 도메인 `id`에 속하고 MongoDB `_id`는 자동 ObjectId로 남는다는 점 명확화

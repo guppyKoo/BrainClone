@@ -3,8 +3,8 @@ title: edu-ai-course — AI 맞춤형 교육 플랫폼
 area: career
 tags: [portfolio, goorm, AI, education, React, oRPC]
 created: 2026-09-01
-updated: 2026-09-01
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # edu-ai-course — AI 맞춤형 교육 플랫폼
@@ -16,8 +16,8 @@ status: draft
 
 - Git 이력 기준 2025-11부터 2026-04까지 `guppy.koo` 이름으로 약 500개 commit에 참여했다.
   merge와 중복 이력이 포함되므로 이를 그대로 성과 개수로 사용하지 않는다.
-- (추론) 한 화면이나 한 레이어에 한정되지 않고 학습 UI, API, 테스트, 공용 UI, 모킹,
-  AI 코스 편집 도구까지 제품의 세로 단면을 넓게 맡았다.
+- 한 화면이나 한 레이어에 한정되지 않고 학습 UI, API, 테스트, 공용 UI, 모킹,
+  AI 코스 편집 도구까지 제품의 세로 단면을 넓게 맡았다 (아래 "확인되는 주요 작업"이 근거).
 
 ## 확인되는 주요 작업
 
@@ -56,7 +56,7 @@ Vapor UI 1.1 업데이트에서 약 90개 파일을 함께 바꾸며 component �
 새 API로 정리했다. 단순 버전 bump가 아니라 사내 design system skill의 component/token mapping 문서도
 같이 갱신해 이후 작업 규칙까지 맞췄다.
 
-## 포트폴리오 표현 초안 (추론)
+## 포트폴리오 표현
 
 - 계약 공유형 TypeScript 모노레포에서 코스 학습 UI, 온보딩, Express/oRPC API, 관리자 편집 도구까지
   제품 기능을 end-to-end로 개발했다.
@@ -69,4 +69,5 @@ Vapor UI 1.1 업데이트에서 약 90개 파일을 함께 바꾸며 component �
 
 ## 변경 이력
 
+- 2026-10-06: (추론) 2건을 "확인되는 주요 작업"에 근거한 표현으로 확정, 사용자 승인으로 confirmed 승격
 - 2026-09-01: 저장소 구조와 `guppy.koo` commit 이력에서 참여 범위, 주요 작업, 면접용 문제 해결 서사를 추출

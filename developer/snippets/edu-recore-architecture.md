@@ -4,7 +4,7 @@ area: developer
 tags: [goorm, edu-core, edu-server, edu-front, recore, Istio, HTTPRoute, gitops-apps, ArgoCD, monolith-split]
 created: 2026-09-23
 updated: 2026-09-23
-status: draft
+status: confirmed
 ---
 
 # RECORE — edu-core 서버 분리 구조와 개발 규칙

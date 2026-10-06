@@ -3,14 +3,17 @@ title: Bulk Mail — Electron 데스크톱 앱
 area: career
 tags: [portfolio, Electron, React, side-project]
 created: 2026-08-03
-updated: 2026-09-01
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # Bulk Mail (Post Office) — Electron 데스크톱 앱
 
 macOS 대량 메일 데스크톱 앱. 개인 프로젝트, 혼자 만들었다.
 저장소: github.com/guppyKoo (원본: Bulk-email → 마이그레이션: bulk-mail-electron)
+
+> **2026-10-06: 프로젝트 종료.** 의의는 Electron으로 앱을 처음부터 DMG 배포까지 만들어본 것이다.
+> 아래 "방향"과 미해결 항목은 종료 시점의 기록으로 남긴다.
 
 ## 문제 & 서사
 
@@ -59,6 +62,7 @@ macOS 대량 메일 데스크톱 앱. 개인 프로젝트, 혼자 만들었다.
 
 ## 변경 이력
 
+- 2026-10-06: 프로젝트 종료 표시(의의: Electron 앱 제작 경험). confirmed 승격
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-10: 2026-08-10 무단 발송 기록(레거시 스크립트 증거), 공개 구독 방향 추가
 - 2026-08-07: 실사용 섹션(2026-04부터 7명 개인 편지)과 2026-07-14 중복 발송 사고 추가

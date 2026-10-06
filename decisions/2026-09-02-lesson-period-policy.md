@@ -3,8 +3,8 @@ title: 강의 공개 기간 검증 정책 (edu-core V2 편집기)
 area: developer
 tags: [edu-core, 공개-기간, time_set, isPrivate, 검증-정책]
 created: 2026-09-02
-updated: 2026-09-02
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # 결정: 강의 공개 기간 검증 정책
@@ -71,6 +71,9 @@ D2는 서버 규칙보다 프론트가 **더 엄격한** 경우다. `isOpenTime`
   `if (time_set)`이 `false`를 기록하지 못하는 문제 — 별도 PR
 - 기존 오염 데이터 마이그레이션 — 위 수정 이후
 
+> 2026-10-06: 위 두 건 모두 **종료** (사용자 확인)
+
 ## 변경 이력
 
+- 2026-10-06: "남은 것" 2건(v1 `time_set` PR, 레거시 마이그레이션) 종료 표시. confirmed 승격
 - 2026-09-02: 최초 작성 (D1~D5 결정, 대안 A·B·C 기각)

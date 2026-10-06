@@ -4,7 +4,7 @@ area: developer
 tags: [edu-core, tiptap, prosemirror, 스키마, 왕복-변환, 저장-버튼]
 created: 2026-09-02
 updated: 2026-09-02
-status: draft
+status: confirmed
 ---
 
 # edit-lecture-v2 에디터 스키마와 왕복 변환 함정

@@ -3,8 +3,8 @@ title: 운동 루틴
 area: interest
 tags: [fitness, gym, routine]
 created: 2026-08-03
-updated: 2026-09-01
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # 운동 루틴
@@ -19,5 +19,6 @@ status: draft
 
 ## 변경 이력
 
+- 2026-10-06: confirmed 승격
 - 2026-09-01: 문서를 한국어로 전환
 - 2026-08-03: 영어로 전환

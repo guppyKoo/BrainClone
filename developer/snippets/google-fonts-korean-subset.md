@@ -4,7 +4,7 @@ area: developer
 tags: [webfont, google-fonts, 한글, 성능, IntersectionObserver, INOS]
 created: 2026-09-09
 updated: 2026-09-09
-status: draft
+status: confirmed
 ---
 
 # 한글 웹폰트 30벌을 text= 서브셋으로 증분 로딩하기

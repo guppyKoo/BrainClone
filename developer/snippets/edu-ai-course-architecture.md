@@ -4,7 +4,7 @@ area: developer
 tags: [monorepo, oRPC, contracts, Inversify, MSW, architecture]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # AI 교육 플랫폼의 계약 공유형 모노레포 구조

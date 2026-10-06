@@ -4,7 +4,7 @@ area: interest
 tags: [investing, stocks, macro, market-analysis]
 created: 2026-08-03
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 투자 & 거시경제

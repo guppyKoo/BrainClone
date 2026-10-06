@@ -4,7 +4,7 @@ area: developer
 tags: [LLM, rate-limit, retry, backoff, LangChain, BullMQ]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 중첩 병렬 LLM 파이프라인의 429 방어

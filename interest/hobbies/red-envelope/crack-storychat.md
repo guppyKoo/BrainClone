@@ -4,7 +4,7 @@ area: interest
 tags: [미연시, 게임, 창작, 크랙, 스토리챗, AI채팅, 붉은봉투]
 created: 2026-10-02
 updated: 2026-10-02
-status: draft
+status: confirmed
 ---
 
 # 붉은 봉투 — 크랙 스토리챗 버전 v2

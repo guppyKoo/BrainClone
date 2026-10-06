@@ -4,7 +4,7 @@ area: interest
 tags: [anime, manga, movies, games, pop-culture]
 created: 2026-08-03
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 애니메이션 · 영화 · 게임

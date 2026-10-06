@@ -3,7 +3,7 @@
 guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUDE.md](CLAUDE.md) (= [AGENTS.md](AGENTS.md)).
 **AI는 어떤 작업이든 이 파일과 [now.md](now.md)를 먼저 읽는다.**
 
-> 마지막 갱신: 2026-10-02 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
+> 마지막 갱신: 2026-10-06 · 대부분의 문서가 `draft` 상태 — 검토 후 `confirmed`로 승격 필요
 > 경계: **개발 관련은 전부 `developer/`**, `profile/`·`interest/`는 비개발 영역, `idea/`는 미착수 구상
 > 언어: 모든 문서 한국어 (CLAUDE.md §0 참조)
 
@@ -18,6 +18,7 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
 - [journal/](profile/journal/) — 깊은 성찰, 간헐적 회고 (append-only)
   - [2026-08-03-brainclone-start.md](profile/journal/2026-08-03-brainclone-start.md) — BrainClone 시작
   - [2026-09-10-inos-ai-quality-focus.md](profile/journal/2026-09-10-inos-ai-quality-focus.md) — INOS 성장 목표를 운영 경험에서 AI 발제문 평가·검색 최적화로 변경
+  - [2026-09-10-ai-era-career.md](profile/journal/2026-09-10-ai-era-career.md) — AI 시대 주니어 축소 속에서 이른 입사가 이점인가, 연차 대신 무엇으로 굳힐 것인가
 
 ## 🧭 Decisions — 기술·설계 판단 (append-only)
 
@@ -26,10 +27,12 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
   - [2026-09-09-edu-vibe-architecture.md](decisions/2026-09-09-edu-vibe-architecture.md) — Edu Vibe MVP 아키텍처 확정 (NestJS(Express)·Mongoose 채택, Fastify·Prisma·4앱 분리 기각)
   - [2026-09-09-edu-vibe-student-id-pii.md](decisions/2026-09-09-edu-vibe-student-id-pii.md) — 학생 식별자를 합성 값에서 무작위 값으로 (위 문서 D6을 **대체**)
   - [2026-09-09-edu-vibe-front-no-tests.md](decisions/2026-09-09-edu-vibe-front-no-tests.md) — 프론트는 테스트를 쓰지 않기로 하고 하네스 제거 (서버는 반대)
+  - [2026-09-09-inos-eval-before-slot-schema.md](decisions/2026-09-09-inos-eval-before-slot-schema.md) — INOS 발제문: 슬롯 스키마·모델 비교보다 eval이 먼저
   - [2026-09-11-edu-vibe-llm-evaluation.md](decisions/2026-09-11-edu-vibe-llm-evaluation.md) — LLM 품질을 명세량 S에 따른 Q·정정률 두 곡선으로 측정하는 이론 설계
   - [2026-09-14-edu-vibe-llm-eval-observation-model.md](decisions/2026-09-14-edu-vibe-llm-eval-observation-model.md) — 종합점수 없이 Q1~Q4·L·S와 발화/맥락 모호함을 독립 턴 단위로 관측
   - [2026-09-15-edu-vibe-llm-eval-pipeline.md](decisions/2026-09-15-edu-vibe-llm-eval-pipeline.md) — Gate, R·D·B/M 단계 분리, 생성·평가 AX 축 소유권과 평가 전용 호출 태그 확정
   - [2026-09-16-edu-vibe-eval-gate-reporting.md](decisions/2026-09-16-edu-vibe-eval-gate-reporting.md) — 검증 가능한 R이 없는 턴과 실행 불가 0점을 품질 그래프에서 분리
+  - [2026-09-16-edu-vibe-eval-extractor-only.md](decisions/2026-09-16-edu-vibe-eval-extractor-only.md) — M/Judge 단계 제거, LLM은 닫힌 R 추출만. S는 코드가 계산 (09-15 문서 Step2를 **대체**)
   - [2026-09-16-edu-vibe-eval-instrument-contract.md](decisions/2026-09-16-edu-vibe-eval-instrument-contract.md) — eval 산출물을 품질 판단이 아닌 계측값으로 좁히고 Extractor 계약을 코드로 강제. 변경 범위는 `changeScope`로 명시 선언
 
 ## 💡 Idea — 아직 만들지 않은 것 (공모전·해커톤 구상)
@@ -55,6 +58,8 @@ guppy의 뇌를 복제하는 개인 지식베이스. 규칙 & OKF 명세: [CLAUD
     - [story-outline.md](interest/hobbies/red-envelope/story-outline.md) — 0막 프롤로그 ~ 5막 해소 아웃라인
     - [endings.md](interest/hobbies/red-envelope/endings.md) — 엔딩 6종 분기 설계
     - [crack-storychat.md](interest/hobbies/red-envelope/crack-storychat.md) — 크랙 스토리챗 버전 (동일 페르소나·엔딩, 포맷만 변환)
+  - [ghost-pokemon/](interest/hobbies/ghost-pokemon/) — 귀신 포켓몬: 원한 상성으로 귀신과 계약해 싸우는 다크 사상극 세계관 (소설/게임)
+    - [setting.md](interest/hobbies/ghost-pokemon/setting.md) — 세계관 설정집 (컨셉·주인공·가문 배경·계약 시스템·하지메·메인 플롯)
   - [fitness.md](interest/hobbies/fitness.md) — 운동 루틴
   - [food.md](interest/hobbies/food.md) — 음식과 미식 취향 (노포 판별 기준)
 - [persona/](interest/persona/) — 캐릭터·페르소나 설정

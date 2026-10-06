@@ -4,7 +4,7 @@ area: developer
 tags: [idea, service, contest, hackathon, 의성, 워케이션, 힐링맵, Google Cloud, Gemini]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 의성 워케이션 힐링맵

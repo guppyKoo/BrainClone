@@ -4,7 +4,7 @@ area: interest
 tags: [writing, blog, velog, essay, travel]
 created: 2026-08-07
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 글쓰기 — velog 블로그

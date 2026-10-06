@@ -4,7 +4,7 @@ area: developer
 tags: [mongodb, migrate-mongo, index, migration, partial-index, mongoose]
 created: 2026-09-09
 updated: 2026-09-09
-status: draft
+status: confirmed
 ---
 
 # migrate-mongo로 안전하게 데이터를 옮기는 규칙

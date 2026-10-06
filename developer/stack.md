@@ -3,8 +3,8 @@ title: 기술 스택 & 숙련도
 area: developer
 tags: [stack, JavaScript, TypeScript, React, Node.js, Express, oRPC, Electron, NestJS]
 created: 2026-08-03
-updated: 2026-09-10
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # 기술 스택 & 숙련도
@@ -21,7 +21,7 @@ status: draft
 | **Electron** | Bulk Mail — electron-vite + electron-builder로 DMG 배포까지 완주 |
 | **Tailwind CSS v4** | Bulk Mail (`@theme inline`, `rgb(from ...)` 토큰 파생), INOS (DaisyUI) |
 | **NestJS + Fastify** | INOS server/ai-server — SSE 스트리밍 포함 |
-| **Prisma + PostgreSQL** | INOS — pgvector 검색, 모노레포 공유 스키마 |
+| **Prisma + PostgreSQL** | INOS — 모노레포 공유 스키마. pgvector는 써봤지만 오버엔지니어링이라 제거 (추천 시스템 구현 시 재도입 검토) |
 | **NestJS + Express + Mongoose/MongoDB** | Edu Vibe 서버 (2026-08) — 전역 `ValidationPipe`/`ClassSerializerInterceptor` 방어, 리포지토리 레이어, `migrate-mongo` 마이그레이션. 함정: [[nestjs-mongoose-pitfalls]] |
 | **Express 5 + oRPC + Inversify + Mongoose** | goorm `edu-ai-course` — Zod/oRPC 계약 공유, feature별 router/service/module, DI container, MongoDB 트랜잭션. 구조: [[edu-ai-course-architecture]] |
 
@@ -29,7 +29,7 @@ status: draft
 
 - **실시간 협업 편집**: Yjs, hocuspocus, y-prosemirror, ProseMirror/TipTap — 라이브러리를 직접 패치했다 ([[y-prosemirror-nodeselection-crash]])
   - goorm `goorm-hocuspocus` + `edu-core` — **epoch 기반 문서 버저닝**을 설계하고 운영 중
-- **에디터/블록 시스템**: goorm edu-core, mist-blocks-react (추론)
+- **에디터/블록 시스템**: goorm edu-core
 - **사내 AI 인프라**: Claude Code를 goorm 사내 LiteLLM 프록시에 연결. GitHub MCP를 HTTP 엔드포인트로 연동
 
 ## 도구 & 인프라
@@ -43,8 +43,12 @@ status: draft
 - LangChain/LangGraph, OpenAI·Anthropic 멀티 provider LLM 구성, retry/backoff와 token·latency 계측 ([[llm-rate-limit-defense]])
 - TanStack Router/Query, Radix UI, CVA, sonner
 - nodemailer, OpenAI API (Images, 스트리밍)
+- **Playwright**: Edu Vibe LLM eval에서 생성 HTML을 브라우저로 실행·관측 (시계·타임존 고정 `addInitScript`,
+  `<select>` 조작 등) → [[2026-09-16-edu-vibe-eval-instrument-contract]]. 2026-10-06 interest에서 승격
+- **Appsmith**: 회사에서 사내 도구용으로 사용 중 (JSONForm 위젯, API body 직렬화 이슈 경험). 2026-10-06 interest에서 승격
 - Claude Code 파워 유저 — skill/agent/hook/MCP를 대규모로 운용
-- 배포/인프라: EKS 기반 Kubernetes, Jenkins 파이프라인
+- 배포/인프라: EKS 기반 Kubernetes, Jenkins 파이프라인. ArgoCD, Vault, Istio(HTTPRoute), Elastic APM도 사용하지만
+  전부 **이미 구축된 사내 플랫폼 위에서 쓰는 수준**이다. 직접 구축·운영한 경험은 없다.
 
 ## 테스트 & 품질 보증
 
@@ -60,7 +64,8 @@ status: draft
 - **AI model serving**: 회사의 Edu Vibe와 `edu-ai-course`, 개인 프로젝트 INOS에서 모델을 서비스에
   연결하고 API·비동기 작업·스트리밍 흐름을 구현했다. 대규모 트래픽의 고가용성 서빙과 모델 배포
   플랫폼을 직접 구축한 경험은 부족하다.
-- **Vector 검색**: NestJS + PostgreSQL/pgvector를 소규모로 사용해 봤다. RAG 파이프라인을 구축하거나
+- **Vector 검색**: INOS에서 PostgreSQL/pgvector를 써봤지만 오버엔지니어링이라 판단해 뺐다.
+  나중에 추천 시스템을 구현할 때 다시 추가할 수 있다. RAG 파이프라인을 구축하거나
   검색 품질·성능을 최적화한 경험은 없다.
 - **Python**: 코딩 테스트 풀이 경험이 많다. 프로덕션 AI/Data 애플리케이션 개발 경험으로 보기는 어렵다.
 - **JVM**: Java를 학교 수업에서 사용한 정도이며 실무 경험은 많지 않다. NestJS의 모듈·DI·데코레이터 기반
@@ -76,6 +81,9 @@ status: draft
 
 ## 변경 이력
 
+- 2026-10-06: Playwright·Appsmith를 [[interest]]에서 승격 (사용자 확인)
+- 2026-10-06: confirmed 승격. mist-blocks-react(추론) 제거, pgvector를 "사용 후 오버엔지니어링으로 제거"로 정정,
+  배포 스택(ArgoCD·Vault·Istio·APM)을 "구축된 플랫폼 위 사용" 수준으로 명시
 - 2026-09-10: Edu Vibe의 TDD·e2e와 edu-core의 선제적 오류 검출 e2e 경험을 품질 보증 역량으로 명시
 - 2026-09-09: Kafka·Redis의 회사 사용 경험과 구축 경험의 경계, AI model serving·Python·JVM 및
   Airflow/RAG/핀테크 경험 수준을 사용자 확인 내용으로 추가

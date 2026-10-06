@@ -4,7 +4,7 @@ area: interest
 tags: [미연시, 게임, 창작, 엔딩, 분기, 붉은봉투]
 created: 2026-10-02
 updated: 2026-10-02
-status: draft
+status: confirmed
 ---
 
 # 붉은 봉투 — 엔딩 설계

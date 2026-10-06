@@ -4,7 +4,7 @@ area: developer
 tags: [ETL, Google-Sheets, MongoDB, upsert, idempotency]
 created: 2026-09-01
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # 반복 가능한 Spreadsheet Import에서 ID를 보존하는 법

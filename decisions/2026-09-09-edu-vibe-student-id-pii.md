@@ -3,8 +3,8 @@ title: 학생 식별자를 합성 값에서 무작위 값으로 (EDU-650)
 area: developer
 tags: [edu-vibe, PII, 개인정보, 식별자, mongodb, partial-index, migration]
 created: 2026-09-09
-updated: 2026-09-09
-status: draft
+updated: 2026-10-06
+status: confirmed
 ---
 
 # 결정: 학생 식별자를 `{entryCode}-{nickName}`에서 무작위 `stu-*`로
@@ -93,5 +93,6 @@ DB unique 제약으로 공짜였고, 같은 수업에 같은 이름으로 다시
 
 ## 변경 이력
 
+- 2026-10-06: 사용자 검토 후 confirmed 승격
 - 2026-09-09: 코드(`src/common/id.ts`, `migrations/20260911000000-random-student-ids.js`)에서 확인해 작성.
   [[2026-09-09-edu-vibe-architecture]] D6을 대체한다

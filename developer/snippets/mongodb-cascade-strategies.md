@@ -4,7 +4,7 @@ area: developer
 tags: [mongodb, cascade, change-stream, kafka, transactions, cdc]
 created: 2026-08-14
 updated: 2026-09-01
-status: draft
+status: confirmed
 ---
 
 # MongoDB 캐스케이드 삭제 전략
